@@ -16,9 +16,7 @@ export default function Home() {
               <li>Out-of-context</li>
               <li></li>
             </ul>
-
           </div>
-
         </section>
         <aside className="grid grid-flow-col auto-cols-max">
           <h2>Showing methods that</h2>
