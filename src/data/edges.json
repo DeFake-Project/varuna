@@ -1,0 +1,230 @@
+[
+    {
+        "source": "start",
+        "target": "why",
+        "label": "Instance of",
+        "weight": 3
+    },
+    {
+        "source": "start",
+        "target": "where",
+        "label": "Search within",
+        "weight": 3
+    },
+    {
+        "source": "start",
+        "target": "what",
+        "label": "Analyze",
+        "weight": 3
+    },
+    {
+        "source": "why",
+        "target": "deepfake",
+        "label": "Instance of",
+        "weight": 3
+    },
+    {
+        "source": "why",
+        "target": "manual-forgery",
+        "label": "Instance of",
+        "weight": 3
+    },
+    {
+        "source": "why",
+        "target": "out-of-context",
+        "label": "Instance of",
+        "weight": 3
+    },
+    {
+        "source": "why",
+        "target": "synthetic-media",
+        "label": "Instance of",
+        "weight": 3
+    },
+    {
+        "source": "where",
+        "target": "non-human",
+        "label": "Search within",
+        "weight": 3
+    },
+    {
+        "source": "where",
+        "target": "human",
+        "label": "Search within",
+        "weight": 3
+    },
+    {
+        "source": "where",
+        "target": "scene",
+        "label": "Search within",
+        "weight": 3
+    },
+    {
+        "source": "where",
+        "target": "file",
+        "label": "Search within",
+        "weight": 3
+    },
+    {
+        "source": "what",
+        "target": "spatial",
+        "label": "Search within",
+        "weight": 3
+    },
+    {
+        "source": "what",
+        "target": "file-analysis",
+        "label": "Search within",
+        "weight": 3
+    },
+    {
+        "source": "what",
+        "target": "temporal",
+        "label": "Search within",
+        "weight": 3
+    },
+    {
+        "source": "deepfake",
+        "target": "deepfake-video",
+        "label": "for",
+        "weight": 1
+    },
+    {
+        "source": "deepfake",
+        "target": "deepfake-image",
+        "label": "for",
+        "weight": 1
+    },
+    {
+        "source": "deepfake",
+        "target": "deepfake-audio",
+        "label": "for",
+        "weight": 1
+    },
+    {
+        "source": "deepfake",
+        "target": "deepfake-video",
+        "label": "for",
+        "weight": 1
+    },
+    {
+        "source": "deepfake",
+        "target": "deepfake-text",
+        "label": "for",
+        "weight": 1
+    },
+    {
+        "source": "human",
+        "target": "human-face",
+        "label": "within",
+        "weight": 2
+    },
+    {
+        "source": "human",
+        "target": "human-body",
+        "label": "within",
+        "weight": 2
+    },
+    {
+        "source": "human",
+        "target": "human-text",
+        "label": "within",
+        "weight": 2
+    },
+    {
+        "source": "human",
+        "target": "human-body",
+        "label": "within",
+        "weight": 2
+    },
+    {
+        "source": "non-human",
+        "target": "non-human-biological",
+        "label": "within",
+        "weight": 2
+    },
+    {
+        "source": "non-human",
+        "target": "non-human-non-biological",
+        "label": "within",
+        "weight": 2
+    },
+    {
+        "source": "spatial",
+        "target": "spatial-structural",
+        "label": "for",
+        "weight": 3
+    },
+    {
+        "source": "spatial",
+        "target": "spatial-pixel-level",
+        "label": "for",
+        "weight": 3
+    },
+    {
+        "source": "spatial",
+        "target": "spatial-context",
+        "label": "for",
+        "weight": 3
+    },
+    {
+        "source": "spatial",
+        "target": "spatial-provenance",
+        "label": "for",
+        "weight": 3
+    },
+    {
+        "source": "spatial",
+        "target": "spatial-identity",
+        "label": "for",
+        "weight": 3
+    },
+    {
+        "source": "spatial",
+        "target": "spatial-physics",
+        "label": "for",
+        "weight": 3
+    },
+    {
+        "source": "file-analysis",
+        "target": "file-metadata",
+        "label": "for",
+        "weight": 3
+    },
+    {
+        "source": "file-analysis",
+        "target": "file-digital-watermark",
+        "label": "for",
+        "weight": 3
+    },
+    {
+        "source": "temporal",
+        "target": "temporal-biometrics",
+        "label": "for",
+        "weight": 3
+    },
+    {
+        "source": "temporal",
+        "target": "temporal-physiology",
+        "label": "for",
+        "weight": 3
+    },
+    {
+        "source": "temporal",
+        "target": "temporal-context",
+        "label": "for",
+        "weight": 3
+    },
+    {
+        "source": "temporal",
+        "target": "temporal-synchronization",
+        "label": "for",
+        "weight": 3
+    },
+    {
+        "source": "temporal",
+        "target": "temporal-coherence",
+        "label": "for",
+        "weight": 3
+    }
+]

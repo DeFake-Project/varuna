@@ -1,0 +1,266 @@
+[
+    {
+        "id": "start",
+        "name": "start",
+        "group": 0,
+        "description": "Starting point"
+    },
+    {
+        "id": "why",
+        "name": "why",
+        "group": 1,
+        "description": "Why is the media being analyzed?"
+    },
+    {
+        "id": "where",
+        "name": "where",
+        "group": 2,
+        "description": "Where is the model looking at?"
+    },
+    {
+        "id": "what",
+        "name": "what",
+        "group": 3,
+        "description": "What are the feautures being analyzed?"
+    },
+    {
+        "id": "deepfake",
+        "name": "deepfake",
+        "group": 1,
+        "description": "Manipulated media"
+    },
+    {
+        "id": "manual-forgery",
+        "name": "manual-forgery",
+        "group": 1,
+        "description": "Manually edited media"
+    },
+    {
+        "id": "out-of-context",
+        "name": "out-of-context",
+        "group": 1,
+        "description": "Media taken out of context"
+    },
+    {
+        "id": "synthetic-media",
+        "name": "synthetic-media",
+        "group": 1,
+        "description": "Generated media"
+    },
+    {
+        "id": "human",
+        "name": "human",
+        "group": 2,
+        "description": "Media involving humans"
+    },
+    {
+        "id": "non-human",
+        "name": "non-human",
+        "group": 2,
+        "description": "Media not involving humans"
+    },
+    {
+        "id": "scene",
+        "name": "scene",
+        "group": 2,
+        "description": "Media depicting a scene"
+    },
+    {
+        "id": "file",
+        "name": "file",
+        "group": 2,
+        "description": "Media stored in a file"
+    },
+    {
+        "id": "spatial-features",
+        "name": "spatial-features",
+        "group": 3,
+        "description": "Spatial features"
+    },
+    {
+        "id": "temporal-features",
+        "name": "temporal-features",
+        "group": 3,
+        "description": "Temporal features"
+    },
+    {
+        "id": "file-structure",
+        "name": "file-structure",
+        "group": 3,
+        "description": "Structure and organization of media files"
+    },
+    {
+        "id": "deepfake-video",
+        "name": "deepfake-video",
+        "group": 1,
+        "description": "Manipulated video content created using deep learning techniques"
+    },
+    {
+        "id": "deepfake-audio",
+        "name": "deepfake-audio",
+        "group": 1,
+        "description": "Manipulated audio content created using deep learning techniques"
+    },
+    {
+        "id": "deepfake-image",
+        "name": "deepfake-image",
+        "group": 1,
+        "description": "Manipulated image content created using deep learning techniques"
+    },
+    {
+        "id": "deepfake-text",
+        "name": "deepfake-text",
+        "group": 1,
+        "description": "Manipulated text content created using deep learning techniques"
+    },
+    {
+        "id": "manual-forgery-video",
+        "name": "manual-forgery-video",
+        "group": 1,
+        "description": "Manipulated video content created through manual editing"
+    },
+    {
+        "id": "manual-forgery-audio",
+        "name": "manual-forgery-audio",
+        "group": 1,
+        "description": "Manipulated audio content created through manual editing"
+    },
+    {
+        "id": "manual-forgery-image",
+        "name": "manual-forgery-image",
+        "group": 1,
+        "description": "Manipulated image content created through manual editing"
+    },
+    {
+        "id": "human-face",
+        "name": "human-face",
+        "group": 2,
+        "description": "Media content depicting human faces"
+    },
+    {
+        "id": "human-voice",
+        "name": "human-voice",
+        "group": 2,
+        "description": "Media content involving human voices"
+    },
+    {
+        "id": "human-body",
+        "name": "human-body",
+        "group": 2,
+        "description": "Media content depicting human bodies"
+    },
+    {
+        "id": "human-handwriting",
+        "name": "human-handwriting",
+        "group": 2,
+        "description": "Media content depicting human handwriting"
+    },
+    {
+        "id": "non-human-biological",
+        "name": "non-human-biological",
+        "group": 2,
+        "description": "Media content involving non-human biological entities"
+    },
+    {
+        "id": "non-human-non-biological",
+        "name": "non-human-non-biological",
+        "group": 2,
+        "description": "Media content involving non-human non-biological entities"
+    },
+    {
+        "id": "spatial",
+        "name": "spatial",
+        "group": 3,
+        "description": "Spatial features of media content"
+    },
+    {
+        "id": "spatial-structural",
+        "name": "spatial-structural",
+        "group": 3,
+        "description": "Structural features of media content"
+    },
+    {
+        "id": "spatial-pixel-level",
+        "name": "spatial-pixel-level",
+        "group": 3,
+        "description": "Pixel-level features of media content"
+    },
+    {
+        "id": "spatial-context",
+        "name": "spatial-context",
+        "group": 3,
+        "description": "Contextual features of media content"
+    },
+    {
+        "id": "spatial-provenance",
+        "name": "spatial-provenance",
+        "group": 3,
+        "description": "Provenance features of media content"
+    },
+    {
+        "id": "spatial-identity",
+        "name": "spatial-identity",
+        "group": 3,
+        "description": "Identity-related features of media content"
+    },
+    {
+        "id": "spatial-physics",
+        "name": "spatial-physics",
+        "group": 3,
+        "description": "Physics-related features of media content"
+    },
+    {
+        "id": "file-analysis",
+        "name": "file-analysis",
+        "group": 3,
+        "description": "Analysis of media files"
+    },
+    {
+        "id": "file-metadata",
+        "name": "file-metadata",
+        "group": 3,
+        "description": "Metadata associated with media files"
+    },
+    {
+        "id": "file-digital-watermark",
+        "name": "file-digital-watermark",
+        "group": 3,
+        "description": "Digital watermark embedded in media files"
+    },
+    {
+        "id": "temporal",
+        "name": "temporal",
+        "group": 3,
+        "description": "Temporal features of media content"
+    },
+    {
+        "id": "temporal-biometrics",
+        "name": "temporal-biometrics",
+        "group": 3,
+        "description": "Biometric features of media content over time"
+    },
+    {
+        "id": "temporal-physiology",
+        "name": "temporal-physiology",
+        "group": 3,
+        "description": "Physiological features of media content over time"
+    },
+    {
+        "id": "temporal-context",
+        "name": "temporal-context",
+        "group": 3,
+        "description": "Contextual features of media content over time"
+    },
+    {
+        "id": "temporal-synchronization",
+        "name": "temporal-synchronization",
+        "group": 3,
+        "description": "Synchronization features of media content over time"
+    },
+    {
+        "id": "temporal-coherence",
+        "name": "temporal-coherence",
+        "group": 3,
+        "description": "Coherence features of media content over time"
+    }
+]

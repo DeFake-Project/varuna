@@ -31,3 +31,10 @@ body {
     text-wrap: balance;
   }
 }
+
+aside {
+  @apply bg-gray-900;
+  color: rgb(var(--foreground-rgb));
+  border-color: rgb(var(--foreground-rgb));
+  border-left: 1px solid;
+}
