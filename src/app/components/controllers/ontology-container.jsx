@@ -3,11 +3,21 @@ import data from '../../../data/ontology.json';
 import Option from '../shells/option-block';
 
 const OntologyContainer = () => {
-    return (
-        <div id="why-block" className="flex">
-            <Option key="ontology-group" item={data} />
-        </div>
-    );
+
+    const topLevel = data['start'].children;
+    const topLevelKeys = Object.keys(topLevel)
+
+    function objectToArray(obj) {
+        return Object.keys(obj).map((key, index) => {
+            return obj[key];
+        });
+    }
+    return topLevelKeys.map((key, index) => {
+        return (
+            <Option key={index} title={key} data={objectToArray(topLevel[key].children)} />
+        )
+    });
+
 };
 
 export default OntologyContainer;

@@ -1,43 +1,39 @@
 const { group } = require('console');
 const fs = require('fs');
 
-function processOntology(nodeFilePath, edgeFilePath) {
+function processOntology(nodeFilePath, edgeFilePath, resultFileDirectory) {
     try {
         const nodeData = JSON.parse(fs.readFileSync(nodeFilePath, 'utf8'));
         const edgeData = JSON.parse(fs.readFileSync(edgeFilePath, 'utf8'));
 
         const ontology = {};
 
-        // Add nodes to the ontology dictionary
-        nodeData.forEach(node => {
-            if (node.group !== 0) {
-                ontology[node.id] = {
-                    id: node.id,
-                    label: node.label,
-                    group: node.group,
-                    children: []
+        // recursively traverse edges and add children to each node
+        function traverseEdges(node, edges) {
+            const children = edges.filter(edge => edge.source === node.id);
+            if (children.length === 0) {
+                return;
+            }
+            var childrenObj = {};
+            children.forEach(child => {
+                childrenObj[child.target] = {
+                    ...nodeData.find(n => n.id === child.target),
+                    children: {}
                 };
-            }
-        });
-
-        function addChildToOntology(ontology, childId, parentId) {
-            const parent = ontology[parentId];
-            const child = ontology[childId];
-
-            if (parent && child) {
-                parent.children.push(child);
-                delete ontology[childId];
-
-                // Recursively add the child to the parent's ancestors
-
-
-            }
+                childrenObj[child.target].children = traverseEdges(childrenObj[child.target], edges);
+            });
+            return childrenObj;
         }
 
-        // Add edges to the ontology dictionary
-        edgeData.forEach(edge => {
-            addChildToOntology(ontology, edge.target, edge.source);
-        });
+        ontology[nodeData[0].id] = {
+            ...nodeData[0],
+            children: traverseEdges(nodeData[0], edgeData)
+        };
+
+        // export ontology as JSON file and save it
+        const ontologyJSON = JSON.stringify(ontology, null, 2);
+        const resultFilePath = `${resultFileDirectory}/ontology.json`;
+        fs.writeFileSync(resultFilePath, ontologyJSON, 'utf8');
 
         return ontology;
     } catch (error) {
@@ -50,16 +46,9 @@ function processOntology(nodeFilePath, edgeFilePath) {
 if (require.main === module) {
     const nodeFilePath = process.argv[2];
     const edgeFilePath = process.argv[3];
-    const ontology = processOntology(nodeFilePath, edgeFilePath);
-
-    // Traverse ontology and print the results
-    function printOntology(ontology, indent = 0) {
-        Object.values(ontology).forEach(node => {
-            console.log(' '.repeat(indent), node);
-            printOntology(node.children, indent + 4);
-        });
-    }
-    printOntology(ontology);
+    const resultFileDirectory = process.argv[4];
+    const ontology = processOntology(nodeFilePath, edgeFilePath, resultFileDirectory);
+    console.log(ontology)
 }
 
 module.exports = processOntology;

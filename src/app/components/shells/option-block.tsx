@@ -1,21 +1,25 @@
 import React from 'react';
 
 type OptionItem = {
-    id: number;
+    id: string;
     name: string;
 };
 
 type OptionProps = {
-    items: OptionItem[];
+    title: string;
+    data: OptionItem[];
 };
 
-const Option: React.FC<OptionProps> = ({ items }) => {
+const Option: React.FC<OptionProps> = ({ title, data }) => {
     return (
-        <ul>
-            {items.map((item) => (
-                <li key={item.id}>{item.name}</li>
-            ))}
-        </ul>
+        <>
+            <h2>{title}</h2>
+            <ul>
+                {data.map((item) => (
+                    <li key={item.id}>{item.name}</li>
+                ))}
+            </ul>
+        </>
     );
 };
 

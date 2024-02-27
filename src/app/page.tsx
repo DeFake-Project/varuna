@@ -1,4 +1,5 @@
 import Image from "next/image";
+import OntologyContainer from "./components/controllers/ontology-container";
 
 export default function Home() {
   return (
@@ -12,6 +13,8 @@ export default function Home() {
           <p>all the fields have multi-select capability</p>
         </section>
         <section id="ontology" className="col-span-3">
+          <OntologyContainer />
+          {/*           
           <div id="why-block" className="flex">
             <div className="text-block">
               <h2>I think my content is a</h2>
@@ -112,7 +115,7 @@ export default function Home() {
               </ul>
             </div>
 
-          </div>
+          </div> */}
         </section>
         <aside className="col-span-2">
           <h2>Showing methods that</h2>
