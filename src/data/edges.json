@@ -85,12 +85,6 @@
     },
     {
         "source": "deepfake",
-        "target": "deepfake-video",
-        "label": "for",
-        "weight": 1
-    },
-    {
-        "source": "deepfake",
         "target": "deepfake-image",
         "label": "for",
         "weight": 1
@@ -128,12 +122,6 @@
     {
         "source": "human",
         "target": "human-text",
-        "label": "within",
-        "weight": 2
-    },
-    {
-        "source": "human",
-        "target": "human-body",
         "label": "within",
         "weight": 2
     },
