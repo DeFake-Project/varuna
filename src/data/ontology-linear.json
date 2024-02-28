@@ -1,0 +1,303 @@
+{
+  "why": {
+    "id": "why",
+    "name": "why",
+    "group": 1,
+    "description": "Why is the media being analyzed?",
+    "parents": "start"
+  },
+  "where": {
+    "id": "where",
+    "name": "where",
+    "group": 2,
+    "description": "Where is the model looking at?",
+    "parents": "start"
+  },
+  "what": {
+    "id": "what",
+    "name": "what",
+    "group": 3,
+    "description": "What are the feautures being analyzed?",
+    "parents": "start"
+  },
+  "deepfake": {
+    "id": "deepfake",
+    "name": "deepfake",
+    "group": 1,
+    "description": "Manipulated media",
+    "parents": "why"
+  },
+  "manual-forgery": {
+    "id": "manual-forgery",
+    "name": "manual-forgery",
+    "group": 1,
+    "description": "Manually edited media",
+    "parents": "why"
+  },
+  "out-of-context": {
+    "id": "out-of-context",
+    "name": "out-of-context",
+    "group": 1,
+    "description": "Media taken out of context",
+    "parents": "why"
+  },
+  "synthetic-media": {
+    "id": "synthetic-media",
+    "name": "synthetic-media",
+    "group": 1,
+    "description": "Generated media",
+    "parents": "why"
+  },
+  "human": {
+    "id": "human",
+    "name": "human",
+    "group": 2,
+    "description": "Media involving humans",
+    "parents": "where"
+  },
+  "non-human": {
+    "id": "non-human",
+    "name": "non-human",
+    "group": 2,
+    "description": "Media not involving humans",
+    "parents": "where"
+  },
+  "scene": {
+    "id": "scene",
+    "name": "scene",
+    "group": 2,
+    "description": "Media depicting a scene",
+    "parents": "where"
+  },
+  "file": {
+    "id": "file",
+    "name": "file",
+    "group": 2,
+    "description": "Media stored in a file",
+    "parents": "where"
+  },
+  "spatial-features": {
+    "id": "spatial-features",
+    "name": "spatial-features",
+    "group": 3,
+    "description": "Spatial features",
+    "parents": []
+  },
+  "temporal-features": {
+    "id": "temporal-features",
+    "name": "temporal-features",
+    "group": 3,
+    "description": "Temporal features",
+    "parents": []
+  },
+  "file-structure": {
+    "id": "file-structure",
+    "name": "file-structure",
+    "group": 3,
+    "description": "Structure and organization of media files",
+    "parents": []
+  },
+  "deepfake-video": {
+    "id": "deepfake-video",
+    "name": "deepfake-video",
+    "group": 1,
+    "description": "Manipulated video content created using deep learning techniques",
+    "parents": "deepfake"
+  },
+  "deepfake-audio": {
+    "id": "deepfake-audio",
+    "name": "deepfake-audio",
+    "group": 1,
+    "description": "Manipulated audio content created using deep learning techniques",
+    "parents": "deepfake"
+  },
+  "deepfake-image": {
+    "id": "deepfake-image",
+    "name": "deepfake-image",
+    "group": 1,
+    "description": "Manipulated image content created using deep learning techniques",
+    "parents": "deepfake"
+  },
+  "deepfake-text": {
+    "id": "deepfake-text",
+    "name": "deepfake-text",
+    "group": 1,
+    "description": "Manipulated text content created using deep learning techniques",
+    "parents": "deepfake"
+  },
+  "manual-forgery-video": {
+    "id": "manual-forgery-video",
+    "name": "manual-forgery-video",
+    "group": 1,
+    "description": "Manipulated video content created through manual editing",
+    "parents": []
+  },
+  "manual-forgery-audio": {
+    "id": "manual-forgery-audio",
+    "name": "manual-forgery-audio",
+    "group": 1,
+    "description": "Manipulated audio content created through manual editing",
+    "parents": []
+  },
+  "manual-forgery-image": {
+    "id": "manual-forgery-image",
+    "name": "manual-forgery-image",
+    "group": 1,
+    "description": "Manipulated image content created through manual editing",
+    "parents": []
+  },
+  "human-face": {
+    "id": "human-face",
+    "name": "human-face",
+    "group": 2,
+    "description": "Media content depicting human faces",
+    "parents": "human"
+  },
+  "human-voice": {
+    "id": "human-voice",
+    "name": "human-voice",
+    "group": 2,
+    "description": "Media content involving human voices",
+    "parents": []
+  },
+  "human-body": {
+    "id": "human-body",
+    "name": "human-body",
+    "group": 2,
+    "description": "Media content depicting human bodies",
+    "parents": "human"
+  },
+  "human-handwriting": {
+    "id": "human-handwriting",
+    "name": "human-handwriting",
+    "group": 2,
+    "description": "Media content depicting human handwriting",
+    "parents": []
+  },
+  "non-human-biological": {
+    "id": "non-human-biological",
+    "name": "non-human-biological",
+    "group": 2,
+    "description": "Media content involving non-human biological entities",
+    "parents": "non-human"
+  },
+  "non-human-non-biological": {
+    "id": "non-human-non-biological",
+    "name": "non-human-non-biological",
+    "group": 2,
+    "description": "Media content involving non-human non-biological entities",
+    "parents": "non-human"
+  },
+  "spatial": {
+    "id": "spatial",
+    "name": "spatial",
+    "group": 3,
+    "description": "Spatial features of media content",
+    "parents": "what"
+  },
+  "spatial-structural": {
+    "id": "spatial-structural",
+    "name": "spatial-structural",
+    "group": 3,
+    "description": "Structural features of media content",
+    "parents": "spatial"
+  },
+  "spatial-pixel-level": {
+    "id": "spatial-pixel-level",
+    "name": "spatial-pixel-level",
+    "group": 3,
+    "description": "Pixel-level features of media content",
+    "parents": "spatial"
+  },
+  "spatial-context": {
+    "id": "spatial-context",
+    "name": "spatial-context",
+    "group": 3,
+    "description": "Contextual features of media content",
+    "parents": "spatial"
+  },
+  "spatial-provenance": {
+    "id": "spatial-provenance",
+    "name": "spatial-provenance",
+    "group": 3,
+    "description": "Provenance features of media content",
+    "parents": "spatial"
+  },
+  "spatial-identity": {
+    "id": "spatial-identity",
+    "name": "spatial-identity",
+    "group": 3,
+    "description": "Identity-related features of media content",
+    "parents": "spatial"
+  },
+  "spatial-physics": {
+    "id": "spatial-physics",
+    "name": "spatial-physics",
+    "group": 3,
+    "description": "Physics-related features of media content",
+    "parents": "spatial"
+  },
+  "file-analysis": {
+    "id": "file-analysis",
+    "name": "file-analysis",
+    "group": 3,
+    "description": "Analysis of media files",
+    "parents": "what"
+  },
+  "file-metadata": {
+    "id": "file-metadata",
+    "name": "file-metadata",
+    "group": 3,
+    "description": "Metadata associated with media files",
+    "parents": "file-analysis"
+  },
+  "file-digital-watermark": {
+    "id": "file-digital-watermark",
+    "name": "file-digital-watermark",
+    "group": 3,
+    "description": "Digital watermark embedded in media files",
+    "parents": "file-analysis"
+  },
+  "temporal": {
+    "id": "temporal",
+    "name": "temporal",
+    "group": 3,
+    "description": "Temporal features of media content",
+    "parents": "what"
+  },
+  "temporal-biometrics": {
+    "id": "temporal-biometrics",
+    "name": "temporal-biometrics",
+    "group": 3,
+    "description": "Biometric features of media content over time",
+    "parents": "temporal"
+  },
+  "temporal-physiology": {
+    "id": "temporal-physiology",
+    "name": "temporal-physiology",
+    "group": 3,
+    "description": "Physiological features of media content over time",
+    "parents": "temporal"
+  },
+  "temporal-context": {
+    "id": "temporal-context",
+    "name": "temporal-context",
+    "group": 3,
+    "description": "Contextual features of media content over time",
+    "parents": "temporal"
+  },
+  "temporal-synchronization": {
+    "id": "temporal-synchronization",
+    "name": "temporal-synchronization",
+    "group": 3,
+    "description": "Synchronization features of media content over time",
+    "parents": "temporal"
+  },
+  "temporal-coherence": {
+    "id": "temporal-coherence",
+    "name": "temporal-coherence",
+    "group": 3,
+    "description": "Coherence features of media content over time",
+    "parents": "temporal"
+  }
+}

@@ -8,18 +8,44 @@ function generateLinearOntology(nodeFilePath, edgeFilePath, resultFileDirectory)
         const ontology = {};
 
         // recursively traverse edges and add parents to each node
-        function traverseEdges(node, edges) {
-            const child = edges.find(edge => edge.source === node.id);
-            if (!target) {
-                return;
-            }
-            const parentObj = {
-                ...nodeData.find(n => n.id === parent.source),
-                parent: {}
-            };
-            parentObj.parent = traverseEdges(parentObj, edges);
-            return parentObj;
+        function traverseEdges(edges, ignoreNodes = ["start"]) {
+            nodeData.forEach(node => {
+                if (ignoreNodes.includes(node.id)) {
+                    return;
+                }
+                const parents = edges.filter(edge => edge.target === node.id);
+                // if parents is an array, it means the node has multiple parents
+                if (parents && parents.length === 1) {
+                    // console.log('Single parent:', node.id, parents);
+                    ontology[node.id] = {
+                        ...node,
+                        parents: parents[0].source,
+                    };
+                } else if (parents && parents.length > 1) {
+                    // console.log('Multiple parents:', node.id, parents);
+                    ontology[node.id] = {
+                        ...node,
+                        parents: parents.map(parent => parent.source),
+                    };
+                } else {
+                    // console.log('No parents:', node.id, parents);
+                    ontology[node.id] = {
+                        ...node,
+                        parents: [],
+                    };
+                }
+
+            });
         }
+
+        traverseEdges(edgeData, ["start"]);
+
+        // export ontology as JSON file and save it
+        const ontologyJSON = JSON.stringify(ontology, null, 2);
+        const resultFilePath = `${resultFileDirectory}/ontology-linear.json`;
+        fs.writeFileSync(resultFilePath, ontologyJSON, 'utf8');
+
+        return ontology;
 
     } catch (error) {
         console.error('Error processing ontology:', error);
