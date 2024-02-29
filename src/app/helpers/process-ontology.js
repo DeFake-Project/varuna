@@ -1,11 +1,5 @@
-const { group } = require('console');
-const fs = require('fs');
-
-function processOntology(nodeFilePath, edgeFilePath, resultFileDirectory) {
+function processOntology(nodeData, edgeData) {
     try {
-        const nodeData = JSON.parse(fs.readFileSync(nodeFilePath, 'utf8'));
-        const edgeData = JSON.parse(fs.readFileSync(edgeFilePath, 'utf8'));
-
         const ontology = {};
 
         // recursively traverse edges and add children to each node
@@ -30,24 +24,29 @@ function processOntology(nodeFilePath, edgeFilePath, resultFileDirectory) {
             children: traverseEdges(nodeData[0], edgeData)
         };
 
-        // export ontology as JSON file and save it
-        const ontologyJSON = JSON.stringify(ontology, null, 2);
-        const resultFilePath = `${resultFileDirectory}/ontology.json`;
-        fs.writeFileSync(resultFilePath, ontologyJSON, 'utf8');
-
         return ontology;
     } catch (error) {
         console.error('Error processing ontology:', error);
-        return null;
+        return {};
     }
 }
 
 // Run the function from the terminal
 if (require.main === module) {
+    const fs = require('fs');
     const nodeFilePath = process.argv[2];
     const edgeFilePath = process.argv[3];
     const resultFileDirectory = process.argv[4];
+
+    const nodeData = JSON.parse(fs.readFileSync(nodeFilePath, 'utf8'));
+    const edgeData = JSON.parse(fs.readFileSync(edgeFilePath, 'utf8'));
     const ontology = processOntology(nodeFilePath, edgeFilePath, resultFileDirectory);
+
+    // export ontology as JSON file and save it
+    const ontologyJSON = JSON.stringify(ontology, null, 2);
+    const resultFilePath = `${resultFileDirectory}/ontology.json`;
+    fs.writeFileSync(resultFilePath, ontologyJSON, 'utf8');
+
     console.log(ontology)
 }
 
