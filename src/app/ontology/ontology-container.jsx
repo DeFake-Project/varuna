@@ -1,9 +1,11 @@
+'use client'
 import React from 'react';
-import Option from './option-block';
+import OptionBlock from './option-block';
 
 const OntologyContainer = ({ data }) => {
-    const topLevel = data['start'].children;
-    const topLevelKeys = Object.keys(topLevel);
+    const whyBlock = data['start'].children['why'];
+    const whereBlock = data['start'].children['where'];
+    const whatBlock = data['start'].children['what'];
 
     function objectToArray(obj) {
         return Object.keys(obj).map((key, index) => {
@@ -11,11 +13,30 @@ const OntologyContainer = ({ data }) => {
         });
     }
 
-    return topLevelKeys.map((key, index) => {
+    const RecursiveComponent = ({ data }) => {
         return (
-            <Option key={index} title={key} data={objectToArray(topLevel[key].children)} />
+            <div style={{ paddingLeft: "20px" }}>
+                {data.map((parent) => {
+                    return (
+                        <div key={`${parent.id}-rec`}>
+                            <span>{parent.id}</span>
+                            {/* Base Condition and Rendering recursive component from inside itself */}
+                            <div>
+                                {parent.children && <RecursiveComponent data={objectToArray(parent.children)} />}
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
         );
-    });
+    };
+
+    return (
+        <div className="ontology-container">
+            <RecursiveComponent data={objectToArray(data['start'].children)} />
+        </div>
+    )
+    // <OptionBlock key={`${block.id}-block`} title={block.name} data={childrenArray} />
 };
 
 export default OntologyContainer;

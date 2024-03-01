@@ -10,29 +10,15 @@ function generateLinearOntology(nodeData, edgeData) {
                     return;
                 }
                 const parents = edges.filter(edge => edge.target === node.id);
-                // if parents is an array, it means the node has multiple parents
-                if (parents && parents.length === 1) {
-                    // console.log('Single parent:', node.id, parents);
-                    ontology[node.id] = {
-                        id: node.id,
-                        state: 'available',
-                        parents: parents[0].source,
-                    };
-                } else if (parents && parents.length > 1) {
-                    // console.log('Multiple parents:', node.id, parents);
-                    ontology[node.id] = {
-                        id: node.id,
-                        state: 'available',
-                        parents: parents.map(parent => parent.source),
-                    };
-                } else {
-                    // console.log('No parents:', node.id, parents);
-                    ontology[node.id] = {
-                        id: node.id,
-                        state: 'available',
-                        parents: [],
-                    };
-                }
+                const children = edges.filter(edge => edge.source === node.id);
+
+                ontology[node.id] = {
+                    id: node.id,
+                    name: node.name,
+                    state: 'available',
+                    parents: parents.map(parent => parent.source),
+                    children: children.map(child => child.target),
+                };
             });
         }
         traverseEdges(edgeData, ["start"]);
