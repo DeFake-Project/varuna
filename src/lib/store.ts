@@ -1,8 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
+import ontologyReducer from './features/ontology/ontologySlice'
 
 export const makeStore = () => {
     return configureStore({
-        reducer: {}
+        reducer: {
+            ontology: ontologyReducer,
+        }
     })
 }
 

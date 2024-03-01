@@ -5,8 +5,8 @@ import { makeStore, AppStore } from '../lib/store'
 import { initializeOntology } from '../lib/features/ontology/ontologySlice'
 
 // open json file and initialize the state
-const nodes = require("../../data/nodes.json");
-const edges = require("../../data/edges.json");
+// const nodes = require("../../data/nodes.json");
+// const edges = require("../../data/edges.json");
 
 export default function StoreProvider({
     children
@@ -16,7 +16,7 @@ export default function StoreProvider({
     const storeRef = useRef<AppStore | null>(null)
     if (!storeRef.current) {
         storeRef.current = makeStore()
-        storeRef.current.dispatch(initializeOntology({ nodes, edges }))
+        storeRef.current.dispatch(initializeOntology())
     }
 
     return <Provider store={storeRef.current}>{children}</Provider>
