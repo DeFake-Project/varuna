@@ -21,3 +21,17 @@ export type OntologyFilter = {
         id: string;
     };
 };
+
+export type OntologyTree = {
+    [key: string]: {
+        id: string;
+        name: string;
+        description: string;
+        children: OntologyTree;
+    };
+};
+
+export type OntologyState = {
+    filter: OntologyFilter;
+    tree: OntologyTree;
+};

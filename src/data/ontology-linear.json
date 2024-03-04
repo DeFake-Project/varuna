@@ -1,217 +1,217 @@
 {
   "why": {
     "id": "why",
-    "state": "available",
+    "state": "exists",
     "parents": "start"
   },
   "where": {
     "id": "where",
-    "state": "available",
+    "state": "exists",
     "parents": "start"
   },
   "what": {
     "id": "what",
-    "state": "available",
+    "state": "exists",
     "parents": "start"
   },
   "deepfake": {
     "id": "deepfake",
-    "state": "available",
+    "state": "exists",
     "parents": "why"
   },
   "manual-forgery": {
     "id": "manual-forgery",
-    "state": "available",
+    "state": "exists",
     "parents": "why"
   },
   "out-of-context": {
     "id": "out-of-context",
-    "state": "available",
+    "state": "exists",
     "parents": "why"
   },
   "synthetic-media": {
     "id": "synthetic-media",
-    "state": "available",
+    "state": "exists",
     "parents": "why"
   },
   "human": {
     "id": "human",
-    "state": "available",
+    "state": "exists",
     "parents": "where"
   },
   "non-human": {
     "id": "non-human",
-    "state": "available",
+    "state": "exists",
     "parents": "where"
   },
   "scene": {
     "id": "scene",
-    "state": "available",
+    "state": "exists",
     "parents": "where"
   },
   "file": {
     "id": "file",
-    "state": "available",
+    "state": "exists",
     "parents": "where"
   },
   "spatial-features": {
     "id": "spatial-features",
-    "state": "available",
+    "state": "exists",
     "parents": []
   },
   "temporal-features": {
     "id": "temporal-features",
-    "state": "available",
+    "state": "exists",
     "parents": []
   },
   "file-structure": {
     "id": "file-structure",
-    "state": "available",
+    "state": "exists",
     "parents": []
   },
   "deepfake-video": {
     "id": "deepfake-video",
-    "state": "available",
+    "state": "exists",
     "parents": "deepfake"
   },
   "deepfake-audio": {
     "id": "deepfake-audio",
-    "state": "available",
+    "state": "exists",
     "parents": "deepfake"
   },
   "deepfake-image": {
     "id": "deepfake-image",
-    "state": "available",
+    "state": "exists",
     "parents": "deepfake"
   },
   "deepfake-text": {
     "id": "deepfake-text",
-    "state": "available",
+    "state": "exists",
     "parents": "deepfake"
   },
   "manual-forgery-video": {
     "id": "manual-forgery-video",
-    "state": "available",
+    "state": "exists",
     "parents": []
   },
   "manual-forgery-audio": {
     "id": "manual-forgery-audio",
-    "state": "available",
+    "state": "exists",
     "parents": []
   },
   "manual-forgery-image": {
     "id": "manual-forgery-image",
-    "state": "available",
+    "state": "exists",
     "parents": []
   },
   "human-face": {
     "id": "human-face",
-    "state": "available",
+    "state": "exists",
     "parents": "human"
   },
   "human-voice": {
     "id": "human-voice",
-    "state": "available",
+    "state": "exists",
     "parents": []
   },
   "human-body": {
     "id": "human-body",
-    "state": "available",
+    "state": "exists",
     "parents": "human"
   },
   "human-handwriting": {
     "id": "human-handwriting",
-    "state": "available",
+    "state": "exists",
     "parents": []
   },
   "non-human-biological": {
     "id": "non-human-biological",
-    "state": "available",
+    "state": "exists",
     "parents": "non-human"
   },
   "non-human-non-biological": {
     "id": "non-human-non-biological",
-    "state": "available",
+    "state": "exists",
     "parents": "non-human"
   },
   "spatial": {
     "id": "spatial",
-    "state": "available",
+    "state": "exists",
     "parents": "what"
   },
   "spatial-structural": {
     "id": "spatial-structural",
-    "state": "available",
+    "state": "exists",
     "parents": "spatial"
   },
   "spatial-pixel-level": {
     "id": "spatial-pixel-level",
-    "state": "available",
+    "state": "exists",
     "parents": "spatial"
   },
   "spatial-context": {
     "id": "spatial-context",
-    "state": "available",
+    "state": "exists",
     "parents": "spatial"
   },
   "spatial-provenance": {
     "id": "spatial-provenance",
-    "state": "available",
+    "state": "exists",
     "parents": "spatial"
   },
   "spatial-identity": {
     "id": "spatial-identity",
-    "state": "available",
+    "state": "exists",
     "parents": "spatial"
   },
   "spatial-physics": {
     "id": "spatial-physics",
-    "state": "available",
+    "state": "exists",
     "parents": "spatial"
   },
   "file-analysis": {
     "id": "file-analysis",
-    "state": "available",
+    "state": "exists",
     "parents": "what"
   },
   "file-metadata": {
     "id": "file-metadata",
-    "state": "available",
+    "state": "exists",
     "parents": "file-analysis"
   },
   "file-digital-watermark": {
     "id": "file-digital-watermark",
-    "state": "available",
+    "state": "exists",
     "parents": "file-analysis"
   },
   "temporal": {
     "id": "temporal",
-    "state": "available",
+    "state": "exists",
     "parents": "what"
   },
   "temporal-biometrics": {
     "id": "temporal-biometrics",
-    "state": "available",
+    "state": "exists",
     "parents": "temporal"
   },
   "temporal-physiology": {
     "id": "temporal-physiology",
-    "state": "available",
+    "state": "exists",
     "parents": "temporal"
   },
   "temporal-context": {
     "id": "temporal-context",
-    "state": "available",
+    "state": "exists",
     "parents": "temporal"
   },
   "temporal-synchronization": {
     "id": "temporal-synchronization",
-    "state": "available",
+    "state": "exists",
     "parents": "temporal"
   },
   "temporal-coherence": {
     "id": "temporal-coherence",
-    "state": "available",
+    "state": "exists",
     "parents": "temporal"
   }
 }

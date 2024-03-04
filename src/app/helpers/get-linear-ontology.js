@@ -15,7 +15,7 @@ function generateLinearOntology(nodeData, edgeData) {
                 ontology[node.id] = {
                     id: node.id,
                     name: node.name,
-                    state: 'available',
+                    state: 'exists',
                     parents: parents.map(parent => parent.source),
                     children: children.map(child => child.target),
                 };
