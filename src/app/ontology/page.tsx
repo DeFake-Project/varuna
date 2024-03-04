@@ -4,7 +4,7 @@ import OntologyContainer from "./ontology-container";
 import { useAppSelector } from '@/lib/hooks';
 
 export default function Page() {
-  const ontology = useAppSelector(state => state.ontology.tree);
+  const filter = useAppSelector(state => state.ontology.filter);
   return <>
     <header>
       Digital Multimedia Forensics Ontology
@@ -15,7 +15,7 @@ export default function Page() {
         <p>all the fields have multi-select capability</p>
       </section>
       <section id="ontology" className="col-span-3">
-        <OntologyContainer data={ontology} />
+        <OntologyContainer />
       </section>
       <aside className="col-span-2">
         <h2>Showing methods that</h2>
