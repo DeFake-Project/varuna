@@ -33,4 +33,4 @@ function processOntology(nodeData, edgeData) {
     }
 }
 
-module.exports = processOntology;
+export default processOntology;

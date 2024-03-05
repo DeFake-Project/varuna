@@ -2,6 +2,7 @@
 import React from 'react';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import { activateItem } from '@/lib/features/ontology/ontologySlice';
+import { OntologyFilter } from '@/lib/customTypes';
 
 type OptionBlockProps = {
     title: string;
@@ -10,13 +11,7 @@ type OptionBlockProps = {
 
 const OptionBlock: React.FC<OptionBlockProps> = ({ title, nodenames }) => {
     const dispatch = useAppDispatch();
-    const filter: {
-        [key: string]: {
-            state: string;
-            id: string;
-            parents: string[];
-        }
-    } = useAppSelector((state) => state.ontology.filter);
+    const filter: OntologyFilter = useAppSelector((state) => state.ontology.filter);
 
     return (
         <div className={`${title} option-block p-2 grid grid-flow-col auto-cols-max gap-2`}>

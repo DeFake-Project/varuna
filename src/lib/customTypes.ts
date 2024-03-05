@@ -19,6 +19,7 @@ export type OntologyFilter = {
         parents: string[] | string;
         state: string;
         id: string;
+        level: number;
     };
 };
 
@@ -32,6 +33,7 @@ export type OntologyTree = {
 };
 
 export type OntologyState = {
-    filter: OntologyFilter;
-    tree: OntologyTree;
+    filter: OntologyFilter | {};
+    tree: OntologyTree | {};
+    isLoading: Boolean;
 };

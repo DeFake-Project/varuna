@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  --background-rgb: 214, 219, 220;
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -13,13 +14,13 @@
   --what-file-rgb: 211, 84, 0;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -38,7 +39,12 @@ body {
 }
 
 aside {
-  @apply bg-gray-900;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgb(var(--background-end-rgb))
+  )
+    rgb(var(--background-start-rgb));
   color: rgb(var(--foreground-rgb));
   border-color: rgb(var(--foreground-rgb));
   border-left: 1px solid;
@@ -81,14 +87,17 @@ aside {
 
 .ontology-item.selected {
   background-color: rgba(var(--foreground-rgb), 1);
-  color: #000;
+  color: rgb(var(--background-rgb));
   border: 0;
 }
 
-.ontology-item.exists {
-  background-color: rgba(var(--foreground-rgb), 0.1);
-  cursor: not-allowed;
+.ontology-item.selected:hover {
+  background-color: rgba(var(--background-rgb), 1);
+  color: #FFF;
+  border: 0;
 }
+
+.ontology-item.exists {}
 
 .option-block-group .ontology-item:hover {
   background-color: rgba(var(--foreground-rgb), 0.1);

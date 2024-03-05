@@ -1,4 +1,3 @@
-
 function generateLinearOntology(nodeData, edgeData) {
     try {
         const ontology = {};
@@ -11,6 +10,9 @@ function generateLinearOntology(nodeData, edgeData) {
                 }
                 const parents = edges.filter(edge => edge.target === node.id);
                 const children = edges.filter(edge => edge.source === node.id);
+                const level = parents.length === 0 ? 0 : parents.reduce((max, parent) => {
+                    return Math.max(max, ontology[parent.source]?.level | 0);
+                }, 0) + 1;
 
                 ontology[node.id] = {
                     id: node.id,
@@ -18,6 +20,7 @@ function generateLinearOntology(nodeData, edgeData) {
                     state: 'exists',
                     parents: parents.map(parent => parent.source),
                     children: children.map(child => child.target),
+                    level: level,
                 };
             });
         }
@@ -32,4 +35,4 @@ function generateLinearOntology(nodeData, edgeData) {
     }
 }
 
-module.exports = generateLinearOntology;
+export default generateLinearOntology;
