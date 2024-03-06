@@ -3,216 +3,294 @@
         "source": "start",
         "target": "why",
         "label": "Instance of",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
         "source": "start",
         "target": "where",
         "label": "Search within",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
         "source": "start",
         "target": "what",
         "label": "Analyze",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
         "source": "why",
         "target": "deepfake",
         "label": "Instance of",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
         "source": "why",
         "target": "manual-forgery",
         "label": "Instance of",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
         "source": "why",
         "target": "out-of-context",
         "label": "Instance of",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
         "source": "why",
         "target": "synthetic-media",
         "label": "Instance of",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
         "source": "where",
         "target": "non-human",
         "label": "Search within",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
         "source": "where",
         "target": "human",
         "label": "Search within",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
         "source": "where",
         "target": "scene",
         "label": "Search within",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
         "source": "where",
         "target": "file",
         "label": "Search within",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
         "source": "what",
         "target": "spatial",
         "label": "Search within",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
         "source": "what",
         "target": "file-analysis",
         "label": "Search within",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
         "source": "what",
         "target": "temporal",
         "label": "Search within",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
         "source": "deepfake",
         "target": "deepfake-image",
         "label": "for",
-        "weight": 1
+        "weight": 1,
+        "type": "ontology"
     },
     {
         "source": "deepfake",
         "target": "deepfake-audio",
         "label": "for",
-        "weight": 1
+        "weight": 1,
+        "type": "ontology"
     },
     {
         "source": "deepfake",
         "target": "deepfake-video",
         "label": "for",
-        "weight": 1
+        "weight": 1,
+        "type": "ontology"
     },
     {
         "source": "deepfake",
         "target": "deepfake-text",
         "label": "for",
-        "weight": 1
+        "weight": 1,
+        "type": "ontology"
+    },
+    {
+        "source": "manual-forgery",
+        "target": "manual-forgery-image",
+        "label": "for",
+        "weight": 1,
+        "type": "ontology"
+    },
+    {
+        "source": "manual-forgery",
+        "target": "manual-forgery-audio",
+        "label": "for",
+        "weight": 1,
+        "type": "ontology"
+    },
+    {
+        "source": "manual-forgery",
+        "target": "manual-forgery-video",
+        "label": "for",
+        "weight": 1,
+        "type": "ontology"
+    },
+    {
+        "source": "manual-forgery",
+        "target": "manual-forgery-text",
+        "label": "for",
+        "weight": 1,
+        "type": "ontology"
     },
     {
         "source": "human",
         "target": "human-face",
         "label": "within",
-        "weight": 2
+        "weight": 2,
+        "type": "ontology"
+    },
+    {
+        "source": "human-face",
+        "target": "human-mouth",
+        "label": "within",
+        "weight": 2,
+        "type": "ontology"
+    },
+    {
+        "source": "human-face",
+        "target": "human-eye",
+        "label": "within",
+        "weight": 2,
+        "type": "ontology"
+    },
+    {
+        "source": "human-face",
+        "target": "human-ear",
+        "label": "within",
+        "weight": 2,
+        "type": "ontology"
     },
     {
         "source": "human",
         "target": "human-body",
         "label": "within",
-        "weight": 2
+        "weight": 2,
+        "type": "ontology"
     },
     {
         "source": "human",
         "target": "human-text",
         "label": "within",
-        "weight": 2
+        "weight": 2,
+        "type": "ontology"
+    },
+    {
+        "source": "human",
+        "target": "human-handwriting",
+        "label": "within",
+        "weight": 2,
+        "type": "ontology"
+    },
+    {
+        "source": "human",
+        "target": "human-voice",
+        "label": "within",
+        "weight": 2,
+        "type": "ontology"
     },
     {
         "source": "non-human",
         "target": "non-human-biological",
         "label": "within",
-        "weight": 2
+        "weight": 2,
+        "type": "ontology"
     },
     {
         "source": "non-human",
         "target": "non-human-non-biological",
         "label": "within",
-        "weight": 2
+        "weight": 2,
+        "type": "ontology"
     },
     {
         "source": "spatial",
         "target": "spatial-structural",
         "label": "for",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
         "source": "spatial",
         "target": "spatial-pixel-level",
         "label": "for",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
         "source": "spatial",
         "target": "spatial-context",
         "label": "for",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
         "source": "spatial",
         "target": "spatial-provenance",
         "label": "for",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
         "source": "spatial",
         "target": "spatial-identity",
         "label": "for",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
         "source": "spatial",
         "target": "spatial-physics",
         "label": "for",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
         "source": "file-analysis",
         "target": "file-metadata",
         "label": "for",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
         "source": "file-analysis",
         "target": "file-digital-watermark",
         "label": "for",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
         "source": "temporal",
-        "target": "temporal-biometrics",
+        "target": "temporal-forensics",
         "label": "for",
-        "weight": 3
+        "weight": 3,
+        "type": "ontology"
     },
     {
-        "source": "temporal",
-        "target": "temporal-physiology",
-        "label": "for",
-        "weight": 3
-    },
-    {
-        "source": "temporal",
-        "target": "temporal-context",
-        "label": "for",
-        "weight": 3
-    },
-    {
-        "source": "temporal",
-        "target": "temporal-synchronization",
-        "label": "for",
-        "weight": 3
-    },
-    {
-        "source": "temporal",
-        "target": "temporal-coherence",
-        "label": "for",
-        "weight": 3
+        "source": "spatial-pixel-level",
+        "target": "compression-artifacts",
+        "label": "",
+        "weight": 3,
+        "type": "ontology"
     }
 ]

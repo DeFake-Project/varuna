@@ -72,12 +72,6 @@
         "description": "Media stored in a file"
     },
     {
-        "id": "file-structure",
-        "name": "file-structure",
-        "group": 3,
-        "description": "Structure and organization of media files"
-    },
-    {
         "id": "deepfake-video",
         "name": "deepfake-video",
         "group": 1,
@@ -135,7 +129,25 @@
         "id": "human-face",
         "name": "human-face",
         "group": 2,
-        "description": "Media content depicting human faces"
+        "description": "Media manipulation searched within human faces"
+    },
+    {
+        "id": "human-mouth",
+        "name": "human-mouth",
+        "group": 2,
+        "description": "Media manipulation searched within human mouths"
+    },
+    {
+        "id": "human-eye",
+        "name": "human-eye",
+        "group": 2,
+        "description": "Media manipulation searched within human eyes"
+    },
+    {
+        "id": "human-ear",
+        "name": "human-ear",
+        "group": 2,
+        "description": "Media manipulation searched within human ears"
     },
     {
         "id": "human-voice",
@@ -262,5 +274,11 @@
         "name": "temporal-coherence",
         "group": 3,
         "description": "Coherence features of media content over time"
+    },
+    {
+        "id": "compression-artifacts",
+        "name": "compression-artifacts",
+        "group": 3,
+        "description": "Artifacts introduced by compression"
     }
 ]

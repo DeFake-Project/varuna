@@ -9,7 +9,228 @@
         "why": [
             "deepfake",
             "deepfake-image",
-            "deepfake-reenactment"
+            "deepfake-video",
+            "reenactment",
+            "faceswap"
+        ],
+        "where": [
+            "human",
+            "human-face"
+        ],
+        "what": [
+            "spatial",
+            "spatial-pixel-level"
+        ]
+    },
+    {
+        "id": "lip-shape",
+        "name": "lip-shape",
+        "description": "This is template 1.",
+        "paperTitle": "Template 1 Paper",
+        "paperURL": "https://example.com/template1",
+        "codeURL": "https://github.com/example/template1",
+        "why": [
+            "deepfake",
+            "deepfake-video",
+            "reenactment"
+        ],
+        "where": [
+            "human",
+            "human-face",
+            "human-mouth"
+        ],
+        "what": [
+            "temporal",
+            "temporal-physiology"
+        ]
+    },
+    {
+        "id": "blood-flow",
+        "name": "blood-flow",
+        "description": "This is template 2.",
+        "paperTitle": "Template 2 Paper",
+        "paperURL": "https://example.com/template2",
+        "codeURL": "https://github.com/example/template2",
+        "why": [
+            "deepfake",
+            "deepfake-video",
+            "reenactment",
+            "faceswap"
+        ],
+        "where": [
+            "human",
+            "human-face"
+        ],
+        "what": [
+            "temporal",
+            "temporal-physiology"
+        ]
+    },
+    {
+        "id": "in-ictu-oculi",
+        "name": "in-ictu-oculi",
+        "description": "This is template 3.",
+        "paperTitle": "Template 3 Paper",
+        "paperURL": "https://example.com/template3",
+        "codeURL": "https://github.com/example/template3",
+        "why": [
+            "deepfake",
+            "deepfake-video",
+            "faceswap"
+        ],
+        "where": [
+            "human",
+            "human-face",
+            "human-eye"
+        ],
+        "what": [
+            "temporal",
+            "temporal-physiology"
+        ]
+    },
+    {
+        "id": "aural-oral-dynamic",
+        "name": "aural-oral-dynamic",
+        "description": "This is template 4.",
+        "paperTitle": "Template 4 Paper",
+        "paperURL": "https://example.com/template4",
+        "codeURL": "https://github.com/example/template4",
+        "why": [
+            "deepfake",
+            "deepfake-video",
+            "reenactment"
+        ],
+        "where": [
+            "human",
+            "human-face",
+            "human-ear"
+        ],
+        "what": [
+            "temporal",
+            "temporal-physiology"
+        ]
+    },
+    {
+        "id": "ela",
+        "name": "ela",
+        "description": "This is template 5.",
+        "paperTitle": "Template 5 Paper",
+        "paperURL": "https://example.com/template5",
+        "codeURL": "https://github.com/example/template5",
+        "why": [
+            "manual-forgery",
+            "manual-forgery-image"
+        ],
+        "where": [
+            "scene"
+        ],
+        "what": [
+            "spatial",
+            "spatial-pixel-level",
+            "compression-artifacts"
+        ]
+    },
+    {
+        "id": "ffd",
+        "name": "ffd",
+        "description": "This is template 6.",
+        "paperTitle": "Template 6 Paper",
+        "paperURL": "https://example.com/template6",
+        "codeURL": "https://github.com/example/template6",
+        "why": [
+            "deepfake",
+            "deepfake-video",
+            "deepfake-image",
+            "faceswap",
+            "synthetic"
+        ],
+        "where": [
+            "human",
+            "human-face"
+        ],
+        "what": [
+            "spatial",
+            "spatial-pixel-level"
+        ]
+    },
+    {
+        "id": "cornea-reflection",
+        "name": "cornea-reflection",
+        "description": "This is template 7.",
+        "paperTitle": "Template 7 Paper",
+        "paperURL": "https://example.com/template7",
+        "codeURL": "https://github.com/example/template7",
+        "why": [
+            "synthetic",
+            "synthetic-image"
+        ],
+        "where": [
+            "human",
+            "human-face"
+        ],
+        "what": [
+            "spatial",
+            "spatial-structural"
+        ]
+    },
+    {
+        "id": "template8",
+        "name": "Template 8",
+        "description": "This is template 8.",
+        "paperTitle": "Template 8 Paper",
+        "paperURL": "https://example.com/template8",
+        "codeURL": "https://github.com/example/template8",
+        "why": [
+            "reason1",
+            "reason2"
+        ],
+        "where": [
+            "location1",
+            "location2"
+        ],
+        "what": [
+            "feature1",
+            "feature2"
+        ]
+    },
+    {
+        "id": "template9",
+        "name": "Template 9",
+        "description": "This is template 9.",
+        "paperTitle": "Template 9 Paper",
+        "paperURL": "https://example.com/template9",
+        "codeURL": "https://github.com/example/template9",
+        "why": [
+            "reason1",
+            "reason2"
+        ],
+        "where": [
+            "location1",
+            "location2"
+        ],
+        "what": [
+            "feature1",
+            "feature2"
+        ]
+    },
+    {
+        "id": "template10",
+        "name": "Template 10",
+        "description": "This is template 10.",
+        "paperTitle": "Template 10 Paper",
+        "paperURL": "https://example.com/template10",
+        "codeURL": "https://github.com/example/template10",
+        "why": [
+            "reason1",
+            "reason2"
+        ],
+        "where": [
+            "location1",
+            "location2"
+        ],
+        "what": [
+            "feature1",
+            "feature2"
         ]
     }
 ]

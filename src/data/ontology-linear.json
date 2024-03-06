@@ -65,7 +65,12 @@
     "parents": [
       "why"
     ],
-    "children": [],
+    "children": [
+      "manual-forgery-image",
+      "manual-forgery-audio",
+      "manual-forgery-video",
+      "manual-forgery-text"
+    ],
     "level": 2
   },
   "out-of-context": {
@@ -98,7 +103,9 @@
     "children": [
       "human-face",
       "human-body",
-      "human-text"
+      "human-text",
+      "human-handwriting",
+      "human-voice"
     ],
     "level": 2
   },
@@ -134,14 +141,6 @@
     ],
     "children": [],
     "level": 2
-  },
-  "file-structure": {
-    "id": "file-structure",
-    "name": "file-structure",
-    "state": "exists",
-    "parents": [],
-    "children": [],
-    "level": 0
   },
   "deepfake-video": {
     "id": "deepfake-video",
@@ -203,25 +202,31 @@
     "id": "manual-forgery-video",
     "name": "manual-forgery-video",
     "state": "exists",
-    "parents": [],
+    "parents": [
+      "manual-forgery"
+    ],
     "children": [],
-    "level": 0
+    "level": 3
   },
   "manual-forgery-audio": {
     "id": "manual-forgery-audio",
     "name": "manual-forgery-audio",
     "state": "exists",
-    "parents": [],
+    "parents": [
+      "manual-forgery"
+    ],
     "children": [],
-    "level": 0
+    "level": 3
   },
   "manual-forgery-image": {
     "id": "manual-forgery-image",
     "name": "manual-forgery-image",
     "state": "exists",
-    "parents": [],
+    "parents": [
+      "manual-forgery"
+    ],
     "children": [],
-    "level": 0
+    "level": 3
   },
   "human-face": {
     "id": "human-face",
@@ -230,16 +235,52 @@
     "parents": [
       "human"
     ],
-    "children": [],
+    "children": [
+      "human-mouth",
+      "human-eye",
+      "human-ear"
+    ],
     "level": 3
+  },
+  "human-mouth": {
+    "id": "human-mouth",
+    "name": "human-mouth",
+    "state": "exists",
+    "parents": [
+      "human-face"
+    ],
+    "children": [],
+    "level": 4
+  },
+  "human-eye": {
+    "id": "human-eye",
+    "name": "human-eye",
+    "state": "exists",
+    "parents": [
+      "human-face"
+    ],
+    "children": [],
+    "level": 4
+  },
+  "human-ear": {
+    "id": "human-ear",
+    "name": "human-ear",
+    "state": "exists",
+    "parents": [
+      "human-face"
+    ],
+    "children": [],
+    "level": 4
   },
   "human-voice": {
     "id": "human-voice",
     "name": "human-voice",
     "state": "exists",
-    "parents": [],
+    "parents": [
+      "human"
+    ],
     "children": [],
-    "level": 0
+    "level": 3
   },
   "human-body": {
     "id": "human-body",
@@ -255,9 +296,11 @@
     "id": "human-handwriting",
     "name": "human-handwriting",
     "state": "exists",
-    "parents": [],
+    "parents": [
+      "human"
+    ],
     "children": [],
-    "level": 0
+    "level": 3
   },
   "non-human-biological": {
     "id": "non-human-biological",
@@ -313,7 +356,9 @@
     "parents": [
       "spatial"
     ],
-    "children": [],
+    "children": [
+      "compression-artifacts"
+    ],
     "level": 3
   },
   "spatial-context": {
@@ -397,11 +442,7 @@
       "what"
     ],
     "children": [
-      "temporal-biometrics",
-      "temporal-physiology",
-      "temporal-context",
-      "temporal-synchronization",
-      "temporal-coherence"
+      "temporal-forensics"
     ],
     "level": 2
   },
@@ -409,50 +450,50 @@
     "id": "temporal-biometrics",
     "name": "temporal-biometrics",
     "state": "exists",
-    "parents": [
-      "temporal"
-    ],
+    "parents": [],
     "children": [],
-    "level": 3
+    "level": 0
   },
   "temporal-physiology": {
     "id": "temporal-physiology",
     "name": "temporal-physiology",
     "state": "exists",
-    "parents": [
-      "temporal"
-    ],
+    "parents": [],
     "children": [],
-    "level": 3
+    "level": 0
   },
   "temporal-context": {
     "id": "temporal-context",
     "name": "temporal-context",
     "state": "exists",
-    "parents": [
-      "temporal"
-    ],
+    "parents": [],
     "children": [],
-    "level": 3
+    "level": 0
   },
   "temporal-synchronization": {
     "id": "temporal-synchronization",
     "name": "temporal-synchronization",
     "state": "exists",
-    "parents": [
-      "temporal"
-    ],
+    "parents": [],
     "children": [],
-    "level": 3
+    "level": 0
   },
   "temporal-coherence": {
     "id": "temporal-coherence",
     "name": "temporal-coherence",
     "state": "exists",
+    "parents": [],
+    "children": [],
+    "level": 0
+  },
+  "compression-artifacts": {
+    "id": "compression-artifacts",
+    "name": "compression-artifacts",
+    "state": "exists",
     "parents": [
-      "temporal"
+      "spatial-pixel-level"
     ],
     "children": [],
-    "level": 3
+    "level": 4
   }
 }
