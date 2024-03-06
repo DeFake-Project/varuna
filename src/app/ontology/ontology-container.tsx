@@ -66,8 +66,8 @@ const OntologyContainer = () => {
                 suffix: ["", "inconsistencies"]
             })}
             {progressiveComponent("where", {
-                prefix: ["I want to search within", "", ""],
-                suffix: ["", "", ""]
+                prefix: ["I want to search within", " ", " "],
+                suffix: [" ", " ", " "]
             })}
         </div>
     )
