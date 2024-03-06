@@ -174,23 +174,30 @@
         ]
     },
     {
-        "id": "template8",
-        "name": "Template 8",
-        "description": "This is template 8.",
-        "paperTitle": "Template 8 Paper",
-        "paperURL": "https://example.com/template8",
-        "codeURL": "https://github.com/example/template8",
+        "id": "clipbased-synthetic-image-detection",
+        "name": "CLIPBased Synthetic Image Detection",
+        "description": "A CLIP-based detector exhibits a surprising generalization ability and high robustness across several different architectures, including recent commercial tools such as Dalle-3, Midjourney v5, and Firefly",
+        "paperTitle": "Raising the Bar of AI-generated Image Detection with CLIP",
+        "paperURL": "https://arxiv.org/pdf/2312.00195.pdf",
+        "codeURL": "https://grip-unina.github.io/ClipBased-SyntheticImageDetection/",
         "why": [
-            "reason1",
-            "reason2"
+            "synthetic",
+            "image",
+            { 
+                "name": "dalle-3",
+                "benchmark": 0.99"
+            },
+            {
+                "name": "midjourney-v5",
+                "benchmark": 0.98"
+            }        
         ],
         "where": [
-            "location1",
-            "location2"
+            "scene"
         ],
         "what": [
-            "feature1",
-            "feature2"
+            "spatial",
+            "spatial-pixel-level"
         ]
     },
     {
