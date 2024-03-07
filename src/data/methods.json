@@ -1,8 +1,8 @@
 [
     {
         "id": "mesonet",
-        "name": "Mesonet",
-        "description": "We present a method to automatically detect face tampering in videos. We particularly focus on two recent approaches used to generate hyper-realistic forged videos: deepfake and face2face. Traditional image forensics techniques are usually not well suited to videos due to their compression that strongly degrades the data. Thus, we follow a deep learning approach and build two networks, both with a low number of layers to focus on mesoscopic properties of the image. We evaluate those fast networks on both an existing dataset and a dataset we have constituted from online videos. Our tests demonstrate a successful detection for more than 98% for deepfake and 95% for face2face.",
+        "name": "MesoNet",
+        "description": "A compact facial video forgery detection network",
         "paperTitle": "MesoNet: a Compact Facial Video Forgery Detection Network",
         "paperURL": "https://arxiv.org/abs/1809.00888",
         "codeURL": "https://github.com/DariusAf/MesoNet",
@@ -24,11 +24,11 @@
     },
     {
         "id": "lip-shape",
-        "name": "lip-shape",
-        "description": "This is template 1.",
-        "paperTitle": "Template 1 Paper",
-        "paperURL": "https://example.com/template1",
-        "codeURL": "https://github.com/example/template1",
+        "name": "Lip Shape Analysis",
+        "description": "Analyzing lip shape for face forgery detection",
+        "paperTitle": "Lips Don't Lie: A Generalisable and Robust Approach to Face Forgery Detection",
+        "paperURL": "https://openaccess.thecvf.com/content/CVPR2021/papers/Haliassos_Lips_Dont_Lie_A_Generalisable_and_Robust_Approach_To_Face_CVPR_2021_paper.pdf",
+        "codeURL": "unavailable",
         "why": [
             "deepfake",
             "deepfake-video",
@@ -46,11 +46,11 @@
     },
     {
         "id": "blood-flow",
-        "name": "blood-flow",
-        "description": "This is template 2.",
-        "paperTitle": "Template 2 Paper",
-        "paperURL": "https://example.com/template2",
-        "codeURL": "https://github.com/example/template2",
+        "name": "Blood Flow Analysis",
+        "description": "Analyzing blood flow patterns for deepfake detection",
+        "paperTitle": "DeepRhythm: Exposing DeepFakes with Attentional Visual Rhythms",
+        "paperURL": "https://dl.acm.org/doi/10.1145/3394171.3413707",
+        "codeURL": "unavailable",
         "why": [
             "deepfake",
             "deepfake-video",
@@ -67,12 +67,12 @@
         ]
     },
     {
-        "id": "in-ictu-oculi",
-        "name": "in-ictu-oculi",
-        "description": "This is template 3.",
-        "paperTitle": "Template 3 Paper",
-        "paperURL": "https://example.com/template3",
-        "codeURL": "https://github.com/example/template3",
+        "id": "eye-blinking",
+        "name": "Eye Blinking Analysis",
+        "description": "Detecting deepfakes by analyzing eye blinking patterns",
+        "paperTitle": "Exposing fake videos with defective eye behavior",
+        "paperURL": "https://arxiv.org/pdf/1806.02877.pdf",
+        "codeURL": "unavailable",
         "why": [
             "deepfake",
             "deepfake-video",
@@ -81,7 +81,7 @@
         "where": [
             "human",
             "human-face",
-            "human-eye"
+            "human-eyes"
         ],
         "what": [
             "temporal",
@@ -89,37 +89,38 @@
         ]
     },
     {
-        "id": "aural-oral-dynamic",
-        "name": "aural-oral-dynamic",
-        "description": "This is template 4.",
-        "paperTitle": "Template 4 Paper",
-        "paperURL": "https://example.com/template4",
-        "codeURL": "https://github.com/example/template4",
+        "id": "face-xray",
+        "name": "Face X-ray",
+        "description": "Detecting face forgeries using blending artifacts",
+        "paperTitle": "Face X-Ray for More General Face Forgery Detection",
+        "paperURL": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Li_Face_X-Ray_for_More_General_Face_Forgery_Detection_CVPR_2020_paper.pdf",
+        "codeURL": "https://github.com/biai0755/Face-Xray",
         "why": [
             "deepfake",
-            "deepfake-video",
-            "reenactment"
+            "deepfake-image",
+            "reenactment",
+            "faceswap"
         ],
         "where": [
             "human",
-            "human-face",
-            "human-ear"
+            "human-face"
         ],
         "what": [
-            "temporal",
-            "temporal-physiology"
+            "spatial",
+            "spatial-pixel-level",
+            "blending-artifacts"
         ]
     },
     {
         "id": "ela",
-        "name": "ela",
-        "description": "This is template 5.",
-        "paperTitle": "Template 5 Paper",
-        "paperURL": "https://example.com/template5",
-        "codeURL": "https://github.com/example/template5",
+        "name": "Error Level Analysis (ELA)",
+        "description": "Detecting image manipulation using compression artifacts",
+        "paperTitle": "",
+        "paperURL": "",
+        "codeURL": "",
         "why": [
-            "manual-forgery",
-            "manual-forgery-image"
+            "image-manipulation",
+            "manual-forgery"
         ],
         "where": [
             "scene"
@@ -131,18 +132,133 @@
         ]
     },
     {
-        "id": "ffd",
-        "name": "ffd",
-        "description": "This is template 6.",
-        "paperTitle": "Template 6 Paper",
-        "paperURL": "https://example.com/template6",
-        "codeURL": "https://github.com/example/template6",
+        "id": "head-pose",
+        "name": "Head Pose Inconsistency",
+        "description": "Detecting deepfakes by inconsistent head poses",
+        "paperTitle": "Exposing DeepFake Videos By Detecting Face Warping Artifacts",
+        "paperURL": "https://ieeexplore.ieee.org/document/8683164",
+        "codeURL": "",
         "why": [
             "deepfake",
             "deepfake-video",
+            "faceswap"
+        ],
+        "where": [
+            "human",
+            "human-face"
+        ],
+        "what": [
+            "temporal",
+            "temporal-physiology"
+        ],
+        "deepLearning": false
+    },
+    {
+        "id": "cornea-reflection",
+        "name": "Cornea Reflection Analysis",
+        "description": "Analyzing cornea reflections for synthetic face detection",
+        "paperTitle": "Exposing DeepFake Videos By Detecting Inconsistent Corneal Specular Reflections",
+        "paperURL": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9414582",
+        "codeURL": "",
+        "why": [
+            "synthetic-image"
+        ],
+        "where": [
+            "human",
+            "human-face"
+        ],
+        "what": [
+            "spatial",
+            "structural"
+        ],
+        "deepLearning": false
+    },
+    {
+        "id": "f3net",
+        "name": "F3Net",
+        "description": "Face Forgery Detection Network in Frequency Domain",
+        "paperTitle": "F3Net: Fusion, FeedForward and Frequency Domain Filtering for Robust Deepfake Detection",
+        "paperURL": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123570086.pdf",
+        "codeURL": "https://github.com/neverandu/F3Net",
+        "why": [
+            "deepfake",
             "deepfake-image",
+            "deepfake-video",
+            "reenactment",
+            "faceswap"
+        ],
+        "where": [
+            "human",
+            "human-face"
+        ],
+        "what": [
+            "spatial",
+            "spatial-pixel-level",
+            "frequency"
+        ]
+    },
+    {
+        "id": "srm",
+        "name": "Steganalysis Rich Model (SRM)",
+        "description": "Detecting face manipulation using steganalysis features",
+        "paperTitle": "Steganalysis Rich Models for Steganalysis of Digital Images",
+        "paperURL": "https://openaccess.thecvf.com/content_cvpr_2018/CameraReady/2813.pdf",
+        "codeURL": "",
+        "why": [
+            "deepfake",
+            "deepfake-image",
+            "deepfake-video",
+            "manual-forgery"
+        ],
+        "where": [
+            "human",
+            "human-face",
+            "scene"
+        ],
+        "what": [
+            "spatial",
+            "spatial-pixel-level",
+            "noise-artifacts"
+        ]
+    },
+    {
+        "id": "spsl",
+        "name": "Spatial-Phase Shallow Learning",
+        "description": "Deepfake detection in the frequency domain",
+        "paperTitle": "Spatial-Phase Shallow Learning: Rethinking Face Forgery Detection in Frequency Domain",
+        "paperURL": "https://openaccess.thecvf.com/content/CVPR2021/papers/Liu_Spatial-Phase_Shallow_Learning_Rethinking_Face_Forgery_Detection_in_Frequency_Domain_CVPR_2021_paper.pdf",
+        "codeURL": "https://github.com/RUC-Air-Lab/SPSL",
+        "why": [
+            "deepfake",
+            "deepfake-image",
+            "deepfake-video",
+            "reenactment",
+            "faceswap"
+        ],
+        "where": [
+            "human",
+            "human-face"
+        ],
+        "what": [
+            "spatial",
+            "spatial-pixel-level",
+            "frequency"
+        ]
+    },
+    {
+        "id": "ffd",
+        "name": "Facial Forgery Detection",
+        "description": "Detecting various types of facial forgeries",
+        "paperTitle": "On the Detection of Digital Face Manipulation",
+        "paperURL": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Dang_On_the_Detection_of_Digital_Face_Manipulation_CVPR_2020_paper.pdf",
+        "codeURL": "https://github.com/binghamton-tgs/FFD",
+        "why": [
+            "deepfake",
+            "deepfake-image",
+            "deepfake-video",
+            "reenactment",
             "faceswap",
-            "synthetic"
+            "synthetic-video"
         ],
         "where": [
             "human",
@@ -154,15 +270,18 @@
         ]
     },
     {
-        "id": "cornea-reflection",
-        "name": "cornea-reflection",
-        "description": "This is template 7.",
-        "paperTitle": "Template 7 Paper",
-        "paperURL": "https://example.com/template7",
-        "codeURL": "https://github.com/example/template7",
+        "id": "ucf",
+        "name": "Uncovering Common Features (UCF)",
+        "description": "Generalizable deepfake detection by uncovering common features",
+        "paperTitle": "UCF: Uncovering Common Features for Generalizable Deepfake Detection",
+        "paperURL": "https://openaccess.thecvf.com/content/ICCV2023/papers/Yan_UCF_Uncovering_Common_Features_for_Generalizable_Deepfake_Detection_ICCV_2023_paper.pdf",
+        "codeURL": "https://github.com/bluelaten/UCF",
         "why": [
-            "synthetic",
-            "synthetic-image"
+            "deepfake",
+            "deepfake-image",
+            "deepfake-video",
+            "reenactment",
+            "faceswap"
         ],
         "where": [
             "human",
@@ -170,67 +289,318 @@
         ],
         "what": [
             "spatial",
-            "spatial-structural"
+            "spatial-pixel-level"
         ]
     },
     {
-        "id": "template8",
-        "name": "Template 8",
-        "description": "This is template 8.",
-        "paperTitle": "Template 8 Paper",
-        "paperURL": "https://example.com/template8",
-        "codeURL": "https://github.com/example/template8",
+        "id": "capsule",
+        "name": "Capsule Networks for Deepfake Detection",
+        "description": "Using capsule networks to detect deepfakes",
+        "paperTitle": "Exposing Deep Fakes Using Inconsistent Head Poses",
+        "paperURL": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8682602",
+        "codeURL": "",
         "why": [
-            "reason1",
-            "reason2"
+            "deepfake",
+            "deepfake-image",
+            "deepfake-video",
+            "reenactment",
+            "faceswap"
         ],
         "where": [
-            "location1",
-            "location2"
+            "human",
+            "human-face"
         ],
         "what": [
-            "feature1",
-            "feature2"
+            "spatial",
+            "spatial-pixel-level"
         ]
     },
     {
-        "id": "template9",
-        "name": "Template 9",
-        "description": "This is template 9.",
-        "paperTitle": "Template 9 Paper",
-        "paperURL": "https://example.com/template9",
-        "codeURL": "https://github.com/example/template9",
+        "id": "dsp-fwa",
+        "name": "DSP-FWA",
+        "description": "Detecting face warping artifacts in deepfakes",
+        "paperTitle": "Exposing DeepFake Videos By Detecting Face Warping Artifacts",
+        "paperURL": "https://openaccess.thecvf.com/content_CVPRW_2019/papers/Media%20Forensics/Li_Exposing_DeepFake_Videos_By_Detecting_Face_Warping_Artifacts_CVPRW_2019_paper.pdf",
+        "codeURL": "https://github.com/danmohaha/DSP-FWA",
         "why": [
-            "reason1",
-            "reason2"
+            "deepfake",
+            "deepfake-image",
+            "deepfake-video",
+            "faceswap"
         ],
         "where": [
-            "location1",
-            "location2"
+            "human",
+            "human-face"
         ],
         "what": [
-            "feature1",
-            "feature2"
+            "spatial",
+            "spatial-pixel-level"
         ]
     },
     {
-        "id": "template10",
-        "name": "Template 10",
-        "description": "This is template 10.",
-        "paperTitle": "Template 10 Paper",
-        "paperURL": "https://example.com/template10",
-        "codeURL": "https://github.com/example/template10",
+        "id": "core",
+        "name": "CORE",
+        "description": "Consistent representation learning for face forgery detection",
+        "paperTitle": "CORE: COnsistent REpresentation Learning for Face Forgery Detection",
+        "paperURL": "https://openaccess.thecvf.com/content/CVPR2022W/WMF/papers/Ni_CORE_COnsistent_REpresentation_Learning_for_Face_Forgery_Detection_CVPRW_2022_paper.pdf",
+        "codeURL": "https://github.com/nimaicn/CORE",
         "why": [
-            "reason1",
-            "reason2"
+            "deepfake",
+            "deepfake-image",
+            "deepfake-video",
+            "faceswap"
         ],
         "where": [
-            "location1",
-            "location2"
+            "human",
+            "human-face"
         ],
         "what": [
-            "feature1",
-            "feature2"
+            "spatial",
+            "spatial-pixel-level"
+        ]
+    },
+    {
+        "id": "recce",
+        "name": "RECCE",
+        "description": "End-to-end reconstruction-classification for face forgery detection",
+        "paperTitle": "End-to-End Reconstruction-Classification Learning for Face Forgery Detection",
+        "paperURL": "https://openaccess.thecvf.com/content/CVPR2022/papers/Cao_End-to-End_Reconstruction-Classification_Learning_for_Face_Forgery_Detection_CVPR_2022_paper.pdf",
+        "codeURL": "https://github.com/GlassyXu/RECCE",
+        "why": [
+            "deepfake",
+            "deepfake-image",
+            "deepfake-video",
+            "reenactment",
+            "faceswap"
+        ],
+        "where": [
+            "human",
+            "human-face"
+        ],
+        "what": [
+            "spatial",
+            "spatial-pixel-level"
+        ]
+    },
+    {
+        "id": "phoneme-viseme",
+        "name": "Phoneme-Viseme Mismatch",
+        "description": "Detecting deepfakes from audio-visual mismatches",
+        "paperTitle": "Detecting Deep-Fake Videos From Phoneme-Viseme Mismatches",
+        "paperURL": "https://openaccess.thecvf.com/content_CVPRW_2020/papers/w39/Agarwal_Detecting_Deep-Fake_Videos_From_Phoneme-Viseme_Mismatches_CVPRW_2020_paper.pdf",
+        "codeURL": "",
+        "why": [
+            "deepfake",
+            "deepfake-video",
+            "reenactment"
+        ],
+        "where": [
+            "human",
+            "human-face",
+            "human-mouth"
+        ],
+        "what": [
+            "temporal",
+            "temporal-physiology",
+            "temporal-synchronization"
+        ]
+    },
+    {
+        "id": "face-background-noise",
+        "name": "Face vs Background Noise Differences",
+        "description": "Detecting deepfakes by analyzing noise differences between face and background regions",
+        "paperTitle": "Detection of face manipulation by inconsistent imaging noise",
+        "paperURL": "https://www.sciencedirect.com/science/article/pii/S2666281722000762",
+        "codeURL": "",
+        "why": [
+            "deepfake",
+            "deepfake-image",
+            "deepfake-video",
+            "reenactment",
+            "faceswap"
+        ],
+        "where": [
+            "human",
+            "human-face",
+            "scene"
+        ],
+        "what": [
+            "spatial",
+            "spatial-pixel-level",
+            "noise-artifacts"
+        ]
+    },
+    {
+        "id": "edge-information",
+        "name": "Edge Region Feature Extraction",
+        "description": "Using edge information for generalized facial manipulation detection",
+        "paperTitle": "Generalized Facial Manipulation Detection With Edge Region Feature Extraction",
+        "paperURL": "https://openaccess.thecvf.com/content/WACV2022/papers/Kim_Generalized_Facial_Manipulation_Detection_With_Edge_Region_Feature_Extraction_WACV_2022_paper.pdf",
+        "codeURL": "",
+        "why": [
+            "deepfake",
+            "deepfake-image",
+            "deepfake-video",
+            "reenactment",
+            "faceswap"
+        ],
+        "where": [
+            "human",
+            "human-face",
+            "scene"
+        ],
+        "what": [
+            "spatial",
+            "spatial-pixel-level"
+        ]
+    },
+    {
+        "id": "mantra-net",
+        "name": "ManTra-Net",
+        "description": "Manipulation tracing network for image forgery localization",
+        "paperTitle": "ManTra-Net: Manipulation Tracing Network for Detection and Localization of Image Forgeries With Anomalous Features",
+        "paperURL": "https://openaccess.thecvf.com/content_CVPR_2019/papers/Wu_ManTra-Net_Manipulation_Tracing_Network_for_Detection_and_Localization_of_Image_CVPR_2019_paper.pdf",
+        "codeURL": "https://github.com/pxb615/ManTra-Net",
+        "why": [
+            "image-splicing",
+            "image-removal",
+            "image-enhancement",
+            "copy-move"
+        ],
+        "where": [
+            "scene"
+        ],
+        "what": [
+            "spatial",
+            "spatial-pixel-level"
+        ]
+    },
+    {
+        "id": "model-fingerprints",
+        "name": "Model Fingerprints",
+        "description": "Detecting synthetic images using model fingerprints",
+        "paperTitle": "Model Fingerprints for Deep Image Forgery Detection and Localization",
+        "paperURL": "https://arxiv.org/pdf/2211.00680.pdf",
+        "codeURL": "",
+        "why": [
+            "synthetic-image"
+        ],
+        "where": [
+            "scene"
+        ],
+        "what": [
+            "spatial",
+            "spatial-pixel-level",
+            "frequency"
+        ]
+    },
+    {
+        "id": "prnu",
+        "name": "Photo Response Non-Uniformity (PRNU)",
+        "description": "Detecting image manipulation using sensor noise patterns",
+        "paperTitle": "Detecting DeepFakes using Camera Model Fingerprints",
+        "paperURL": "https://dl.acm.org/doi/pdf/10.1145/3437880.3460400",
+        "codeURL": "",
+        "why": [
+            "deepfake",
+            "deepfake-image",
+            "deepfake-video",
+            "reenactment",
+            "faceswap",
+            "manual-forgery"
+        ],
+        "where": [
+            "human",
+            "human-face",
+            "scene"
+        ],
+        "what": [
+            "spatial",
+            "spatial-pixel-level",
+            "noise-artifacts"
+        ],
+        "deepLearning": false
+    },
+    {
+        "id": "image-stats",
+        "name": "Image Statistics Analysis",
+        "description": "Analyzing image statistics for forgery detection",
+        "paperTitle": "",
+        "paperURL": "",
+        "codeURL": "",
+        "why": [
+            "deepfake",
+            "manual-forgery",
+            "synthetic-image"
+        ],
+        "where": [
+            "scene"
+        ],
+        "what": [
+            "spatial",
+            "spatial-pixel-level",
+            "frequency"
+        ],
+        "deepLearning": false
+    },
+    {
+        "id": "metadata-analysis",
+        "name": "Metadata Analysis",
+        "description": "Analyzing file metadata for forgery detection",
+        "paperTitle": "",
+        "paperURL": "",
+        "codeURL": "",
+        "why": [
+            "deepfake",
+            "manual-forgery",
+            "synthetic-image"
+        ],
+        "where": [
+            "file"
+        ],
+        "what": [
+            "file-structure"
+        ],
+        "deepLearning": false
+    },
+    {
+        "id": "behavior-analysis",
+        "name": "Behavior Analysis",
+        "description": "Detecting deepfakes by analyzing facial expressions and head movements",
+        "paperTitle": "Face Biometrics in the Wild: Multi-view Facial Deception Detection",
+        "paperURL": "https://farid.berkeley.edu/downloads/publications/wifs20.pdf",
+        "codeURL": "",
+        "why": [
+            "deepfake",
+            "deepfake-video",
+            "reenactment",
+            "faceswap"
+        ],
+        "where": [
+            "human",
+            "human-face"
+        ],
+        "what": [
+            "temporal",
+            "temporal-behavior"
+        ]
+    },
+    {
+        "id": "clip-based",
+        "name": "CLIP-based Detection",
+        "description": "Detecting synthetic images using CLIP features",
+        "paperTitle": "CLIP-Based Detection of Image Manipulations for Generative Forgeries",
+        "paperURL": "https://arxiv.org/abs/2312.00195",
+        "codeURL": "",
+        "why": [
+            "synthetic-image"
+        ],
+        "where": [
+            "scene"
+        ],
+        "what": [
+            "spatial",
+            "spatial-pixel-level"
         ]
     }
 ]
