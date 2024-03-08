@@ -37,3 +37,15 @@ export type OntologyState = {
     tree: OntologyTree | {};
     isLoading: Boolean;
 };
+
+export type AnalyticType = {
+    id: string,
+    name: string,
+    description: string,
+    paperTitle: string,
+    paperURL: string,
+    codeURL: string,
+    why: string[]
+    where: string[],
+    what: string[]
+}
