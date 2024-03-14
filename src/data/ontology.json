@@ -67,7 +67,12 @@
                 "group": 1,
                 "description": "Manipulated video content created through manual editing"
               },
-              "manual-forgery-text": {}
+              "manual-forgery-text": {
+                "id": "manual-forgery-text",
+                "name": "manual-forgery-text",
+                "group": 1,
+                "description": "Manipulated text content created through manual editing"
+              }
             }
           },
           "out-of-context": {
@@ -148,7 +153,12 @@
                 "group": 2,
                 "description": "Media content depicting human bodies"
               },
-              "human-text": {},
+              "human-text": {
+                "id": "human-text",
+                "name": "human-text",
+                "group": 2,
+                "description": "Media content depicting human text"
+              },
               "human-handwriting": {
                 "id": "human-handwriting",
                 "name": "human-handwriting",
@@ -261,7 +271,36 @@
             "group": 3,
             "description": "Temporal features of media content",
             "children": {
-              "temporal-forensics": {}
+              "temporal-biometrics": {
+                "id": "temporal-biometrics",
+                "name": "temporal-biometrics",
+                "group": 3,
+                "description": "Biometric features of media content over time"
+              },
+              "temporal-context": {
+                "id": "temporal-context",
+                "name": "temporal-context",
+                "group": 3,
+                "description": "Contextual features of media content over time"
+              },
+              "temporal-physiology": {
+                "id": "temporal-physiology",
+                "name": "temporal-physiology",
+                "group": 3,
+                "description": "Physiological features of media content over time"
+              },
+              "temporal-synchronization": {
+                "id": "temporal-synchronization",
+                "name": "temporal-synchronization",
+                "group": 3,
+                "description": "Synchronization features of media content over time"
+              },
+              "temporal-coherence": {
+                "id": "temporal-coherence",
+                "name": "temporal-coherence",
+                "group": 3,
+                "description": "Coherence features of media content over time"
+              }
             }
           }
         }

@@ -126,6 +126,12 @@
         "description": "Manipulated image content created through manual editing"
     },
     {
+        "id": "manual-forgery-text",
+        "name": "manual-forgery-text",
+        "group": 1,
+        "description": "Manipulated text content created through manual editing"
+    },
+    {
         "id": "human-face",
         "name": "human-face",
         "group": 2,
@@ -166,6 +172,12 @@
         "name": "human-handwriting",
         "group": 2,
         "description": "Media content depicting human handwriting"
+    },
+    {
+        "id": "human-text",
+        "name": "human-text",
+        "group": 2,
+        "description": "Media content depicting human text"
     },
     {
         "id": "non-human-biological",

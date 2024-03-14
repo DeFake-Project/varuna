@@ -12,7 +12,8 @@
       "out-of-context",
       "synthetic-media"
     ],
-    "level": 1
+    "level": 1,
+    "group": 1
   },
   "where": {
     "id": "where",
@@ -27,7 +28,8 @@
       "scene",
       "file"
     ],
-    "level": 1
+    "level": 1,
+    "group": 2
   },
   "what": {
     "id": "what",
@@ -41,7 +43,8 @@
       "file-analysis",
       "temporal"
     ],
-    "level": 1
+    "level": 1,
+    "group": 3
   },
   "deepfake": {
     "id": "deepfake",
@@ -56,7 +59,8 @@
       "deepfake-video",
       "deepfake-text"
     ],
-    "level": 2
+    "level": 2,
+    "group": 1
   },
   "manual-forgery": {
     "id": "manual-forgery",
@@ -71,7 +75,8 @@
       "manual-forgery-video",
       "manual-forgery-text"
     ],
-    "level": 2
+    "level": 2,
+    "group": 1
   },
   "out-of-context": {
     "id": "out-of-context",
@@ -81,7 +86,8 @@
       "why"
     ],
     "children": [],
-    "level": 2
+    "level": 2,
+    "group": 1
   },
   "synthetic-media": {
     "id": "synthetic-media",
@@ -91,7 +97,8 @@
       "why"
     ],
     "children": [],
-    "level": 2
+    "level": 2,
+    "group": 1
   },
   "human": {
     "id": "human",
@@ -107,7 +114,8 @@
       "human-handwriting",
       "human-voice"
     ],
-    "level": 2
+    "level": 2,
+    "group": 2
   },
   "non-human": {
     "id": "non-human",
@@ -120,7 +128,8 @@
       "non-human-biological",
       "non-human-non-biological"
     ],
-    "level": 2
+    "level": 2,
+    "group": 2
   },
   "scene": {
     "id": "scene",
@@ -130,7 +139,8 @@
       "where"
     ],
     "children": [],
-    "level": 2
+    "level": 2,
+    "group": 2
   },
   "file": {
     "id": "file",
@@ -140,7 +150,8 @@
       "where"
     ],
     "children": [],
-    "level": 2
+    "level": 2,
+    "group": 2
   },
   "deepfake-video": {
     "id": "deepfake-video",
@@ -150,7 +161,8 @@
       "deepfake"
     ],
     "children": [],
-    "level": 3
+    "level": 3,
+    "group": 1
   },
   "deepfake-audio": {
     "id": "deepfake-audio",
@@ -160,7 +172,8 @@
       "deepfake"
     ],
     "children": [],
-    "level": 3
+    "level": 3,
+    "group": 1
   },
   "deepfake-image": {
     "id": "deepfake-image",
@@ -170,7 +183,8 @@
       "deepfake"
     ],
     "children": [],
-    "level": 3
+    "level": 3,
+    "group": 1
   },
   "deepfake-text": {
     "id": "deepfake-text",
@@ -180,7 +194,8 @@
       "deepfake"
     ],
     "children": [],
-    "level": 3
+    "level": 3,
+    "group": 1
   },
   "reenactment": {
     "id": "reenactment",
@@ -188,7 +203,8 @@
     "state": "exists",
     "parents": [],
     "children": [],
-    "level": 0
+    "level": 0,
+    "group": 1
   },
   "faceswap": {
     "id": "faceswap",
@@ -196,7 +212,8 @@
     "state": "exists",
     "parents": [],
     "children": [],
-    "level": 0
+    "level": 0,
+    "group": 1
   },
   "manual-forgery-video": {
     "id": "manual-forgery-video",
@@ -206,7 +223,8 @@
       "manual-forgery"
     ],
     "children": [],
-    "level": 3
+    "level": 3,
+    "group": 1
   },
   "manual-forgery-audio": {
     "id": "manual-forgery-audio",
@@ -216,7 +234,8 @@
       "manual-forgery"
     ],
     "children": [],
-    "level": 3
+    "level": 3,
+    "group": 1
   },
   "manual-forgery-image": {
     "id": "manual-forgery-image",
@@ -226,7 +245,19 @@
       "manual-forgery"
     ],
     "children": [],
-    "level": 3
+    "level": 3,
+    "group": 1
+  },
+  "manual-forgery-text": {
+    "id": "manual-forgery-text",
+    "name": "manual-forgery-text",
+    "state": "exists",
+    "parents": [
+      "manual-forgery"
+    ],
+    "children": [],
+    "level": 3,
+    "group": 1
   },
   "human-face": {
     "id": "human-face",
@@ -240,7 +271,8 @@
       "human-eye",
       "human-ear"
     ],
-    "level": 3
+    "level": 3,
+    "group": 2
   },
   "human-mouth": {
     "id": "human-mouth",
@@ -250,7 +282,8 @@
       "human-face"
     ],
     "children": [],
-    "level": 4
+    "level": 4,
+    "group": 2
   },
   "human-eye": {
     "id": "human-eye",
@@ -260,7 +293,8 @@
       "human-face"
     ],
     "children": [],
-    "level": 4
+    "level": 4,
+    "group": 2
   },
   "human-ear": {
     "id": "human-ear",
@@ -270,7 +304,8 @@
       "human-face"
     ],
     "children": [],
-    "level": 4
+    "level": 4,
+    "group": 2
   },
   "human-voice": {
     "id": "human-voice",
@@ -280,7 +315,8 @@
       "human"
     ],
     "children": [],
-    "level": 3
+    "level": 3,
+    "group": 2
   },
   "human-body": {
     "id": "human-body",
@@ -290,7 +326,8 @@
       "human"
     ],
     "children": [],
-    "level": 3
+    "level": 3,
+    "group": 2
   },
   "human-handwriting": {
     "id": "human-handwriting",
@@ -300,7 +337,19 @@
       "human"
     ],
     "children": [],
-    "level": 3
+    "level": 3,
+    "group": 2
+  },
+  "human-text": {
+    "id": "human-text",
+    "name": "human-text",
+    "state": "exists",
+    "parents": [
+      "human"
+    ],
+    "children": [],
+    "level": 3,
+    "group": 2
   },
   "non-human-biological": {
     "id": "non-human-biological",
@@ -310,7 +359,8 @@
       "non-human"
     ],
     "children": [],
-    "level": 3
+    "level": 3,
+    "group": 2
   },
   "non-human-non-biological": {
     "id": "non-human-non-biological",
@@ -320,7 +370,8 @@
       "non-human"
     ],
     "children": [],
-    "level": 3
+    "level": 3,
+    "group": 2
   },
   "spatial": {
     "id": "spatial",
@@ -337,7 +388,8 @@
       "spatial-identity",
       "spatial-physics"
     ],
-    "level": 2
+    "level": 2,
+    "group": 3
   },
   "spatial-structural": {
     "id": "spatial-structural",
@@ -347,7 +399,8 @@
       "spatial"
     ],
     "children": [],
-    "level": 3
+    "level": 3,
+    "group": 3
   },
   "spatial-pixel-level": {
     "id": "spatial-pixel-level",
@@ -359,7 +412,8 @@
     "children": [
       "compression-artifacts"
     ],
-    "level": 3
+    "level": 3,
+    "group": 3
   },
   "spatial-context": {
     "id": "spatial-context",
@@ -369,7 +423,8 @@
       "spatial"
     ],
     "children": [],
-    "level": 3
+    "level": 3,
+    "group": 3
   },
   "spatial-provenance": {
     "id": "spatial-provenance",
@@ -379,7 +434,8 @@
       "spatial"
     ],
     "children": [],
-    "level": 3
+    "level": 3,
+    "group": 3
   },
   "spatial-identity": {
     "id": "spatial-identity",
@@ -389,7 +445,8 @@
       "spatial"
     ],
     "children": [],
-    "level": 3
+    "level": 3,
+    "group": 3
   },
   "spatial-physics": {
     "id": "spatial-physics",
@@ -399,7 +456,8 @@
       "spatial"
     ],
     "children": [],
-    "level": 3
+    "level": 3,
+    "group": 3
   },
   "file-analysis": {
     "id": "file-analysis",
@@ -412,7 +470,8 @@
       "file-metadata",
       "file-digital-watermark"
     ],
-    "level": 2
+    "level": 2,
+    "group": 3
   },
   "file-metadata": {
     "id": "file-metadata",
@@ -422,7 +481,8 @@
       "file-analysis"
     ],
     "children": [],
-    "level": 3
+    "level": 3,
+    "group": 3
   },
   "file-digital-watermark": {
     "id": "file-digital-watermark",
@@ -432,7 +492,8 @@
       "file-analysis"
     ],
     "children": [],
-    "level": 3
+    "level": 3,
+    "group": 3
   },
   "temporal": {
     "id": "temporal",
@@ -442,49 +503,69 @@
       "what"
     ],
     "children": [
-      "temporal-forensics"
+      "temporal-biometrics",
+      "temporal-context",
+      "temporal-physiology",
+      "temporal-synchronization",
+      "temporal-coherence"
     ],
-    "level": 2
+    "level": 2,
+    "group": 3
   },
   "temporal-biometrics": {
     "id": "temporal-biometrics",
     "name": "temporal-biometrics",
     "state": "exists",
-    "parents": [],
+    "parents": [
+      "temporal"
+    ],
     "children": [],
-    "level": 0
+    "level": 3,
+    "group": 3
   },
   "temporal-physiology": {
     "id": "temporal-physiology",
     "name": "temporal-physiology",
     "state": "exists",
-    "parents": [],
+    "parents": [
+      "temporal"
+    ],
     "children": [],
-    "level": 0
+    "level": 3,
+    "group": 3
   },
   "temporal-context": {
     "id": "temporal-context",
     "name": "temporal-context",
     "state": "exists",
-    "parents": [],
+    "parents": [
+      "temporal"
+    ],
     "children": [],
-    "level": 0
+    "level": 3,
+    "group": 3
   },
   "temporal-synchronization": {
     "id": "temporal-synchronization",
     "name": "temporal-synchronization",
     "state": "exists",
-    "parents": [],
+    "parents": [
+      "temporal"
+    ],
     "children": [],
-    "level": 0
+    "level": 3,
+    "group": 3
   },
   "temporal-coherence": {
     "id": "temporal-coherence",
     "name": "temporal-coherence",
     "state": "exists",
-    "parents": [],
+    "parents": [
+      "temporal"
+    ],
     "children": [],
-    "level": 0
+    "level": 3,
+    "group": 3
   },
   "compression-artifacts": {
     "id": "compression-artifacts",
@@ -494,6 +575,7 @@
       "spatial-pixel-level"
     ],
     "children": [],
-    "level": 4
+    "level": 4,
+    "group": 3
   }
 }

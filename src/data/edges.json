@@ -281,7 +281,35 @@
     },
     {
         "source": "temporal",
-        "target": "temporal-forensics",
+        "target": "temporal-biometrics",
+        "label": "for",
+        "weight": 3,
+        "type": "ontology"
+    },
+    {
+        "source": "temporal",
+        "target": "temporal-context",
+        "label": "for",
+        "weight": 3,
+        "type": "ontology"
+    },
+    {
+        "source": "temporal",
+        "target": "temporal-physiology",
+        "label": "for",
+        "weight": 3,
+        "type": "ontology"
+    },
+    {
+        "source": "temporal",
+        "target": "temporal-synchronization",
+        "label": "for",
+        "weight": 3,
+        "type": "ontology"
+    },
+    {
+        "source": "temporal",
+        "target": "temporal-coherence",
         "label": "for",
         "weight": 3,
         "type": "ontology"
