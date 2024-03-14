@@ -1,0 +1,15 @@
+// Transitions
+$transition-duration: 0.3s;
+$transition-timing-function: ease-in-out;
+$transition-property: all;
+
+// Animations
+$animation-duration: 1s;
+$animation-timing-function: ease;
+$animation-iteration-count: infinite;
+$animation-direction: normal;
+
+* {
+    transition: $transition-property $transition-duration $transition-timing-function;
+    animation: $animation-duration $animation-timing-function $animation-iteration-count $animation-direction;
+}

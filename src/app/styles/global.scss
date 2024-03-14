@@ -1,0 +1,35 @@
+@import 'colors';
+@import 'typography';
+@import 'variables';
+@import 'animations';
+@import 'components';
+@import 'structure';
+
+body {
+    font-family: $default-font;
+    font-weight: 400;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $default-font;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(90deg, var(--background-start-rgb), var(--background-end-rgb));
+    color: var(--foreground-rgb);
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    align-items: center;
+    box-shadow: $box-shadow-default;
+}

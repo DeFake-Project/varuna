@@ -17,7 +17,7 @@ const AnalyticsContainer = () => {
     )
 
     return (
-        <div className="analytics-container h-screen max-h-screen overflow-y-auto">
+        <div className="analytics-container">
             <h2 className="mb-4">List of available analytics</h2>
             {analyticsBlocks}
         </div>
