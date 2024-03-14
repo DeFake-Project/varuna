@@ -42,40 +42,56 @@ const recursiveleSetParents = (filter: OntologyFilter, childName: string) => {
     return newFilter;
 }
 
+const recursivelyUnsetChildren = (filter: OntologyFilter, parentName: string) => {
+    const children = edges.filter((edge: any) => edge.source === parentName);
+    if (children.length == 0) return filter;
+
+    let newFilter: OntologyFilter = filter;
+
+    children.forEach((child: OntologyEdge) => {
+        newFilter = recursivelyUnsetChildren(newFilter, child.target);
+        newFilter[child.target].state = EXISTS;
+    });
+
+    return newFilter;
+}
+
 export const filteredAnalytics = (filter: OntologyFilter) => {
     const selectedWhy: string[] = Object.keys(filter).filter((key) => filter[key].state === "selected" && filter[key].group === 1);
     const selectedWhere: string[] = Object.keys(filter).filter((key) => filter[key].state === "selected" && filter[key].group === 2);
     const selectedWhat: string[] = Object.keys(filter).filter((key) => filter[key].state === "selected" && filter[key].group === 3);
     let analyticsList: AnalyticType[] = analytics;
 
-    console.log("++ Selected why:", selectedWhy, "Selected where:", selectedWhere, "Selected what:", selectedWhat)
+    const alphabeticCompare = (a: AnalyticType, b: AnalyticType) => {
+        return a.id.localeCompare(b.id);
+    }
 
     if (selectedWhy.length > 0) {
         analyticsList = analyticsList
             .filter(
-                (item: AnalyticType) => [...selectedWhy].filter((e: string) => item.why.includes(e)).length > 0
+                (item: AnalyticType) => [...selectedWhy].filter((e: string) => item.why.includes(e)).length >= selectedWhy.length - 1
             )
     } if (selectedWhere.length > 0) {
         analyticsList = analyticsList
             .filter(
-                (item: AnalyticType) => [...selectedWhere].filter((e: string) => item.where.includes(e)).length > 0
+                (item: AnalyticType) => [...selectedWhere].filter((e: string) => item.where.includes(e)).length >= selectedWhere.length - 1
             )
     } if (selectedWhat.length > 0) {
         analyticsList = analyticsList
             .filter(
-                (item: AnalyticType) => [...selectedWhat].filter((e: string) => item.what.includes(e)).length > 0
+                (item: AnalyticType) => [...selectedWhat].filter((e: string) => item.what.includes(e)).length >= selectedWhat.length - 1
             )
     }
-    return analyticsList;
+    return analyticsList.sort(alphabeticCompare);
 }
 
 const _filterOptionSelected = (state: OntologyState, itemName: string) => {
     // set progeny to available
     const newFilter: OntologyFilter = state.filter;
     if (newFilter[itemName].state === SELECTED) {
-        // newFilter[itemName].state = AVAILABLE;
-        // state.filter = newFilter;
-        // recursivelyUnsetChildren(newFilter, itemName);
+        newFilter[itemName].state = EXISTS;
+        state.filter = newFilter;
+        state.filter = recursivelyUnsetChildren(newFilter, itemName);
     } else {
         newFilter[itemName].state = SELECTED;
         state.filter = newFilter;
