@@ -21,6 +21,7 @@ function generateLinearOntology(nodeData, edgeData) {
                     parents: parents.map(parent => parent.source),
                     children: children.map(child => child.target),
                     level: level,
+                    group: node.group,
                 };
             });
         }
