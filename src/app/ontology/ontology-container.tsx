@@ -1,16 +1,9 @@
 'use client'
 import React from 'react';
 import OptionBlock from './option-block';
-import { OntologyEdge, OntologyNode } from '@/lib/customTypes';
+import { OntologyEdge } from '@/lib/customTypes';
 
 const edges = require("@/data/edges.json");
-
-const generateBlock = (block: OntologyNode, edges: OntologyEdge[]) => {
-    const childrenArray: string[] = edges
-        .filter((edge: OntologyEdge) => edge.source === block.id)
-        .map((edge: OntologyEdge) => edge.target);
-    return <OptionBlock key={`${block.id}-block`} title={block.name} nodenames={childrenArray} />;
-}
 
 const OntologyContainer = () => {
     const progressiveComponent = (blockName: string, supportingText: {

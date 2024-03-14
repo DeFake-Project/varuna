@@ -14,13 +14,18 @@
   --what-file-rgb: 211, 84, 0;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
+    --background-rgb: 0, 0, 0;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-} */
+}
+
+* {
+  transition-duration: 300ms;
+}
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -62,9 +67,22 @@ aside {
   padding: 5px;
 }
 
+.option-list, .analytics-container {
+  scrollbar-width: small;
+  /* Replace 'scrollbar-color' with '-webkit-scrollbar' for WebKit-based browsers */
+  /* Replace '-webkit-scrollbar' with '-ms-overflow-style' for Microsoft Edge */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--foreground-rgb), 0.3) rgba(var(--background-rgb), 0.3);
+  -webkit-scrollbar-width: thin;
+  -webkit-scrollbar-color: rgba(var(--foreground-rgb), 0.3) rgba(var(--background-rgb), 0.3);
+  -ms-overflow-style: scrollbar;
+}
+
+
+
 .ontology-item {
-  border: 1px solid;
-  border-radius: 3px;
+  border: 2px solid;
+  border-radius: 5px;
   padding: 2px 4px;
   margin-bottom: 2px;
 }

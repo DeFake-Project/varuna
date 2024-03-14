@@ -1,17 +1,25 @@
+'use client'
 import React from "react";
+import AnalyticBlock from "@/app/analytics/analytic-block";
+import { OntologyFilter } from '@/lib/customTypes';
+import { useAppSelector } from '@/lib/hooks';
+
 
 import { AnalyticType } from "@/lib/customTypes";
-const analytics = require('@/data/analytics.json')
-
-const analyticsBlocks = analytics.map(
-    (item: AnalyticType, index: number) => <div key={`analytic-${index}`} className="analytic-item"></div>
-)
+import { filteredAnalytics } from "@/lib/features/ontology/ontologySlice";
 
 const AnalyticsContainer = () => {
-    return (
-        <div className="analytics-container">
-            <h2>List of available analytics</h2>
+    const filter: OntologyFilter = useAppSelector((state) => state.ontology.filter);
+    const analyticsList: AnalyticType[] = filteredAnalytics(filter);
 
+    const analyticsBlocks = analyticsList.map(
+        (item: AnalyticType, index: number) => <AnalyticBlock key={`analytic-${index}`} data={item} />
+    )
+
+    return (
+        <div className="analytics-container h-screen max-h-screen overflow-y-auto">
+            <h2 className="mb-4">List of available analytics</h2>
+            {analyticsBlocks}
         </div>
     )
 }

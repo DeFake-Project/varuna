@@ -2,13 +2,13 @@
 import React from 'react';
 import OntologyContainer from "./ontology-container";
 import { useAppSelector } from '@/lib/hooks';
+import AnalyticsContainer from '../analytics/analytics-container';
+import Header from '../shared/header';
 
 export default function Page() {
   const filter = useAppSelector(state => state.ontology.filter);
   return <>
-    <header>
-      Digital Multimedia Forensics Ontology
-    </header>
+    <Header />
     <main className="grid grid-cols-5 grid-auto-rows">
       <section className="instructions col-span-5">
         <h2>Use the interactable sentences provided to filter out the methods on the sidebar</h2>
@@ -25,12 +25,7 @@ export default function Page() {
           <li>Analyze <span>spatial features</span> for <span>pixel inconsistency</span></li>
         </ul>
         <div>
-          <div>
-            <h3>EfficientNet_deepfake</h3>
-          </div>
-          <div>
-            <h3>XceptionNet_deepfake</h3>
-          </div>
+          <AnalyticsContainer />
         </div>
       </aside>
     </main>

@@ -20,6 +20,7 @@ export type OntologyFilter = {
         state: string;
         id: string;
         level: number;
+        group: number;
     };
 };
 
@@ -46,6 +47,12 @@ export type AnalyticType = {
     paperURL: string,
     codeURL: string,
     why: string[]
+    where: string[],
+    what: string[]
+}
+
+export type AnalyticFilter = {
+    why: string[],
     where: string[],
     what: string[]
 }
