@@ -216,6 +216,12 @@
                     "name": "compression-artifacts",
                     "group": 3,
                     "description": "Artifacts introduced by compression"
+                  },
+                  "spatial-frequency": {
+                    "id": "spatial-frequency",
+                    "name": "spatial-frequency",
+                    "group": 3,
+                    "description": "Frequency-related features of media content"
                   }
                 }
               },

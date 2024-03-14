@@ -410,7 +410,8 @@
       "spatial"
     ],
     "children": [
-      "compression-artifacts"
+      "compression-artifacts",
+      "spatial-frequency"
     ],
     "level": 3,
     "group": 3
@@ -570,6 +571,17 @@
   "compression-artifacts": {
     "id": "compression-artifacts",
     "name": "compression-artifacts",
+    "state": "exists",
+    "parents": [
+      "spatial-pixel-level"
+    ],
+    "children": [],
+    "level": 4,
+    "group": 3
+  },
+  "spatial-frequency": {
+    "id": "spatial-frequency",
+    "name": "spatial-frequency",
     "state": "exists",
     "parents": [
       "spatial-pixel-level"

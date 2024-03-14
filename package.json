@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate:ontology": "node ./src/data/helpers/generate-ontology-tree.js ./src/data/nodes.json ./src/data/edges.json ./src/data/",
+    "generate:linear": "node ./src/data/helpers/generate-linear-ontology.js ./src/data/nodes.json ./src/data/edges.json ./src/data/"
   },
   "dependencies": {
     "next": "14.1.0",
@@ -26,5 +28,6 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
-  }
+  },
+  "_comment": "use `type: module` to run the json generators"
 }

@@ -320,5 +320,12 @@
         "label": "",
         "weight": 3,
         "type": "ontology"
+    },
+    {
+        "source": "spatial-pixel-level",
+        "target": "spatial-frequency",
+        "label": "",
+        "weight": 3,
+        "type": "ontology"
     }
 ]
