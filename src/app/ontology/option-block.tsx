@@ -14,18 +14,19 @@ const OptionBlock: React.FC<OptionBlockProps> = ({ title, nodenames }) => {
     const filter: OntologyFilter = useAppSelector((state) => state.ontology.filter);
 
     return (
-        <div className={`${title} option-block p-2 grid grid-flow-col auto-cols-max gap-2`}>
-            <h2 className="text-1xl font-bold">{title}</h2>
-            <ul className="flex option-list flex-col">
+        <div className={`${title} option-block scroll-shadows`}>
+            <h2 className="">{title}</h2>
+            <ul className="option-list">
                 {nodenames.map((item: string) => {
                     // console.log(">> ", item)
                     return filter[item] ? (
-                        <li key={`${filter[item].id}-option`} onClick={() => dispatch(activateItem(filter[item].id))} className={`${filter[item]?.state} ontology-item`}>
+                        <li key={`${filter[item].id}-option`} onClick={() => dispatch(activateItem(filter[item].id))} className={`${filter[item]?.state} ontology-item pill`}>
                             {filter[item].id}
                         </li>
                     ) : null;
                 })}
             </ul>
+            <div className="faded-scroller-bottom"></div>
         </div>
     );
 };

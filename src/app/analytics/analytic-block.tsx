@@ -15,7 +15,7 @@ const AnalyticBlock = ({ data }: AnalyticBlockProps) => {
     const whys = data.why.map((value: string, i: number) => (
         <li
             key={`data-${data.id}-why-${i}`}
-            className="py-1 px-2 m-1 rounded-[3px] bg-emerald-500 text-white leading-3"
+            className="pill why"
         >
             <span className="text-xs">{value}</span>
         </li>
@@ -23,7 +23,7 @@ const AnalyticBlock = ({ data }: AnalyticBlockProps) => {
     const wheres = data.where.map((value: string, i: number) => (
         <li
             key={`data-${data.id}-where-${i}`}
-            className="py-1 px-2 m-1 rounded-[3px] bg-amber-600 text-white leading-3"
+            className="pill where"
         >
             <span className="text-xs">{value}</span>
         </li>
@@ -31,63 +31,63 @@ const AnalyticBlock = ({ data }: AnalyticBlockProps) => {
     const whats = data.what.map((value: string, i: number) => (
         <li
             key={`data-${data.id}-what-${i}`}
-            className="py-1 px-2 m-1 rounded-[3px] bg-sky-500 text-white leading-3"
+            className="pill what"
         >
             <span className="text-xs">{value}</span>
         </li>
     ));
 
     return (
-        <div className="analytic-item-container bg-stone-900 rounded-lg shadow-md p-2 m-2">
+        <div className="analytic-item-container">
             <div onClick={toggleCollapse}
-                className="flex items-center justify-between text-white hover:bg-zinc-700 hover:cursor-pointer pr-2 rounded-sm">
+                className="analytic-item-header">
                 <h4>{data.name}</h4>
-                <span className="text-zinc-600">{isCollapsed ? "▼" : "▲"}</span>
+                <span className={`caret ${isCollapsed ? "" : "open"}`}>▼</span>
             </div>
             {!isCollapsed && (
-                <>
-                    <ul className="pt-2">
-                        <li className="grid grid-flow-col-dense gap-2 justify-start">
+                <div className="analytic-item-content">
+                    <ul className="analytic-item-ontology">
+                        <li className="analytic-item-ontology-content">
                             <span>why</span>
-                            <ul className="flex flex-wrap">
+                            <ul className="analytic-item-ontology-list">
                                 {whys}
                             </ul>
                         </li>
-                        <li className="grid grid-flow-col-dense gap-2 justify-start">
+                        <li className="analytic-item-ontology-content">
                             <span>where</span>
-                            <ul className="flex flex-wrap">
+                            <ul className="analytic-item-ontology-list">
                                 {wheres}
                             </ul>
                         </li>
-                        <li className="grid grid-flow-col-dense gap-2 justify-start">
+                        <li className="analytic-item-ontology-content">
                             <span>what</span>
-                            <ul className="flex flex-wrap">
+                            <ul className="analytic-item-ontology-list">
                                 {whats}
                             </ul>
                         </li>
                     </ul>
-                    <div className="analytic-item-content">
+                    <div className="analytic-item-description">
                         <p className="text-gray-500">{data.description}</p>
                         <a
                             href={data.paperURL}
                             target="_blank"
-                            className="bg-zinc-500 text-white hover:bg-zinc-800 rounded-md px-2 py-1 m-1"
+                            className=""
                         >
                             Paper URL
                         </a>
                         <a
                             href={data.codeURL}
                             target="_blank"
-                            className="bg-zinc-500 text-white hover:bg-zinc-800 rounded-md px-2 py-1 m-1"
+                            className=""
                         >
                             Code URL
                         </a>
                         <button
-                            className="bg-blue-500 text-white hover:bg-blue-800 rounded-md px-2 py-1 m-1">
+                            className="">
                             Use Analytic
                         </button>
                     </div>
-                </>
+                </div>
             )}
         </div>
     );

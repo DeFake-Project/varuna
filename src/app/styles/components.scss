@@ -1,0 +1,246 @@
+.instructions {
+    grid-column: span 2;
+    border: 1px solid $border-color;
+    padding: 12px;
+    border-radius: $border-radius-default;
+    margin-bottom: 12px;
+}
+
+.analytics-header {
+    padding: 0 12px 12px;
+
+    ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+
+        li {
+            margin-right: 8px;
+            font-size: 0.9em;
+            font-weight: 600;
+
+            &:not(:first-child) {
+                border-left: 1px solid $white-100;
+                padding-left: 8px;
+            }
+
+            color: $black-700;
+
+            .why {
+                color: $why;
+            }
+
+            .where {
+                color: $where;
+            }
+
+            .what {
+                color: $what-spatial;
+            }
+        }
+    }
+}
+
+.analytics-container {
+    background: $white-100;
+    padding: 12px;
+    border-radius: $border-radius-default;
+
+    h2 {
+        margin-bottom: 12px;
+    }
+}
+
+.analytic-item-container {
+    background: $white;
+    margin-bottom: 4px;
+    border-radius: $border-radius-default;
+    box-shadow: $box-shadow-default;
+}
+
+.analytic-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    line-height: 1em;
+    border-radius: $border-radius-default;
+
+    &:hover {
+        background: $white-300;
+        cursor: pointer;
+    }
+}
+
+.analytic-item-content {
+    padding: 12px;
+    margin-bottom: 4px;
+}
+
+.analytic-item-ontology-container {}
+
+.analytic-item-ontology-content {
+    display: grid;
+    grid-template-columns: 45px auto;
+    grid-gap: 8px;
+    justify-content: flex-start;
+}
+
+.analytic-item-ontology-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+
+    .pill {
+        margin-bottom: 4px;
+        margin-right: 4px;
+    }
+}
+
+.option-block-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+
+    border-left: 4px solid transparent;
+    padding-left: 20px;
+    margin-left: -24px;
+
+    .pill {
+        border: 2px solid;
+        margin-bottom: 4px;
+        box-shadow: $box-shadow-default;
+
+        &:hover {
+            cursor: pointer;
+            box-shadow: $box-shadow-hover;
+        }
+
+        &.exists {
+            background: none;
+        }
+    }
+}
+
+.why-blocks-container {
+    .pill {
+        &.exists {
+            border-color: $why;
+        }
+
+        &.selected {
+            background: $why;
+        }
+
+        &.available {
+            background: $why;
+            border-color: $why;
+        }
+
+        &:hover {
+            background: $why-hover;
+        }
+    }
+
+    &:hover {
+        border-color: $why;
+    }
+}
+
+.where-blocks-container {
+    .pill {
+        &.exists {
+            border-color: $where;
+        }
+
+        &.selected {
+            background: $where;
+        }
+
+        &.available {
+            background: $where;
+            border-color: $where;
+        }
+
+        &:hover {
+            background: $where-hover;
+        }
+    }
+
+    &:hover {
+        border-color: $where;
+    }
+}
+
+.what-blocks-container {
+    .pill {
+        &.exists {
+            border-color: $what-spatial;
+        }
+
+        &.selected {
+            background: $what-spatial;
+        }
+
+        &.available {
+            background: $what-spatial;
+            border-color: $what-spatial;
+        }
+
+        &:hover {
+            background: $what-spatial-hover;
+        }
+    }
+
+    &:hover {
+        border-color: $what-spatial;
+    }
+}
+
+.option-block {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 4px;
+
+    h2 {
+        font-size: 1em;
+    }
+}
+
+.option-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+    margin-bottom: 12px;
+
+    max-height: 200px;
+    overflow-y: auto;
+    -webkit-overflow-y-scrolling: touch;
+
+    background:
+        /* Shadow Cover TOP */
+        linear-gradient(white 30%,
+            rgba(255, 255, 255, 0)) center top,
+
+        /* Shadow Cover BOTTOM */
+        linear-gradient(rgba(255, 255, 255, 0),
+            white 70%) center bottom,
+
+        /* Shadow TOP */
+        radial-gradient(farthest-side at 50% 0,
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0)) center top,
+
+        /* Shadow BOTTOM */
+        radial-gradient(farthest-side at 50% 100%,
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0)) center bottom;
+
+    background-repeat: no-repeat;
+    background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+    background-attachment: local, local, scroll, scroll;
+}

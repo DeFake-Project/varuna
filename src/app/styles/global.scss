@@ -2,11 +2,11 @@
 @import 'typography';
 @import 'variables';
 @import 'animations';
-@import 'components';
 @import 'structure';
+@import 'elements';
+@import 'components';
 
 body {
-    font-family: $default-font;
     font-weight: 400;
     margin: 0;
 }
@@ -17,11 +17,27 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $default-font;
     font-weight: 400;
     margin: 0;
     padding: 0;
 }
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+}
+
 
 header {
     background: linear-gradient(90deg, var(--background-start-rgb), var(--background-end-rgb));
@@ -32,4 +48,11 @@ header {
     margin: 0;
     align-items: center;
     box-shadow: $box-shadow-default;
+}
+
+main {
+    background: var(--background-rgb);
+    color: var(--foreground-rgb);
+    padding: 24px;
+    margin: 0;
 }

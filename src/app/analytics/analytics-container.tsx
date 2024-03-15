@@ -10,16 +10,32 @@ import { filteredAnalytics } from "@/lib/features/ontology/ontologySlice";
 
 const AnalyticsContainer = () => {
     const filter: OntologyFilter = useAppSelector((state) => state.ontology.filter);
-    const analyticsList: AnalyticType[] = filteredAnalytics(filter);
+    const analyticsList: {
+        analytics: AnalyticType[],
+        why: string[],
+        where: string[],
+        what: string[]
+    } = filteredAnalytics(filter);
+    // console.log(">> ", analyticsList)
 
-    const analyticsBlocks = analyticsList.map(
+    const analyticsBlocks = analyticsList.analytics.map(
         (item: AnalyticType, index: number) => <AnalyticBlock key={`analytic-${index}`} data={item} />
     )
 
     return (
-        <div className="analytics-container">
-            <h2 className="mb-4">List of available analytics</h2>
-            {analyticsBlocks}
+        <div className="analytics-sidebar">
+            <div className="analytics-header">
+                <h2>Showing methods that</h2>
+                <ul>
+                    <li>Detect instances of <span className="why">{analyticsList.why.length > 0 ? analyticsList.why.join(", ") : "anything"}</span></li>
+                    <li>Search within <span className="where">{analyticsList.where.length > 0 ? analyticsList.where.join(", ") : "everywhere"}</span></li>
+                    <li>Analyze <span className="what">{analyticsList.what.length > 0 ? analyticsList.what.join(", ") : "everything"}</span></li>
+                </ul>
+            </div>
+            <div className="analytics-container">
+                <h2>List of available analytics</h2>
+                {analyticsBlocks}
+            </div>
         </div>
     )
 }

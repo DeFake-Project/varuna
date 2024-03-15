@@ -1,9 +1,11 @@
 // Base Colors
 $black: rgba(0, 0, 0, 1);
 $black-900: rgba(44, 44, 44, 1);
+$black-800: rgba(66, 66, 66, 1);
 $black-700: rgba(77, 77, 77, 1);
 $black-500: rgba(102, 102, 102, 1);
 
+$white-400: rgb(153, 153, 153);
 $white-300: rgb(179, 179, 179);
 $white-200: rgb(204, 204, 204);
 $white-100: rgb(218, 218, 218);
@@ -29,6 +31,21 @@ $background-rgb: $white;
 $foreground-rgb: $black;
 $background-start-rgb: $white;
 $background-end-rgb: $white-300;
+
+// Ontology Colors
+$where: $yellow;
+$where-hover: $yellow-dark;
+$why: $green;
+$why-hover: $green-dark;
+$what-temporal: $purple;
+$what-temporal-hover: $purple-dark;
+$what-spatial: $blue;
+$what-spatial-hover: $blue-dark;
+$what-file: $red;
+$what-file-hover: $red-dark;
+
+// Component colors
+$border-color: $black-500;
 
 :root {
     --background-rgb: $background-rgb;
