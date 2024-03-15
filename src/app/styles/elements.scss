@@ -1,0 +1,33 @@
+.caret {
+    color: $white-200;
+
+    &.open {
+        transform: rotate(-180deg);
+    }
+}
+
+.pill {
+    display: inline-block;
+    background: $white-200;
+    padding: 4px 8px;
+    border-radius: $border-radius-default;
+    margin-right: 4px;
+    font-size: 0.8em;
+}
+
+.pill {
+    &.why {
+        background: $why;
+        color: $white;
+    }
+
+    &.where {
+        background: $where;
+        color: $white;
+    }
+
+    &.what {
+        background: $what-spatial;
+        color: $white;
+    }
+}

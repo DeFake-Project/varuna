@@ -36,7 +36,9 @@ const recursiveleSetParents = (filter: OntologyFilter, childName: string) => {
 
     parents.forEach((parent: OntologyEdge) => {
         newFilter = recursiveleSetParents(newFilter, parent.source);
-        newFilter[parent.source].state = SELECTED;
+        if (newFilter[parent.source].level > 2) {
+            newFilter[parent.source].state = SELECTED;
+        }
     });
 
     return newFilter;
@@ -69,20 +71,36 @@ export const filteredAnalytics = (filter: OntologyFilter) => {
     if (selectedWhy.length > 0) {
         analyticsList = analyticsList
             .filter(
-                (item: AnalyticType) => [...selectedWhy].filter((e: string) => item.why.includes(e)).length >= selectedWhy.length - 1
-            )
+                (item: AnalyticType) => {
+                    const whySubset = [...selectedWhy].filter((e: string) => item.why.includes(e));
+                    // console.log(">> ", whySubset.length > 0 && whySubset.length >= selectedWhy.length, whySubset, selectedWhy, item.why)
+                    return whySubset.length > 0 && whySubset.length >= selectedWhy.length;
+                })
     } if (selectedWhere.length > 0) {
         analyticsList = analyticsList
             .filter(
-                (item: AnalyticType) => [...selectedWhere].filter((e: string) => item.where.includes(e)).length >= selectedWhere.length - 1
+                (item: AnalyticType) => {
+                    const whereSubset = [...selectedWhere].filter((e: string) => item.where.includes(e));
+                    // console.log(">> ", whereSubset.length > 0 && whereSubset.length >= selectedWhere.length, whereSubset, selectedWhere, item.where)
+                    return whereSubset.length > 0 && whereSubset.length >= selectedWhere.length;
+                }
             )
     } if (selectedWhat.length > 0) {
         analyticsList = analyticsList
             .filter(
-                (item: AnalyticType) => [...selectedWhat].filter((e: string) => item.what.includes(e)).length >= selectedWhat.length - 1
+                (item: AnalyticType) => {
+                    const whatSubset = [...selectedWhat].filter((e: string) => item.what.includes(e));
+                    // console.log(">> ", whatSubset.length > 0 && whatSubset.length >= selectedWhat.length, whatSubset, selectedWhat, item.what)
+                    return whatSubset.length > 0 && whatSubset.length >= selectedWhat.length;
+                }
             )
     }
-    return analyticsList.sort(alphabeticCompare);
+    return {
+        analytics: analyticsList.sort(alphabeticCompare),
+        why: selectedWhy,
+        where: selectedWhere,
+        what: selectedWhat
+    };
 }
 
 const _filterOptionSelected = (state: OntologyState, itemName: string) => {
@@ -97,7 +115,7 @@ const _filterOptionSelected = (state: OntologyState, itemName: string) => {
         state.filter = newFilter;
         state.filter = recursiveleSetParents(newFilter, itemName);
         state.filter = recursivelySetChildren(newFilter, itemName);
-        state.filter = _setAvilableFilter(state, filteredAnalytics(state.filter));
+        state.filter = _setAvilableFilter(state, filteredAnalytics(state.filter).analytics);
     }
 
     console.log("++ Option selected:", itemName)

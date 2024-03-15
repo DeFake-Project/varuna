@@ -40,7 +40,7 @@ const OntologyContainer = () => {
             } nodenames={thirdGen} />
             : null;
         return (
-            <div className={`${blockName}-blocks-container option-block-group flex flex-wrap p-4`}>
+            <div className={`${blockName}-blocks-container option-block-group`}>
                 {firstBlock}
                 {secondBlock}
                 {thirdBlock}
@@ -49,7 +49,7 @@ const OntologyContainer = () => {
     }
 
     return (
-        <div className="ontology-container">
+        <section className="ontology-container">
             {progressiveComponent("why", {
                 prefix: ["I think my content is a", "in the form of", "in the"],
                 suffix: ["", "", "category"]
@@ -62,7 +62,7 @@ const OntologyContainer = () => {
                 prefix: ["I want to search within", " ", " "],
                 suffix: [" ", " ", " "]
             })}
-        </div>
+        </section>
     )
     // <OptionBlock key={`${block.id}-block`} title={block.name} data={childrenArray} />
 };
