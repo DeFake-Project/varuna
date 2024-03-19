@@ -2,6 +2,10 @@
     display: grid;
     grid-template-columns: 3fr 2fr;
 
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+    }
 
     .analytics-sidebar {
         padding: 0 12px;
