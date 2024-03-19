@@ -110,6 +110,7 @@ const _filterOptionSelected = (state: OntologyState, itemName: string) => {
         newFilter[itemName].state = EXISTS;
         state.filter = newFilter;
         state.filter = recursivelyUnsetChildren(newFilter, itemName);
+        state.filter = _setAvilableFilter(state, filteredAnalytics(state.filter).analytics);
     } else {
         newFilter[itemName].state = SELECTED;
         state.filter = newFilter;
