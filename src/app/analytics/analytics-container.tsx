@@ -18,9 +18,11 @@ const AnalyticsContainer = () => {
     } = filteredAnalytics(filter);
     // console.log(">> ", analyticsList)
 
-    const analyticsBlocks = analyticsList.analytics.map(
-        (item: AnalyticType, index: number) => <AnalyticBlock key={`analytic-${index}`} data={item} />
-    )
+    const analyticsBlocks = analyticsList.analytics.length > 0
+        ? analyticsList.analytics.map(
+            (item: AnalyticType, index: number) => <AnalyticBlock key={`analytic-${index}`} data={item} />
+        )
+        : <p>No analytics available for the current selection</p>;
 
     return (
         <div className="analytics-sidebar">
