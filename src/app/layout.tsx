@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
 import "./styles/global.scss";
 import StoreProvider from "./StoreProvider";
+import Modal from "./shared/modal";
 
 export const metadata: Metadata = {
   title: "DiM-FOntology",
@@ -18,7 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <StoreProvider>
-        <body className={quicksand.className}>{children}</body>
+        <body className={quicksand.className}>
+          {children}
+          <Modal />
+        </body>
       </StoreProvider>
     </html>
   );

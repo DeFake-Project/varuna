@@ -1,5 +1,6 @@
 import React from "react";
 import { AnalyticType } from "@/lib/customTypes";
+import Link from "next/link";
 
 interface AnalyticBlockProps {
     data: AnalyticType
@@ -67,8 +68,8 @@ const AnalyticBlock = ({ data }: AnalyticBlockProps) => {
                         </li>
                     </ul>
                     <div className="analytic-item-description">
-                        <p className="text-gray-500">{data.description}</p>
-                        <a
+                        <p>{data.description}</p>
+                        {/* <a
                             href={data.paperURL}
                             target="_blank"
                             className=""
@@ -81,11 +82,10 @@ const AnalyticBlock = ({ data }: AnalyticBlockProps) => {
                             className=""
                         >
                             Code URL
-                        </a>
-                        <button
-                            className="">
-                            Use Analytic
-                        </button>
+                        </a> */}
+                        <Link href={`?modal=true&analytic=${data.id}`}>
+                            <button type="button" className="button">Use Analytic</button>
+                        </Link>
                     </div>
                 </div>
             )}

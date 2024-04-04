@@ -31,3 +31,34 @@
         color: $white;
     }
 }
+
+button {
+    appearance: none;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+
+    &::-moz-focus-inner {
+        border: 0;
+    }
+}
+
+.button {
+    display: inline-block;
+    padding: 8px 16px;
+    background: $primary-color;
+    color: $white;
+    border-radius: $border-radius-default;
+    font-size: 1em;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background: darken($primary-color, 10%);
+    }
+}
