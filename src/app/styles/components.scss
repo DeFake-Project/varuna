@@ -139,6 +139,10 @@
 
         &.selected {
             background: $why;
+
+            ~.available {
+                background: transparentize($why, 0.5);
+            }
         }
 
         &.available {
@@ -164,6 +168,10 @@
 
         &.selected {
             background: $where;
+
+            ~.available {
+                background: transparentize($where, 0.5);
+            }
         }
 
         &.available {
@@ -189,6 +197,10 @@
 
         &.selected {
             background: $what-spatial;
+
+            ~.available {
+                background: transparentize($what-spatial, 0.5);
+            }
         }
 
         &.available {
