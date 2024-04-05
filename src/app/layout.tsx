@@ -3,6 +3,7 @@ import { Quicksand } from "next/font/google";
 import "./styles/global.scss";
 import StoreProvider from "./StoreProvider";
 import Modal from "./shared/modal";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "DiM-FOntology",
@@ -21,7 +22,9 @@ export default function RootLayout({
       <StoreProvider>
         <body className={quicksand.className}>
           {children}
-          <Modal />
+          <Suspense>
+            <Modal />
+          </Suspense>
         </body>
       </StoreProvider>
     </html>
