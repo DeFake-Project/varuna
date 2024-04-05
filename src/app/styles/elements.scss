@@ -30,6 +30,21 @@
         background: $what-spatial;
         color: $white;
     }
+
+    &.fake {
+        background: $fake;
+        color: $white;
+    }
+
+    &.real {
+        background: $real;
+        color: $white;
+    }
+
+    &.sus {
+        background: $sus;
+        color: $white;
+    }
 }
 
 button {
@@ -58,7 +73,67 @@ button {
     text-decoration: none;
     transition: background-color 0.3s ease;
 
+    &.button-small {
+        padding: 4px 8px;
+        font-size: 0.8em;
+    }
+
+    &.button-secondary {
+        background: $white-200;
+        color: $black-700;
+    }
+
     &:hover {
         background: darken($primary-color, 10%);
+
+        &.button-secondary {
+            background: $white-300;
+        }
+    }
+
+    &.close-button {
+        background: $white-200;
+        color: $black-700;
+        padding: 4px 8px;
+
+        &:hover {
+            background: $white-300;
+        }
+    }
+}
+
+input {
+    appearance: none;
+    border: 1px solid $black-500;
+    padding: 8px;
+    border-radius: $border-radius-default;
+    font-size: 1em;
+    outline: none;
+
+    &::placeholder {
+        color: $white-400;
+    }
+
+    &:active,
+    &:focus {
+        border-color: $primary-color;
+    }
+}
+
+textarea {
+    appearance: none;
+    border: 1px solid $black-500;
+    padding: 8px;
+    border-radius: $border-radius-default;
+    font-size: 1em;
+    outline: none;
+
+    &::placeholder {
+        color: $white-400;
+    }
+
+    &:active,
+    &:focus {
+        border-color: $primary-color;
     }
 }

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AnalyticType } from "@/lib/customTypes";
 import { useState } from "react";
 import { text } from "stream/consumers";
+import { CloseIcon } from "./icons";
 
 const analytics = require("@/data/analytics.json");
 
@@ -13,7 +14,7 @@ function Modal() {
     const searchParams = useSearchParams();
     const modal = searchParams.get("modal");
     const analytic = searchParams.get("analytic");
-    const accuracy = searchParams.get("acc");
+    const accuracy = Number(searchParams.get("acc"));
     const pathname = usePathname();
 
     const analyticData: AnalyticType = analytics.find((item: AnalyticType) => item.id === analytic);
@@ -50,11 +51,20 @@ function Modal() {
             </li>
         ));
 
+        const accuracyClass = accuracy < 50 ? "real" : accuracy < 75 ? "sus" : "fake";
+
         const textToCopy = `<${analyticData.name}><${accuracy}%> Report: ${textarea}`;
 
         content = (
             <div className="modal-content">
-                <h3>{analyticData.name}</h3>
+                <div className="modal-header">
+                    <h3>{analyticData.name}</h3>
+                    <Link href={pathname}>
+                        <button title="close" type="button" className="button close-button">
+                            <CloseIcon width={20} height={20} color="red" />
+                        </button>
+                    </Link>
+                </div>
                 {<ul className="analytic-item-ontology">
                     {whys && <li className="analytic-item-ontology-content">
                         <span>why</span>
@@ -78,16 +88,16 @@ function Modal() {
                 {analyticData && <div className="analytic-item-description">
                     <p>{analyticData.description}</p>
                 </div>}
-                {accuracy && <div className="analytic-item-accuracy">
-                    <p>Accuracy: {accuracy}%</p>
+                {<div className="analytic-item-accuracy">
+                    <span className={`pill ${accuracyClass}`}>{accuracy}%</span>
+                    <span>
+                        chance the content is manipulated
+                    </span>
                 </div>}
                 <div className="modal-input-area">
                     <label htmlFor="textarea">Write an excerpt for conveying these results in your report</label>
-                    <textarea name="textarea" onChange={handleTextareaChange} id="textarea" cols={30} rows={3}>{textarea}</textarea>
+                    <textarea name="textarea" onChange={handleTextareaChange} id="textarea" cols={30} rows={3} value={textarea}></textarea>
                 </div>
-                {/* <Link href={pathname}>
-                    <button type="button" className="button">Close Modal</button>
-                </Link> */}
                 <button className="button" onClick={() => { navigator.clipboard.writeText(textToCopy) }}>Copy Content</button>
             </div>
         )

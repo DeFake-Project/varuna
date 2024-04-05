@@ -69,20 +69,22 @@ const AnalyticBlock = ({ data }: AnalyticBlockProps) => {
                     </ul>
                     <div className="analytic-item-description">
                         <p>{data.description}</p>
-                        {/* <a
+                    </div>
+                    <div className="analytic-item-footer">
+                        <a
                             href={data.paperURL}
                             target="_blank"
-                            className=""
+                            className="button button-small button-secondary"
                         >
                             Paper URL
                         </a>
                         <a
                             href={data.codeURL}
                             target="_blank"
-                            className=""
+                            className="button button-small button-secondary"
                         >
                             Code URL
-                        </a> */}
+                        </a>
                         <Link href={`?modal=true&analytic=${data.id}`}>
                             <button type="button" className="button">Use Analytic</button>
                         </Link>
