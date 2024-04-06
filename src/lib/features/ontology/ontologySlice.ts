@@ -78,7 +78,7 @@ export const filteredAnalytics = (filter: OntologyFilter = {}, searchString: str
         return a.id.localeCompare(b.id);
     }
 
-    if (searchString.length == 0) {
+    if (searchString.length == 0 && selectedWhy.length == 0 && selectedWhere.length == 0 && selectedWhat.length == 0) {
         return {
             analytics: analyticsList.sort(alphabeticCompare),
             why: [],
@@ -86,13 +86,17 @@ export const filteredAnalytics = (filter: OntologyFilter = {}, searchString: str
             what: []
         }
     } else if (searchString.length > 0) {
+        const nameMatch = fuzz.get(searchString)
+        const descMatch = fuzzDesc.get(searchString, null, 0.6)
+        console.log(">> ", nameMatch, descMatch)
+
         analyticsList = analyticsList
             .filter(
                 (item: AnalyticType) => {
                     if (useFuzz) {
-                        // console.log(">> ", fuzz.get(searchString)?.map(i => i[1]).includes(item.id), fuzz.get(searchString)?.map(i => i[1]), item.id, fuzzDesc.get(searchString, null, 0.6)?.map(i => i[1]).includes(item.description), fuzzDesc.get(searchString, null, 0.6)?.map(i => i[1]), item.description)
-                        return fuzz.get(searchString)?.map(i => i[1]).some((e: string) => item.name.includes(e))
-                            || fuzzDesc.get(searchString, null, 0.7)?.map(i => i[1]).some((e: string) => item.description.includes(e));
+                        // console.log(">> ", nameMatch?.map(i => i[1]).includes(item.id), nameMatch?.map(i => i[1]), item.id, descMatch?.map(i => i[1]).includes(item.description), descMatch?.map(i => i[1]), item.description)
+                        return nameMatch?.map(i => i[1]).some((e: string) => item.name.includes(e))
+                            || descMatch?.map(i => i[1]).some((e: string) => item.description.includes(e));
                     }
                     return item.name.toLowerCase().includes(searchString.toLowerCase())
                 }

@@ -32,7 +32,7 @@ const AnalyticsContainer = ({ hasOntology }: { hasOntology: boolean }) => {
 
     const analyticsBlocks = analyticsList.analytics.length > 0
         ? analyticsList.analytics.map(
-            (item: AnalyticType, index: number) => <AnalyticBlock key={`analytic-${index}`} data={item} />
+            (item: AnalyticType, index: number) => <AnalyticBlock key={`analytic-${index}`} data={item} hasOntology={hasOntology} />
         )
         : <p>No analytics available for the current selection</p>;
 

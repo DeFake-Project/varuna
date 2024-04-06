@@ -3,7 +3,6 @@ import { useSearchParams, usePathname } from "next/navigation";
 import Link from "next/link";
 import { AnalyticType } from "@/lib/customTypes";
 import { useState } from "react";
-import { text } from "stream/consumers";
 import { CloseIcon } from "./icons";
 
 const analytics = require("@/data/analytics.json");
@@ -16,6 +15,7 @@ function Modal() {
     const analytic = searchParams.get("analytic");
     const accuracy = Number(searchParams.get("acc"));
     const pathname = usePathname();
+    const hasOntology = pathname !== "/analytics";
 
     const analyticData: AnalyticType = analytics.find((item: AnalyticType) => item.id === analytic);
 
@@ -65,7 +65,7 @@ function Modal() {
                         </button>
                     </Link>
                 </div>
-                {<ul className="analytic-item-ontology">
+                {hasOntology && <ul className="analytic-item-ontology">
                     {whys && <li className="analytic-item-ontology-content">
                         <span>why</span>
                         <ul className="analytic-item-ontology-list">

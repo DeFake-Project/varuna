@@ -3,10 +3,11 @@ import { AnalyticType } from "@/lib/customTypes";
 import Link from "next/link";
 
 interface AnalyticBlockProps {
-    data: AnalyticType
+    data: AnalyticType,
+    hasOntology: boolean
 }
 
-const AnalyticBlock = ({ data }: AnalyticBlockProps) => {
+const AnalyticBlock = ({ data, hasOntology = true }: AnalyticBlockProps) => {
     const [isCollapsed, setIsCollapsed] = React.useState(true);
 
     const toggleCollapse = () => {
@@ -47,26 +48,28 @@ const AnalyticBlock = ({ data }: AnalyticBlockProps) => {
             </div>
             {!isCollapsed && (
                 <div className="analytic-item-content">
-                    <ul className="analytic-item-ontology">
-                        <li className="analytic-item-ontology-content">
-                            <span>why</span>
-                            <ul className="analytic-item-ontology-list">
-                                {whys}
-                            </ul>
-                        </li>
-                        <li className="analytic-item-ontology-content">
-                            <span>where</span>
-                            <ul className="analytic-item-ontology-list">
-                                {wheres}
-                            </ul>
-                        </li>
-                        <li className="analytic-item-ontology-content">
-                            <span>what</span>
-                            <ul className="analytic-item-ontology-list">
-                                {whats}
-                            </ul>
-                        </li>
-                    </ul>
+                    {hasOntology && (
+                        <ul className="analytic-item-ontology">
+                            <li className="analytic-item-ontology-content">
+                                <span>why</span>
+                                <ul className="analytic-item-ontology-list">
+                                    {whys}
+                                </ul>
+                            </li>
+                            <li className="analytic-item-ontology-content">
+                                <span>where</span>
+                                <ul className="analytic-item-ontology-list">
+                                    {wheres}
+                                </ul>
+                            </li>
+                            <li className="analytic-item-ontology-content">
+                                <span>what</span>
+                                <ul className="analytic-item-ontology-list">
+                                    {whats}
+                                </ul>
+                            </li>
+                        </ul>
+                    )}
                     <div className="analytic-item-description">
                         <p>{data.description}</p>
                     </div>
