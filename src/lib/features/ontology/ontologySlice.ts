@@ -3,10 +3,20 @@ import generateLinearOntology from '@/app/helpers/get-linear-ontology';
 import processOntology from '@/app/helpers/get-ontology-tree';
 import { OntologyFilter, OntologyEdge, OntologyState, OntologyNode, AnalyticType, AnalyticFilter } from '@/lib/customTypes';
 import { SELECTED, AVAILABLE, EXISTS } from '@/lib/constants';
+import FuzzySet from 'fuzzyset';
 
 const nodes = require("@/data/nodes.json");
 const edges = require("@/data/edges.json");
 const analytics = require("@/data/analytics.json");
+
+const onlyUnique = (value: string, index: number, self: string) => {
+    return self.indexOf(value) === index;
+}
+
+const useFuzz = true;
+
+const fuzz = FuzzySet(analytics.flatMap((item: AnalyticType) => item.name.split(" ")).filter(onlyUnique));
+const fuzzDesc = FuzzySet(analytics.flatMap((item: AnalyticType) => item.description.split(" ")).filter(onlyUnique));
 
 const initialState: OntologyState = {
     filter: {},
@@ -79,7 +89,12 @@ export const filteredAnalytics = (filter: OntologyFilter = {}, searchString: str
         analyticsList = analyticsList
             .filter(
                 (item: AnalyticType) => {
-                    return item.name.toLowerCase().includes(searchString.toLowerCase());
+                    if (useFuzz) {
+                        // console.log(">> ", fuzz.get(searchString)?.map(i => i[1]).includes(item.id), fuzz.get(searchString)?.map(i => i[1]), item.id, fuzzDesc.get(searchString, null, 0.6)?.map(i => i[1]).includes(item.description), fuzzDesc.get(searchString, null, 0.6)?.map(i => i[1]), item.description)
+                        return fuzz.get(searchString)?.map(i => i[1]).some((e: string) => item.name.includes(e))
+                            || fuzzDesc.get(searchString, null, 0.7)?.map(i => i[1]).some((e: string) => item.description.includes(e));
+                    }
+                    return item.name.toLowerCase().includes(searchString.toLowerCase())
                 }
             )
         return {

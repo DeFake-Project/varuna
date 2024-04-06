@@ -28,7 +28,7 @@ const AnalyticsContainer = ({ hasOntology }: { hasOntology: boolean }) => {
     } else {
         analyticsList = filteredAnalytics({}, searchString)
     }
-    console.log(">> ", analyticsList)
+    // console.log(">> ", analyticsList)
 
     const analyticsBlocks = analyticsList.analytics.length > 0
         ? analyticsList.analytics.map(
