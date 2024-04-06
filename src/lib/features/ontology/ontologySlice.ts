@@ -21,7 +21,8 @@ const fuzzDesc = FuzzySet(analytics.flatMap((item: AnalyticType) => item.descrip
 const initialState: OntologyState = {
     filter: {},
     tree: {},
-    isLoading: false
+    isLoading: false,
+    startTime: Date.now()
 };
 
 const recursivelySetChildren = (filter: OntologyFilter, parentName: string) => {

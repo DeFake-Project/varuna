@@ -2,8 +2,9 @@
 import { useSearchParams, usePathname } from "next/navigation";
 import Link from "next/link";
 import { AnalyticType } from "@/lib/customTypes";
-import { useState } from "react";
+import { use, useState } from "react";
 import { CloseIcon } from "./icons";
+import { useAppSelector } from "@/lib/hooks";
 
 const analytics = require("@/data/analytics.json");
 
@@ -16,6 +17,7 @@ function Modal() {
     const accuracy = Number(searchParams.get("acc"));
     const pathname = usePathname();
     const hasOntology = pathname !== "/analytics";
+    const startTime = useAppSelector((state) => state.ontology.startTime);
 
     const analyticData: AnalyticType = analytics.find((item: AnalyticType) => item.id === analytic);
 
@@ -53,7 +55,7 @@ function Modal() {
 
         const accuracyClass = accuracy < 50 ? "real" : accuracy < 75 ? "sus" : "fake";
 
-        const textToCopy = `<${analyticData.name}><${accuracy}%> Report: ${textarea}`;
+        const textToCopy = `<${analyticData.name}><${accuracy}%><${(Date.now() - startTime) / 1000}s> Report: ${textarea}`;
 
         content = (
             <div className="modal-content">
