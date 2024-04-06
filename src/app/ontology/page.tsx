@@ -19,7 +19,7 @@ export default function Page() {
       </section>
       <OntologyContainer />
       <aside className="sidebar">
-        <AnalyticsContainer />
+        <AnalyticsContainer hasOntology={true} />
       </aside>
     </main>
   </>;

@@ -58,7 +58,7 @@ const recursivelyUnsetChildren = (filter: OntologyFilter, parentName: string) =>
     return newFilter;
 }
 
-export const filteredAnalytics = (filter: OntologyFilter) => {
+export const filteredAnalytics = (filter: OntologyFilter = {}, searchString: string = "") => {
     const selectedWhy: string[] = Object.keys(filter).filter((key) => filter[key].state === "selected" && filter[key].group === 1);
     const selectedWhere: string[] = Object.keys(filter).filter((key) => filter[key].state === "selected" && filter[key].group === 2);
     const selectedWhat: string[] = Object.keys(filter).filter((key) => filter[key].state === "selected" && filter[key].group === 3);
@@ -68,39 +68,61 @@ export const filteredAnalytics = (filter: OntologyFilter) => {
         return a.id.localeCompare(b.id);
     }
 
-    if (selectedWhy.length > 0) {
+    if (searchString.length == 0) {
+        return {
+            analytics: analyticsList.sort(alphabeticCompare),
+            why: [],
+            where: [],
+            what: []
+        }
+    } else if (searchString.length > 0) {
         analyticsList = analyticsList
             .filter(
                 (item: AnalyticType) => {
-                    const whySubset = [...selectedWhy].filter((e: string) => item.why.includes(e));
-                    // console.log(">> ", whySubset.length > 0 && whySubset.length >= selectedWhy.length, whySubset, selectedWhy, item.why)
-                    return whySubset.length > 0 && whySubset.length >= selectedWhy.length;
-                })
-    } if (selectedWhere.length > 0) {
-        analyticsList = analyticsList
-            .filter(
-                (item: AnalyticType) => {
-                    const whereSubset = [...selectedWhere].filter((e: string) => item.where.includes(e));
-                    // console.log(">> ", whereSubset.length > 0 && whereSubset.length >= selectedWhere.length, whereSubset, selectedWhere, item.where)
-                    return whereSubset.length > 0 && whereSubset.length >= selectedWhere.length;
+                    return item.name.toLowerCase().includes(searchString.toLowerCase());
                 }
             )
-    } if (selectedWhat.length > 0) {
-        analyticsList = analyticsList
-            .filter(
-                (item: AnalyticType) => {
-                    const whatSubset = [...selectedWhat].filter((e: string) => item.what.includes(e));
-                    // console.log(">> ", whatSubset.length > 0 && whatSubset.length >= selectedWhat.length, whatSubset, selectedWhat, item.what)
-                    return whatSubset.length > 0 && whatSubset.length >= selectedWhat.length;
-                }
-            )
+        return {
+            analytics: analyticsList.sort(alphabeticCompare),
+            why: [],
+            where: [],
+            what: []
+        }
+    } else {
+        if (selectedWhy.length > 0) {
+            analyticsList = analyticsList
+                .filter(
+                    (item: AnalyticType) => {
+                        const whySubset = [...selectedWhy].filter((e: string) => item.why.includes(e));
+                        // console.log(">> ", whySubset.length > 0 && whySubset.length >= selectedWhy.length, whySubset, selectedWhy, item.why)
+                        return whySubset.length > 0 && whySubset.length >= selectedWhy.length;
+                    })
+        } if (selectedWhere.length > 0) {
+            analyticsList = analyticsList
+                .filter(
+                    (item: AnalyticType) => {
+                        const whereSubset = [...selectedWhere].filter((e: string) => item.where.includes(e));
+                        // console.log(">> ", whereSubset.length > 0 && whereSubset.length >= selectedWhere.length, whereSubset, selectedWhere, item.where)
+                        return whereSubset.length > 0 && whereSubset.length >= selectedWhere.length;
+                    }
+                )
+        } if (selectedWhat.length > 0) {
+            analyticsList = analyticsList
+                .filter(
+                    (item: AnalyticType) => {
+                        const whatSubset = [...selectedWhat].filter((e: string) => item.what.includes(e));
+                        // console.log(">> ", whatSubset.length > 0 && whatSubset.length >= selectedWhat.length, whatSubset, selectedWhat, item.what)
+                        return whatSubset.length > 0 && whatSubset.length >= selectedWhat.length;
+                    }
+                )
+        }
+        return {
+            analytics: analyticsList.sort(alphabeticCompare),
+            why: selectedWhy,
+            where: selectedWhere,
+            what: selectedWhat
+        };
     }
-    return {
-        analytics: analyticsList.sort(alphabeticCompare),
-        why: selectedWhy,
-        where: selectedWhere,
-        what: selectedWhat
-    };
 }
 
 const _filterOptionSelected = (state: OntologyState, itemName: string) => {

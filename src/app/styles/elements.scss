@@ -137,3 +137,22 @@ textarea {
         border-color: $primary-color;
     }
 }
+
+input {
+    appearance: none;
+    border: 1px solid $white-200;
+    background: $white;
+    padding: 8px;
+    border-radius: $border-radius-default;
+    font-size: 1em;
+    color: $black-700;
+    outline: none;
+
+    &::placeholder {
+        color: $black-500;
+    }
+
+    &:focus {
+        border-color: $primary-color;
+    }
+}
