@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "DiM-FOntology | Analytics List",
-  description: "A list of digital myltimedia forensics methods for intelligence analysis and investigation",
+  description: "A list of digital myltimedia forensics analytics for intelligence analysis and investigation",
 };
 
 export default function Page() {
