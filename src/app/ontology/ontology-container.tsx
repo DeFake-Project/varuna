@@ -54,13 +54,13 @@ const OntologyContainer = () => {
                 prefix: ["I think my content is a", "in the form of", "in the"],
                 suffix: ["", "", "category"]
             })}
-            {progressiveComponent("what", {
-                prefix: ["I want to analyze", "content in the form of"],
-                suffix: ["", "inconsistencies"]
-            })}
             {progressiveComponent("where", {
                 prefix: ["I want to search within", " ", " "],
                 suffix: [" ", " ", " "]
+            })}
+            {progressiveComponent("what", {
+                prefix: ["I want to analyze", "content in the form of"],
+                suffix: ["", "inconsistencies"]
             })}
         </section>
     )

@@ -41,13 +41,14 @@ const recursivelySetChildren = (filter: OntologyFilter, parentName: string) => {
 
 const recursiveleSetParents = (filter: OntologyFilter, childName: string) => {
     const parents = edges.filter((edge: any) => edge.target === childName);
+    console.log(">> ", parents, childName)
     if (parents.length == 0 || (parents.length == 1 && parents[0].source == "start")) return filter;
 
     let newFilter: OntologyFilter = filter;
 
     parents.forEach((parent: OntologyEdge) => {
         newFilter = recursiveleSetParents(newFilter, parent.source);
-        if (newFilter[parent.source].level > 2) {
+        if (newFilter[parent.source].level > 1) {
             newFilter[parent.source].state = SELECTED;
         }
     });
@@ -148,6 +149,7 @@ export const filteredAnalytics = (filter: OntologyFilter = {}, searchString: str
 const _filterOptionSelected = (state: OntologyState, itemName: string) => {
     // set progeny to available
     const newFilter: OntologyFilter = state.filter;
+    console.log("++> Option selected:", itemName, newFilter[itemName].state)
     if (newFilter[itemName].state === SELECTED) {
         newFilter[itemName].state = EXISTS;
         state.filter = newFilter;
@@ -191,8 +193,10 @@ const _updateFilter = (state: any, action: PayloadAction<any>, actionType: strin
             break;
         case "available":
             console.log("++ Set available:", action)
+            break;
         case "reset":
             console.log("++ Reset filter")
+
             break;
         default:
             break;

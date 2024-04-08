@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "DiM-FOntology | Ontology",
-  description: "A digital multimedia forensics ontology for intellence analysis and investigation",
+  description: "A digital media forensics ontology for intellence analysis and investigation",
 };
 
 export default function Page() {
