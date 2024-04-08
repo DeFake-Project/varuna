@@ -90,6 +90,30 @@
         "description": "Manipulated image content created using deep learning techniques"
     },
     {
+        "id": "synthetic-image",
+        "name": "synthetic-image",
+        "group": 1,
+        "description": "Generated image"
+    },
+    {
+        "id": "synthetic-video",
+        "name": "synthetic-video",
+        "group": 1,
+        "description": "Generated video"
+    },
+    {
+        "id": "synthetic-audio",
+        "name": "synthetic-audio",
+        "group": 1,
+        "description": "Generated audio"
+    },
+    {
+        "id": "synthetic-text",
+        "name": "synthetic-text",
+        "group": 1,
+        "description": "Generated text"
+    },
+    {
         "id": "deepfake-text",
         "name": "deepfake-text",
         "group": 1,

@@ -242,7 +242,7 @@
         "what": [
             "spatial",
             "spatial-pixel-level",
-            "frequency"
+            "spatial-frequency"
         ]
     },
     {

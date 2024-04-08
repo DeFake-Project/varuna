@@ -154,6 +154,34 @@
         "type": "ontology"
     },
     {
+        "source": "synthetic-media",
+        "target": "synthetic-image",
+        "label": "for",
+        "weight": 3,
+        "type": "ontology"
+    },
+    {
+        "source": "synthetic-media",
+        "target": "synthetic-video",
+        "label": "for",
+        "weight": 3,
+        "type": "ontology"
+    },
+    {
+        "source": "synthetic-media",
+        "target": "synthetic-audio",
+        "label": "for",
+        "weight": 3,
+        "type": "ontology"
+    },
+    {
+        "source": "synthetic-media",
+        "target": "synthetic-text",
+        "label": "for",
+        "weight": 3,
+        "type": "ontology"
+    },
+    {
         "source": "human",
         "target": "human-face",
         "label": "within",
