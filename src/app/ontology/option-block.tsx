@@ -14,14 +14,14 @@ const OptionBlock: React.FC<OptionBlockProps> = ({ title, nodenames }) => {
     const filter: OntologyFilter = useAppSelector((state) => state.ontology.filter);
 
     // sort by state
-    // const sortByState = (a: string, b: string) => {
-    //     if (filter[a].state === "selected") return -1;
-    //     if (filter[b].state === "selected") return 1;
-    //     if (filter[a].state === "available") return -1;
-    //     if (filter[b].state === "available") return 1;
-    //     return 0;
-    // }
-    // nodenames.sort(sortByState);
+    const sortByState = (a: string, b: string) => {
+        if (filter[a].state === "selected") return -1;
+        if (filter[b].state === "selected") return 1;
+        if (filter[a].state === "available") return -1;
+        if (filter[b].state === "available") return 1;
+        return 0;
+    }
+    nodenames.sort(sortByState);
 
     return (
         <div className={`${title} option-block scroll-shadows`}>
