@@ -2,7 +2,7 @@
     {
         "id": "mesonet",
         "name": "MesoNet",
-        "description": "A compact facial video forgery detection network",
+        "description": "This method uses a deep learning approach for detecting face tampering in videos, specifically targeting Deepfake and Face2Face techniques. It uses two neural network architectures, Meso-4 and MesoInception-4, which are designed with a small number of layers to focus on mesoscopic properties of images. These networks are trained and tested on datasets created from online videos and demonstrate high detection rates, with over 98% accuracy for Deepfake and 95% for Face2Face. The technique emphasizes the efficiency and low computational cost of the proposed methods, making them suitable for real-world applications.",
         "paperTitle": "MesoNet: a Compact Facial Video Forgery Detection Network",
         "paperURL": "https://arxiv.org/abs/1809.00888",
         "codeURL": "https://github.com/DariusAf/MesoNet",
@@ -25,7 +25,7 @@
     {
         "id": "lip-shape",
         "name": "Lip Shape Analysis",
-        "description": "Analyzing lip shape for face forgery detection",
+        "description": "The technique focuses on detecting deepfake videos by analyzing inconsistencies in mouth movements. It involves two main stages: pretraining a spatio-temporal network on lipreading to learn rich representations related to natural mouth motion, and then finetuning the network on real and forged data to detect fake videos based on mouth movements without overfitting to low-level, manipulation-specific artifacts. LipForensics achieves state-of-the-art generalization to unseen forgery types and robustness to common corruptions, making it effective for real-world face forgery detection.",
         "paperTitle": "Lips Don't Lie: A Generalisable and Robust Approach to Face Forgery Detection",
         "paperURL": "https://openaccess.thecvf.com/content/CVPR2021/papers/Haliassos_Lips_Dont_Lie_A_Generalisable_and_Robust_Approach_To_Face_CVPR_2021_paper.pdf",
         "codeURL": "unavailable",
@@ -47,10 +47,10 @@
     {
         "id": "blood-flow",
         "name": "Blood Flow Analysis",
-        "description": "Analyzing blood flow patterns for deepfake detection",
+        "description": "The methodology, known as DeepRhythm, leverages the concept of remote visual photoplethysmography (PPG) to detect DeepFakes by analyzing the heartbeat rhythms in video frames. It employs a motion-magnified spatial-temporal representation (MMSTR) to highlight the heart rhythm signals and uses a dual-spatial-temporal attention network to adapt to dynamic face changes and various fake types. This approach is robust against different datasets and challenging degradations, making it a powerful tool for DeepFake detection.",
         "paperTitle": "DeepRhythm: Exposing DeepFakes with Attentional Visual Rhythms",
         "paperURL": "https://dl.acm.org/doi/10.1145/3394171.3413707",
-        "codeURL": "unavailable",
+        "codeURL": "",
         "why": [
             "deepfake",
             "deepfake-video",
