@@ -614,7 +614,7 @@
     {
         "id": "aural",
         "name": "Aural & Oral Dynamic",
-        "description": "Detecting deepfake by looking at human ears",
+        "description": "This analytic tracks the motion of the ear's outer regions (helix, tragus, and lobule) during speech and correlates it with mouth movements and audio signals. Desynchronization between the aural and oral signals can reveal lip-sync deep fakes where the mouth region has been synthesized without considering the natural ear motions.",
         "paperTitle": "Detecting Deep-Fake Videos from Aural and Oral Dynamics",
         "paperURL": "https://ieeexplore.ieee.org/document/9522902",
         "codeURL": "",
@@ -635,7 +635,7 @@
     {
         "id": "xceptionnet",
         "name": "XceptionNet",
-        "description": "Detecting deepfake by training an XceptionNet",
+        "description": "XceptionNet, initially designed for image classification, is adapted for deepfake detection by modifying its final layer and fine-tuning the network through pre-training and subsequent training epochs. The model, initialized with ImageNet weights, can detect deepfakes, especially the FaceForensics++ dataset proposed in the same paper.",
         "paperTitle": "FaceForensics++: Learning to Detect Manipulated Facial Images",
         "paperURL": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Rossler_FaceForensics_Learning_to_Detect_Manipulated_Facial_Images_ICCV_2019_paper.pdf",
         "codeURL": "",
