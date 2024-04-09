@@ -6,7 +6,7 @@
         "paperTitle": "MesoNet: a Compact Facial Video Forgery Detection Network",
         "paperURL": "https://arxiv.org/abs/1809.00888",
         "codeURL": "https://github.com/DariusAf/MesoNet",
-        "why": [
+        "why": [ 
             "deepfake",
             "deepfake-image",
             "deepfake-video",
@@ -108,7 +108,7 @@
         "what": [
             "spatial",
             "spatial-pixel-level",
-            "blending-artifacts"
+            "blurring-artifacts"
         ]
     },
     {
@@ -119,8 +119,8 @@
         "paperURL": "",
         "codeURL": "",
         "why": [
-            "image-manipulation",
-            "manual-forgery"
+            "manual-forgery",
+            "manual-forgery-image"
         ],
         "where": [
             "scene"
@@ -135,7 +135,7 @@
         "id": "head-pose",
         "name": "Head Pose Inconsistency",
         "description": "Detecting deepfakes by inconsistent head poses",
-        "paperTitle": "Exposing DeepFake Videos By Detecting Face Warping Artifacts",
+        "paperTitle": "Exposing Deep Fakes Using Inconsistent Head Poses",
         "paperURL": "https://ieeexplore.ieee.org/document/8683164",
         "codeURL": "",
         "why": [
@@ -161,6 +161,7 @@
         "paperURL": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9414582",
         "codeURL": "",
         "why": [
+            "synthetic-media",
             "synthetic-image"
         ],
         "where": [
@@ -169,7 +170,7 @@
         ],
         "what": [
             "spatial",
-            "structural"
+            "spatial-structural"
         ],
         "deepLearning": false
     },
@@ -194,7 +195,7 @@
         "what": [
             "spatial",
             "spatial-pixel-level",
-            "frequency"
+            "spatial-frequency"
         ]
     },
     {
@@ -208,7 +209,8 @@
             "deepfake",
             "deepfake-image",
             "deepfake-video",
-            "manual-forgery"
+            "manual-forgery",
+            "manual-forgery-image"
         ],
         "where": [
             "human",
@@ -242,7 +244,7 @@
         "what": [
             "spatial",
             "spatial-pixel-level",
-            "frequency"
+            "spatial-frequency"
         ]
     },
     {
@@ -258,7 +260,7 @@
             "deepfake-video",
             "reenactment",
             "faceswap",
-            "synthetic-video"
+            "synthetic-image"
         ],
         "where": [
             "human",
@@ -462,10 +464,8 @@
         "paperURL": "https://openaccess.thecvf.com/content_CVPR_2019/papers/Wu_ManTra-Net_Manipulation_Tracing_Network_for_Detection_and_Localization_of_Image_CVPR_2019_paper.pdf",
         "codeURL": "https://github.com/pxb615/ManTra-Net",
         "why": [
-            "image-splicing",
-            "image-removal",
-            "image-enhancement",
-            "copy-move"
+            "manual-forgery",
+            "manual-forgery-image"
         ],
         "where": [
             "scene"
@@ -483,6 +483,7 @@
         "paperURL": "https://arxiv.org/pdf/2211.00680.pdf",
         "codeURL": "",
         "why": [
+            "synthetic-media",
             "synthetic-image"
         ],
         "where": [
@@ -491,7 +492,7 @@
         "what": [
             "spatial",
             "spatial-pixel-level",
-            "frequency"
+            "spatial-frequency"
         ]
     },
     {
@@ -507,7 +508,8 @@
             "deepfake-video",
             "reenactment",
             "faceswap",
-            "manual-forgery"
+            "manual-forgery",
+            "manual-forgery-image"            
         ],
         "where": [
             "human",
@@ -523,7 +525,7 @@
     },
     {
         "id": "image-stats",
-        "name": "Image Statistics Analysis",
+        "name": "Image/Video Statistics Analysis",
         "description": "Analyzing image statistics for forgery detection",
         "paperTitle": "",
         "paperURL": "",
@@ -531,7 +533,11 @@
         "why": [
             "deepfake",
             "manual-forgery",
-            "synthetic-image"
+            "manual-forgery-image",
+            "manual-forgery-video",
+            "synthetic-media",
+            "synthetic-image",
+            "synthetic-video",
         ],
         "where": [
             "scene"
@@ -539,7 +545,7 @@
         "what": [
             "spatial",
             "spatial-pixel-level",
-            "frequency"
+            "spatial-frequency"
         ],
         "deepLearning": false
     },
@@ -553,13 +559,14 @@
         "why": [
             "deepfake",
             "manual-forgery",
-            "synthetic-image"
+            "synthetic-media"
         ],
         "where": [
             "file"
         ],
         "what": [
-            "file-structure"
+            "file-analysis",
+            "file-metadata"
         ],
         "deepLearning": false
     },
@@ -593,10 +600,53 @@
         "paperURL": "https://arxiv.org/abs/2312.00195",
         "codeURL": "",
         "why": [
+            "synthetic-media",
             "synthetic-image"
         ],
         "where": [
             "scene"
+        ],
+        "what": [
+            "spatial",
+            "spatial-pixel-level"
+        ]
+    }
+      {
+        "id": "aural",
+        "name": "Aural & Oral Dynamic",
+        "description": "Detecting deepfake by looking at human ears",
+        "paperTitle": "Detecting Deep-Fake Videos from Aural and Oral Dynamics",
+        "paperURL": "https://ieeexplore.ieee.org/document/9522902",
+        "codeURL": "",
+        "why": [
+            "deepfake",
+            "deepfake-video"
+        ],
+        "where": [
+            "human",
+            "human-face",
+            "human-ear"
+        ],
+        "what": [
+            "temporal",
+            "temporal-physiology"
+        ]
+    }
+    {
+        "id": "xceptionnet",
+        "name": "XceptionNet",
+        "description": "Detecting deepfake by training an XceptionNet",
+        "paperTitle": "FaceForensics++: Learning to Detect Manipulated Facial Images",
+        "paperURL": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Rossler_FaceForensics_Learning_to_Detect_Manipulated_Facial_Images_ICCV_2019_paper.pdf",
+        "codeURL": "",
+        "why": [
+            "deepfake",
+            "deepfake-video",
+            "deepfake-image"
+        ],
+        "where": [
+            "human",
+            "human-face"
         ],
         "what": [
             "spatial",

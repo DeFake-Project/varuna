@@ -64,7 +64,7 @@ button {
 }
 
 .button {
-    display: inline-block;
+    display: flex;
     padding: 8px 16px;
     background: $primary-color;
     color: $white;
@@ -72,6 +72,8 @@ button {
     font-size: 1em;
     text-decoration: none;
     transition: background-color 0.3s ease;
+    justify-content: center;
+    gap: 4px;
 
     &.button-small {
         padding: 4px 8px;
@@ -133,6 +135,25 @@ textarea {
     }
 
     &:active,
+    &:focus {
+        border-color: $primary-color;
+    }
+}
+
+input {
+    appearance: none;
+    border: 1px solid $white-200;
+    background: $white;
+    padding: 8px;
+    border-radius: $border-radius-default;
+    font-size: 1em;
+    color: $black-700;
+    outline: none;
+
+    &::placeholder {
+        color: $black-500;
+    }
+
     &:focus {
         border-color: $primary-color;
     }

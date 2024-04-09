@@ -5,7 +5,7 @@ const Header: React.FC = () => {
         <header className="flex items-center justify-between px-4 py-2 bg-gray-800 text-white">
             <div className="flex items-center">
                 {/* <img src="/path/to/logo.png" alt="Logo" className="w-8 h-8 mr-2" /> */}
-                <h1 className="text-lg font-bold">Digital Multimedia Forensics Ontology</h1>
+                <h1 className="text-lg font-bold">Digital Media Forensics Ontology</h1>
             </div>
             <nav>
                 {/* <ul className="flex space-x-4">

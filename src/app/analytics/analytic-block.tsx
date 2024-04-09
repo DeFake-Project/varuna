@@ -2,11 +2,15 @@ import React from "react";
 import { AnalyticType } from "@/lib/customTypes";
 import Link from "next/link";
 
+const studyData = require("@/data/study.json");
+
 interface AnalyticBlockProps {
-    data: AnalyticType
+    data: AnalyticType,
+    hasOntology: boolean,
+    studyCode: string | null,
 }
 
-const AnalyticBlock = ({ data }: AnalyticBlockProps) => {
+const AnalyticBlock = ({ data, hasOntology = true, studyCode = null }: AnalyticBlockProps) => {
     const [isCollapsed, setIsCollapsed] = React.useState(true);
 
     const toggleCollapse = () => {
@@ -38,6 +42,16 @@ const AnalyticBlock = ({ data }: AnalyticBlockProps) => {
         </li>
     ));
 
+    let studyParams: string = "";
+    if (studyCode && studyData[studyCode]) {
+        if (studyData[studyCode][data.id]) {
+            studyParams = `&acc${studyData[studyCode][data.id]}`;
+        } else {
+            // assign random number between 1 and 48
+            studyParams = `&acc${Math.floor(Math.random() * 48) + 1}`;
+        }
+    }
+
     return (
         <div className="analytic-item-container">
             <div onClick={toggleCollapse}
@@ -47,26 +61,28 @@ const AnalyticBlock = ({ data }: AnalyticBlockProps) => {
             </div>
             {!isCollapsed && (
                 <div className="analytic-item-content">
-                    <ul className="analytic-item-ontology">
-                        <li className="analytic-item-ontology-content">
-                            <span>why</span>
-                            <ul className="analytic-item-ontology-list">
-                                {whys}
-                            </ul>
-                        </li>
-                        <li className="analytic-item-ontology-content">
-                            <span>where</span>
-                            <ul className="analytic-item-ontology-list">
-                                {wheres}
-                            </ul>
-                        </li>
-                        <li className="analytic-item-ontology-content">
-                            <span>what</span>
-                            <ul className="analytic-item-ontology-list">
-                                {whats}
-                            </ul>
-                        </li>
-                    </ul>
+                    {hasOntology && (
+                        <ul className="analytic-item-ontology">
+                            <li className="analytic-item-ontology-content">
+                                <span>why</span>
+                                <ul className="analytic-item-ontology-list">
+                                    {whys}
+                                </ul>
+                            </li>
+                            <li className="analytic-item-ontology-content">
+                                <span>where</span>
+                                <ul className="analytic-item-ontology-list">
+                                    {wheres}
+                                </ul>
+                            </li>
+                            <li className="analytic-item-ontology-content">
+                                <span>what</span>
+                                <ul className="analytic-item-ontology-list">
+                                    {whats}
+                                </ul>
+                            </li>
+                        </ul>
+                    )}
                     <div className="analytic-item-description">
                         <p>{data.description}</p>
                     </div>
@@ -85,7 +101,7 @@ const AnalyticBlock = ({ data }: AnalyticBlockProps) => {
                         >
                             Code URL
                         </a>
-                        <Link href={`?modal=true&analytic=${data.id}`}>
+                        <Link href={`?modal=true&analytic=${data.id}${studyParams}`}>
                             <button type="button" className="button">Use Analytic</button>
                         </Link>
                     </div>

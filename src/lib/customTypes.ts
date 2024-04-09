@@ -37,6 +37,7 @@ export type OntologyState = {
     filter: OntologyFilter | {};
     tree: OntologyTree | {};
     isLoading: Boolean;
+    startTime: number;
 };
 
 export type AnalyticType = {
