@@ -1,7 +1,7 @@
-import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import generateLinearOntology from '@/app/helpers/get-linear-ontology';
 import processOntology from '@/app/helpers/get-ontology-tree';
-import { OntologyFilter, OntologyEdge, OntologyState, OntologyNode, AnalyticType, AnalyticFilter } from '@/lib/customTypes';
+import { OntologyFilter, OntologyEdge, OntologyState, AnalyticType } from '@/lib/customTypes';
 import { SELECTED, AVAILABLE, EXISTS } from '@/lib/constants';
 import FuzzySet from 'fuzzyset';
 
@@ -41,7 +41,7 @@ const recursivelySetChildren = (filter: OntologyFilter, parentName: string) => {
 
 const recursiveleSetParents = (filter: OntologyFilter, childName: string) => {
     const parents = edges.filter((edge: any) => edge.target === childName);
-    console.log(">> ", parents, childName)
+    // console.log(">> ", parents, childName)
     if (parents.length == 0 || (parents.length == 1 && parents[0].source == "start")) return filter;
 
     let newFilter: OntologyFilter = filter;
@@ -90,7 +90,7 @@ export const filteredAnalytics = (filter: OntologyFilter = {}, searchString: str
     } else if (searchString.length > 0) {
         const nameMatch = fuzz.get(searchString)
         const descMatch = fuzzDesc.get(searchString, null, 0.6)
-        console.log(">> ", nameMatch, descMatch)
+        // console.log(">> ", nameMatch, descMatch)
 
         analyticsList = analyticsList
             .filter(
@@ -117,6 +117,7 @@ export const filteredAnalytics = (filter: OntologyFilter = {}, searchString: str
                         const whySubset = [...selectedWhy].filter((e: string) => item.why.includes(e));
                         // console.log(">> ", whySubset.length > 0 && whySubset.length >= selectedWhy.length, whySubset, selectedWhy, item.why)
                         return whySubset.length > 0 && whySubset.length >= selectedWhy.length;
+                        // return selectedWhy.some((e: string) => item.why.includes(e))
                     })
         } if (selectedWhere.length > 0) {
             analyticsList = analyticsList
@@ -149,7 +150,6 @@ export const filteredAnalytics = (filter: OntologyFilter = {}, searchString: str
 const _filterOptionSelected = (state: OntologyState, itemName: string) => {
     // set progeny to available
     const newFilter: OntologyFilter = state.filter;
-    console.log("++> Option selected:", itemName, newFilter[itemName].state)
     if (newFilter[itemName].state === SELECTED) {
         newFilter[itemName].state = EXISTS;
         state.filter = newFilter;
@@ -185,18 +185,11 @@ const _setAvilableFilter = (state: OntologyState, availableAnalytics: AnalyticTy
     return newFilter;
 }
 
-const _updateFilter = (state: any, action: PayloadAction<any>, actionType: string) => {
+const _updateFilter = (state: any, actionType: string, action: PayloadAction<any> | null) => {
     switch (actionType) {
         case "activate":
             console.log("++ Set activated:", action)
-            _filterOptionSelected(state, action.payload)
-            break;
-        case "available":
-            console.log("++ Set available:", action)
-            break;
-        case "reset":
-            console.log("++ Reset filter")
-
+            _filterOptionSelected(state, action?.payload)
             break;
         default:
             break;
@@ -218,7 +211,7 @@ export const ontologySlice = createSlice({
         },
         activateItem: {
             reducer(state, action: PayloadAction<any>) {
-                _updateFilter(state, action, "activate");
+                _updateFilter(state, "activate", action);
             },
             prepare(payload: any) {
                 return { payload };

@@ -2,12 +2,15 @@ import React from "react";
 import { AnalyticType } from "@/lib/customTypes";
 import Link from "next/link";
 
+const studyData = require("@/data/study.json");
+
 interface AnalyticBlockProps {
     data: AnalyticType,
-    hasOntology: boolean
+    hasOntology: boolean,
+    studyCode: string | null,
 }
 
-const AnalyticBlock = ({ data, hasOntology = true }: AnalyticBlockProps) => {
+const AnalyticBlock = ({ data, hasOntology = true, studyCode = null }: AnalyticBlockProps) => {
     const [isCollapsed, setIsCollapsed] = React.useState(true);
 
     const toggleCollapse = () => {
@@ -38,6 +41,16 @@ const AnalyticBlock = ({ data, hasOntology = true }: AnalyticBlockProps) => {
             <span className="text-xs">{value}</span>
         </li>
     ));
+
+    let studyParams: string = "";
+    if (studyCode && studyData[studyCode]) {
+        if (studyData[studyCode][data.id]) {
+            studyParams = `&acc${studyData[studyCode][data.id]}`;
+        } else {
+            // assign random number between 1 and 48
+            studyParams = `&acc${Math.floor(Math.random() * 48) + 1}`;
+        }
+    }
 
     return (
         <div className="analytic-item-container">
@@ -88,7 +101,7 @@ const AnalyticBlock = ({ data, hasOntology = true }: AnalyticBlockProps) => {
                         >
                             Code URL
                         </a>
-                        <Link href={`?modal=true&analytic=${data.id}`}>
+                        <Link href={`?modal=true&analytic=${data.id}${studyParams}`}>
                             <button type="button" className="button">Use Analytic</button>
                         </Link>
                     </div>

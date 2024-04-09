@@ -64,7 +64,7 @@ button {
 }
 
 .button {
-    display: inline-block;
+    display: flex;
     padding: 8px 16px;
     background: $primary-color;
     color: $white;
@@ -72,6 +72,8 @@ button {
     font-size: 1em;
     text-decoration: none;
     transition: background-color 0.3s ease;
+    justify-content: center;
+    gap: 4px;
 
     &.button-small {
         padding: 4px 8px;

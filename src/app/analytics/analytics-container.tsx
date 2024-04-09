@@ -2,13 +2,19 @@
 import React from "react";
 import AnalyticBlock from "@/app/analytics/analytic-block";
 import { OntologyFilter } from '@/lib/customTypes';
-import { useAppSelector } from '@/lib/hooks';
+import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 
 
 import { AnalyticType } from "@/lib/customTypes";
-import { filteredAnalytics } from "@/lib/features/ontology/ontologySlice";
+import { filteredAnalytics, initializeOntology } from "@/lib/features/ontology/ontologySlice";
+import { useSearchParams } from "next/navigation";
+import { ResetIcon } from "../shared/icons";
 
 const AnalyticsContainer = ({ hasOntology }: { hasOntology: boolean }) => {
+    const searchParams = useSearchParams();
+    const dispatch = useAppDispatch();
+    const studyCode = searchParams.get("study");
+
     const [searchString, setSearchString] = React.useState("");
 
     const filter: OntologyFilter = useAppSelector((state) => state.ontology.filter);
@@ -32,12 +38,17 @@ const AnalyticsContainer = ({ hasOntology }: { hasOntology: boolean }) => {
 
     const analyticsBlocks = analyticsList.analytics.length > 0
         ? analyticsList.analytics.map(
-            (item: AnalyticType, index: number) => <AnalyticBlock key={`analytic-${index}`} data={item} hasOntology={hasOntology} />
+            (item: AnalyticType, index: number) => <AnalyticBlock key={`analytic-${index}`} data={item} hasOntology={hasOntology} studyCode={studyCode} />
         )
         : <p>No analytics available for the current selection</p>;
 
     const analyticsHeader = hasOntology ? <div className="analytics-header">
-        <h2>Showing methods that</h2>
+        <div>
+            <h2>Showing analytics that</h2>
+            <button type="button" className="button button-small" onClick={() => dispatch(initializeOntology())}>
+                <ResetIcon height={14} width={14} color="#fff" /> reset
+            </button>
+        </div>
         <ul>
             <li>Detect instances of <span className="why">{analyticsList.why.length > 0 ? analyticsList.why.join(", ") : "anything"}</span></li>
             <li>Search within <span className="where">{analyticsList.where.length > 0 ? analyticsList.where.join(", ") : "everywhere"}</span></li>
@@ -45,7 +56,7 @@ const AnalyticsContainer = ({ hasOntology }: { hasOntology: boolean }) => {
         </ul>
     </div>
         : <div className="analytics-header search">
-            <input type="text" name="search" id="search" title="search" placeholder="Search for a method" onChange={(e) => setSearchString(e.target.value)} value={searchString} />
+            <input type="text" name="search" id="search" title="search" placeholder="Search for a analytics" onChange={(e) => setSearchString(e.target.value)} value={searchString} />
         </div>;
 
 
@@ -53,7 +64,7 @@ const AnalyticsContainer = ({ hasOntology }: { hasOntology: boolean }) => {
         <div className="analytics-sidebar">
             {analyticsHeader}
             <div className="analytics-container">
-                <h2>List of available analytics</h2>
+                <h2>List of {analyticsList.analytics.length} available analytics</h2>
                 {analyticsBlocks}
             </div>
         </div>

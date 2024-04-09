@@ -14,7 +14,7 @@ export default function Page() {
     <Header />
     <main className="ontology">
       <section className="instructions">
-        <h2>Use the interactable sentences provided to filter out the analyticss on the sidebar</h2>
+        <h2>Use the interactable sentences provided to filter out the analytics on the sidebar</h2>
         <p>all the fields have multi-select capability</p>
       </section>
       <OntologyContainer />
