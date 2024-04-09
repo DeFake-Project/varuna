@@ -290,6 +290,10 @@
     background-repeat: no-repeat;
     background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
     background-attachment: local, local, scroll, scroll;
+
+    &:hover {
+        max-height: 300px;
+    }
 }
 
 .modal {
