@@ -32,6 +32,9 @@ $teal-dark: rgba(22, 160, 133, 1);
 $orange: rgba(230, 126, 34, 1);
 $orange-dark: rgba(211, 84, 0, 1);
 
+$highlight-yellow: rgba(241, 196, 15, 1);
+$highlight-yellow-dark: rgba(243, 156, 18, 1);
+
 $fake: $red;
 $real: $green;
 $sus: $orange;
@@ -57,6 +60,7 @@ $what-file-hover: $red-dark;
 
 // Component colors
 $border-color: $black-500;
+$highlight: $highlight-yellow;
 
 :root {
     --background-rgb: $background-rgb;

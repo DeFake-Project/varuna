@@ -4,6 +4,7 @@ import processOntology from '@/app/helpers/get-ontology-tree';
 import { OntologyFilter, OntologyEdge, OntologyState, AnalyticType } from '@/lib/customTypes';
 import { SELECTED, AVAILABLE, EXISTS } from '@/lib/constants';
 import FuzzySet from 'fuzzyset';
+import { removeStopwords } from 'stopword'
 
 const nodes = require("@/data/nodes.json");
 const edges = require("@/data/edges.json");
@@ -16,7 +17,7 @@ const onlyUnique = (value: string, index: number, self: string) => {
 const useFuzz = true;
 
 const fuzz = FuzzySet(analytics.flatMap((item: AnalyticType) => item.name.split(" ")).filter(onlyUnique));
-const fuzzDesc = FuzzySet(analytics.flatMap((item: AnalyticType) => item.description.split(" ")).filter(onlyUnique));
+const fuzzDesc = FuzzySet(removeStopwords(analytics.flatMap((item: AnalyticType) => item.description.toLowerCase().split(" ")).filter(onlyUnique)));
 
 const initialState: OntologyState = {
     filter: {},
@@ -103,6 +104,16 @@ export const filteredAnalytics = (filter: OntologyFilter = {}, searchString: str
                     return item.name.toLowerCase().includes(searchString.toLowerCase())
                 }
             )
+        // analyticsList = analyticsList.map((item: AnalyticType) => {
+        //     descMatch?.forEach((pair: [number, string]) => {
+        //         if (item.description.includes(pair[1])) {
+        //             console.log(">>", descMatch, item.id)
+        //             item.description = item.description.replace(pair[1], `<span class="highlight">${pair[1]}</span>`)
+        //         }
+        //     });
+        //     return item
+        // });
+
         return {
             analytics: analyticsList.sort(alphabeticCompare),
             why: [],

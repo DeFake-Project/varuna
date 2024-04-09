@@ -84,7 +84,7 @@ const AnalyticBlock = ({ data, hasOntology = true, studyCode = null }: AnalyticB
                         </ul>
                     )}
                     <div className="analytic-item-description">
-                        <p>{data.description}</p>
+                        <p dangerouslySetInnerHTML={{ __html: data.description }}></p>
                     </div>
                     <div className="analytic-item-footer">
                         <a
