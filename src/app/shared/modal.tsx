@@ -2,7 +2,7 @@
 import { useSearchParams, usePathname } from "next/navigation";
 import Link from "next/link";
 import { AnalyticType } from "@/lib/customTypes";
-import { use, useState } from "react";
+import { useState } from "react";
 import { CloseIcon } from "./icons";
 import { useAppSelector } from "@/lib/hooks";
 

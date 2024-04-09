@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import OntologyContainer from "./ontology-container";
 import AnalyticsContainer from '../analytics/analytics-container';
 import Header from '../shared/header';
@@ -19,7 +19,9 @@ export default function Page() {
       </section>
       <OntologyContainer />
       <aside className="sidebar">
-        <AnalyticsContainer hasOntology={true} />
+        <Suspense>
+          <AnalyticsContainer hasOntology={true} />
+        </Suspense>
       </aside>
     </main>
   </>;

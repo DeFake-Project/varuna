@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import AnalyticsContainer from './analytics-container';
 import Header from '../shared/header';
 import type { Metadata } from "next";
@@ -16,7 +16,9 @@ export default function Page() {
         <h2>List of supported analytics</h2>
         <p>The search box performs a live search</p>
       </section>
-      <AnalyticsContainer hasOntology={false} />
+      <Suspense>
+        <AnalyticsContainer hasOntology={false} />
+      </Suspense>
     </main>
   </>;
 }
