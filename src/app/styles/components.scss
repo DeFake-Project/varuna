@@ -247,6 +247,14 @@
     h2 {
         font-size: 1em;
     }
+
+    .pill {
+        &.available {
+            ~:not(.available):not(.selected) {
+                opacity: 0.5;
+            }
+        }
+    }
 }
 
 .option-list {
