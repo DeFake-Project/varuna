@@ -2,7 +2,7 @@ import React from "react";
 import { AnalyticType } from "@/lib/customTypes";
 import Link from "next/link";
 
-const studyData = require("@/data/study.json");
+// const studyData = require("@/data/study.json");
 
 interface AnalyticBlockProps {
     data: AnalyticType,
@@ -43,13 +43,9 @@ const AnalyticBlock = ({ data, hasOntology = true, studyCode = null }: AnalyticB
     ));
 
     let studyParams: string = "";
-    if (studyCode && studyData[studyCode]) {
-        if (studyData[studyCode][data.id]) {
-            studyParams = `&acc${studyData[studyCode][data.id]}`;
-        } else {
-            // assign random number between 1 and 48
-            studyParams = `&acc${Math.floor(Math.random() * 48) + 1}`;
-        }
+    if (studyCode) {
+        // assign random number between 75 and 100
+        studyParams = `&acc=${Math.floor(Math.random() * 26) + 75}`;
     }
 
     return (
