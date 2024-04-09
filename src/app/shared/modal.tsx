@@ -1,5 +1,5 @@
 "use client"
-import { useSearchParams, usePathname } from "next/navigation";
+import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { AnalyticType } from "@/lib/customTypes";
 import { useState } from "react";
@@ -11,6 +11,7 @@ const analytics = require("@/data/analytics.json");
 function Modal() {
     const [textarea, setTextarea] = useState("");
 
+    const router = useRouter();
     const searchParams = useSearchParams();
     const modal = searchParams.get("modal");
     const analytic = searchParams.get("analytic");
@@ -24,6 +25,11 @@ function Modal() {
     const handleTextareaChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         setTextarea(event.target.value);
     };
+
+    // close button action to go back in history
+    const closeModal = () => {
+        router.back();
+    }
 
     let content = null;
     if (analyticData) {
@@ -61,11 +67,9 @@ function Modal() {
             <div className="modal-content">
                 <div className="modal-header">
                     <h3>{analyticData.name}</h3>
-                    <Link href={pathname}>
-                        <button title="close" type="button" className="button close-button">
-                            <CloseIcon width={20} height={20} color="red" />
-                        </button>
-                    </Link>
+                    <button title="close" type="button" className="button close-button" onClick={() => closeModal()}>
+                        <CloseIcon width={20} height={20} color="red" />
+                    </button>
                 </div>
                 {hasOntology && <ul className="analytic-item-ontology">
                     {whys && <li className="analytic-item-ontology-content">
