@@ -21,7 +21,12 @@ const OptionBlock: React.FC<OptionBlockProps> = ({ title, nodenames }) => {
         if (filter[b].state === "available") return 1;
         return 0;
     }
-    nodenames.sort(sortByState);
+
+    const alphabeticCompare = (a: string, b: string, state: string) => {
+        return filter[a].state === state && filter[b].state === state ? a.localeCompare(b) : 0;
+    }
+
+    nodenames.sort(sortByState).sort((a, b) => alphabeticCompare(a, b, "available"));
 
     return (
         <div className={`${title} option-block scroll-shadows`}>
