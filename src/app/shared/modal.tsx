@@ -2,7 +2,7 @@
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { AnalyticType, StudyDataType } from "@/lib/customTypes";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CloseIcon } from "./icons";
 import { useAppSelector } from "@/lib/hooks";
 import Image from "next/image";
@@ -17,7 +17,7 @@ function Modal() {
     const searchParams = useSearchParams();
     const modal = searchParams.get("modal");
     const analytic = searchParams.get("analytic");
-    // const accuracy = Number(searchParams.get("acc"));
+    const [accuracy, setAccuracy] = useState(0);
     const study = searchParams.get("study");
     const pathname = usePathname();
     const hasOntology = pathname !== "/analytics";
@@ -28,6 +28,16 @@ function Modal() {
     const handleTextareaChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         setTextarea(event.target.value);
     };
+
+    useEffect(() => {
+        if (study && analytic) {
+            if (studyData[study][analytic]?.type === "acc") {
+                setAccuracy(Number(studyData[study][analytic].content[1]));
+            } else {
+                setAccuracy(Math.floor(Math.random() * 26) + 75);
+            }
+        }
+    }, [study, analytic]);
 
     // close button action to go back in history
     const closeModal = () => {
@@ -80,6 +90,21 @@ function Modal() {
                                 <li className="pill" key={`data-${analyticData.id}-response-${i}`}><strong>{item[0]}</strong> {item[1]}</li>
                             ))}
                         </ul>
+                    </div>
+                )
+            } else if (studyData[study][analytic]?.type === "acc") {
+                const accuracy = Number(studyData[study][analytic].content[1]);
+                const accuracyClass = accuracy < 50 ? "real" : accuracy < 75 ? "sus" : "fake";
+                textToCopy = `<${analyticData.name}>${accuracy && `<${accuracy}%}>`}<${(Date.now() - startTime) / 1000}s> Report: ${textarea}`;
+
+                analyticResponse = (
+                    <div className="analytic-item-response">
+                        <div className="analytic-item-accuracy">
+                            <span className={`pill ${accuracyClass}`}>{accuracy}%</span>
+                            <span>
+                                chance the content is manipulated
+                            </span>
+                        </div>
                     </div>
                 )
             } else {

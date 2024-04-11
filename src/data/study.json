@@ -178,5 +178,23 @@
                 ]
             ]
         }
+    },
+    "q3": {
+        "aural": {
+            "type": "acc",
+            "content": [
+                "val",
+                90
+            ]
+        }
+    },
+    "q4": {
+        "xceptionnet": {
+            "type": "acc",
+            "content": [
+                "val",
+                80
+            ]
+        }
     }
 }
