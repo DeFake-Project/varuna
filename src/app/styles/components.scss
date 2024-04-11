@@ -333,7 +333,7 @@
         box-shadow: $box-shadow-default;
         background: $white;
         width: 100%;
-        max-width: 600px;
+        max-width: calc(100vw - 200px);
 
         a {
             align-self: flex-end;
@@ -387,7 +387,8 @@
 }
 
 .analytic-item-response {
-    max-width: 1024px;
+    display: flex;
+    justify-content: center;
 
     .metadata-list {
         display: flex;
