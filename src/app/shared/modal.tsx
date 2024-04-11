@@ -66,13 +66,13 @@ function Modal() {
         let textToCopy = `<${analyticData.name}><${(Date.now() - startTime) / 1000}s> Report: ${textarea}`;
 
         if (study && analytic) {
-            if (studyData[study][analytic].type === "img") {
+            if (studyData[study][analytic]?.type === "img") {
                 analyticResponse = (
                     <div className="analytic-item-response">
                         <Image width={600} height={600} src={studyData[study][analytic].content[1]} alt="analytic response" />
                     </div>
                 )
-            } else if (studyData[study][analytic].type === "metadata") {
+            } else if (studyData[study][analytic]?.type === "metadata") {
                 analyticResponse = (
                     <div className="analytic-item-response">
                         <ul className="metadata-list">
