@@ -1,12 +1,14 @@
 "use client"
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import { AnalyticType } from "@/lib/customTypes";
+import { AnalyticType, StudyDataType } from "@/lib/customTypes";
 import { useState } from "react";
 import { CloseIcon } from "./icons";
 import { useAppSelector } from "@/lib/hooks";
+import Image from "next/image";
 
 const analytics = require("@/data/analytics.json");
+const studyData: StudyDataType = require("@/data/study.json");
 
 function Modal() {
     const [textarea, setTextarea] = useState("");
@@ -15,7 +17,8 @@ function Modal() {
     const searchParams = useSearchParams();
     const modal = searchParams.get("modal");
     const analytic = searchParams.get("analytic");
-    const accuracy = Number(searchParams.get("acc"));
+    // const accuracy = Number(searchParams.get("acc"));
+    const study = searchParams.get("study");
     const pathname = usePathname();
     const hasOntology = pathname !== "/analytics";
     const startTime = useAppSelector((state) => state.ontology.startTime);
@@ -59,9 +62,46 @@ function Modal() {
             </li>
         ));
 
-        const accuracyClass = accuracy < 50 ? "real" : accuracy < 75 ? "sus" : "fake";
+        let analyticResponse;
+        let textToCopy = `<${analyticData.name}><${(Date.now() - startTime) / 1000}s> Report: ${textarea}`;
 
-        const textToCopy = `<${analyticData.name}><${accuracy}%><${(Date.now() - startTime) / 1000}s> Report: ${textarea}`;
+        if (study && analytic) {
+            if (studyData[study][analytic].type === "img") {
+                analyticResponse = (
+                    <div className="analytic-item-response">
+                        <Image width={600} height={600} src={studyData[study][analytic].content[1]} alt="analytic response" />
+                    </div>
+                )
+            } else if (studyData[study][analytic].type === "metadata") {
+                analyticResponse = (
+                    <div className="analytic-item-response">
+                        <ul className="metadata-list">
+                            {studyData[study][analytic].content.map((item: string, i: number) => (
+                                <li className="pill" key={`data-${analyticData.id}-response-${i}`}><strong>{item[0]}</strong> {item[1]}</li>
+                            ))}
+                        </ul>
+                    </div>
+                )
+            } else {
+                const accuracy = Math.floor(Math.random() * 26) + 75
+                const accuracyClass = accuracy < 50 ? "real" : accuracy < 75 ? "sus" : "fake";
+                textToCopy = `<${analyticData.name}>${accuracy && `<${accuracy}%}>`}<${(Date.now() - startTime) / 1000}s> Report: ${textarea}`;
+
+                analyticResponse = (
+                    <div className="analytic-item-response">
+                        <div className="analytic-item-accuracy">
+                            <span className={`pill ${accuracyClass}`}>{accuracy}%</span>
+                            <span>
+                                chance the content is manipulated
+                            </span>
+                        </div>
+                    </div>
+                )
+            }
+        }
+
+
+
 
         content = (
             <div className="modal-content">
@@ -94,12 +134,7 @@ function Modal() {
                 {analyticData && <div className="analytic-item-description">
                     <p>{analyticData.description}</p>
                 </div>}
-                {<div className="analytic-item-accuracy">
-                    <span className={`pill ${accuracyClass}`}>{accuracy}%</span>
-                    <span>
-                        chance the content is manipulated
-                    </span>
-                </div>}
+                {analyticResponse}
                 <div className="modal-input-area">
                     <label htmlFor="textarea">Write an excerpt for conveying these results in your report</label>
                     <textarea name="textarea" onChange={handleTextareaChange} id="textarea" cols={30} rows={3} value={textarea}></textarea>

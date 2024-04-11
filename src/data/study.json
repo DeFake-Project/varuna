@@ -1,5 +1,182 @@
 {
     "q1": {
-        "ela": 54.04
+        "ela": {
+            "type": "img",
+            "content": [
+                "src",
+                "/ela_q1.png"
+            ]
+        },
+        "metadata-analysis": {
+            "type": "metadata",
+            "content": [
+                [
+                    "file_name",
+                    "U4CebFN.jpg"
+                ],
+                [
+                    "file_size",
+                    "95 kB"
+                ],
+                [
+                    "file_type",
+                    "JPEG"
+                ],
+                [
+                    "file_type_extension",
+                    "jpg"
+                ],
+                [
+                    "mime_type",
+                    "image/jpeg"
+                ],
+                [
+                    "jfif_version",
+                    "1.01"
+                ],
+                [
+                    "resolution_unit",
+                    "None"
+                ],
+                [
+                    "x_resolution",
+                    1
+                ],
+                [
+                    "y_resolution",
+                    1
+                ],
+                [
+                    "image_width",
+                    640
+                ],
+                [
+                    "image_height",
+                    960
+                ],
+                [
+                    "encoding_process",
+                    "Baseline DCT, Huffman coding"
+                ],
+                [
+                    "bits_per_sample",
+                    8
+                ],
+                [
+                    "color_components",
+                    3
+                ],
+                [
+                    "y_cb_cr_sub_sampling",
+                    "YCbCr4:2:0 (2 2)"
+                ],
+                [
+                    "image_size",
+                    "640x960"
+                ],
+                [
+                    "megapixels",
+                    0.614
+                ],
+                [
+                    "category",
+                    "image"
+                ],
+                [
+                    "raw_header",
+                    "FF D8 FF E0 00 10 4A 46 49 46 00 01 01 00 00 01 00 01 00 00 FF DB 00 43 00 02 01 01 02 01 01 02 02 01 02 02 02 02 02 03 05 03 03 03 03 03 06 04 04 03 05 07 06 07 07 07 06 06 06 07 08 0B 09 07 08 0A 08 06 06 09 0D 09 0A 0B 0B 0C 0C 0C 07 09 0D 0E 0D 0C 0E 0B 0C 0C 0B FF DB 00 43 01 02 02 02 03 02 03 05 03 03 05 0B 08 06 08 0B 0B 0B 0B 0B 0B 0B 0B 0B 0B 0B 0B 0B 0B 0B 0B 0B 0B 0B 0B"
+                ]
+            ]
+        }
+    },
+    "q2": {
+        "ela": {
+            "type": "img",
+            "content": [
+                "src",
+                "/ela_q2.png"
+            ]
+        },
+        "metadata-analysis": {
+            "type": "metadata",
+            "content": [
+                [
+                    "file_name",
+                    "img.jpg"
+                ],
+                [
+                    "file_size",
+                    "190 kB"
+                ],
+                [
+                    "file_type",
+                    "JPEG"
+                ],
+                [
+                    "file_type_extension",
+                    "jpg"
+                ],
+                [
+                    "mime_type",
+                    "image/jpeg"
+                ],
+                [
+                    "jfif_version",
+                    "1.01"
+                ],
+                [
+                    "resolution_unit",
+                    "inches"
+                ],
+                [
+                    "x_resolution",
+                    72
+                ],
+                [
+                    "y_resolution",
+                    72
+                ],
+                [
+                    "image_width",
+                    805
+                ],
+                [
+                    "image_height",
+                    450
+                ],
+                [
+                    "encoding_process",
+                    "Baseline DCT, Huffman coding"
+                ],
+                [
+                    "bits_per_sample",
+                    8
+                ],
+                [
+                    "color_components",
+                    3
+                ],
+                [
+                    "y_cb_cr_sub_sampling",
+                    "YCbCr4:4:4 (1 1)"
+                ],
+                [
+                    "image_size",
+                    "805x450"
+                ],
+                [
+                    "megapixels",
+                    0.362
+                ],
+                [
+                    "category",
+                    "image"
+                ],
+                [
+                    "raw_header",
+                    "FF D8 FF E0 00 10 4A 46 49 46 00 01 01 01 00 48 00 48 00 00 FF DB 00 43 00 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 FF DB 00 43 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01"
+                ]
+            ]
+        }
     }
 }

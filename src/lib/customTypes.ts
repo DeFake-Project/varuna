@@ -57,3 +57,12 @@ export type AnalyticFilter = {
     where: string[],
     what: string[]
 }
+
+export type StudyDataType = {
+    [key: string]: {
+        [key: string]: {
+            type: string,
+            content: string[]
+        }
+    }
+}
