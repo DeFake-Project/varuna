@@ -110,7 +110,7 @@ function Modal() {
             } else {
                 const accuracy = Math.floor(Math.random() * 26) + 75
                 const accuracyClass = accuracy < 50 ? "real" : accuracy < 75 ? "sus" : "fake";
-                textToCopy = `<${analyticData.name}>${accuracy && `<${accuracy}%}>`}<${(Date.now() - startTime) / 1000}s> Report: ${textarea}`;
+                textToCopy = `<${analyticData.name}>${accuracy && `<${accuracy}%}>`}<${(Date.now() - startTime) / 1000}s> ${textarea.length > 0 ? `Report: ${textarea}` : ''}`;
 
                 analyticResponse = (
                     <div className="analytic-item-response">
@@ -160,10 +160,12 @@ function Modal() {
                     <p>{analyticData.description}</p>
                 </div>}
                 {analyticResponse}
-                <div className="modal-input-area">
-                    <label htmlFor="textarea">Write an excerpt for conveying these results in your report</label>
-                    <textarea name="textarea" onChange={handleTextareaChange} id="textarea" cols={30} rows={3} value={textarea}></textarea>
-                </div>
+                {study && ["q1", "q2"].includes(study) ?
+                    null : <div className="modal-input-area">
+                        <label htmlFor="textarea">Write an excerpt for conveying these results in your report</label>
+                        <textarea name="textarea" onChange={handleTextareaChange} id="textarea" cols={30} rows={3} value={textarea}></textarea>
+                    </div>
+                }
                 <button className="button" onClick={() => { navigator.clipboard.writeText(textToCopy) }}>Copy Content</button>
             </div>
         )
