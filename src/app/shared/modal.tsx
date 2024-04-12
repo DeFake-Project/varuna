@@ -1,7 +1,7 @@
 "use client"
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import { AnalyticType, StudyDataType } from "@/lib/customTypes";
+import { AnalyticType, OntologyFilter, StudyDataType } from "@/lib/customTypes";
 import { useEffect, useState } from "react";
 import { CloseIcon } from "./icons";
 import { useAppSelector } from "@/lib/hooks";
@@ -22,6 +22,8 @@ function Modal() {
     const pathname = usePathname();
     const hasOntology = pathname !== "/analytics";
     const startTime = useAppSelector((state) => state.ontology.startTime);
+    const filter: OntologyFilter = useAppSelector((state) => state.ontology.filter);
+    const selectedFilter: string = Object.keys(filter).filter((key) => filter[key].state === "selected").join(" ");
 
     const analyticData: AnalyticType = analytics.find((item: AnalyticType) => item.id === analytic);
 
@@ -73,7 +75,7 @@ function Modal() {
         ));
 
         let analyticResponse;
-        let textToCopy = `<${analyticData.name}><${(Date.now() - startTime) / 1000}s> Report: ${textarea}`;
+        let textToCopy = `<${analyticData.name}><${(Date.now() - startTime) / 1000}s> ${selectedFilter.length > 0 ? `<${selectedFilter}>` : ""} Report: ${textarea}`;
 
         if (study && analytic) {
             if (studyData[study][analytic]?.type === "img") {
@@ -95,7 +97,7 @@ function Modal() {
             } else if (studyData[study][analytic]?.type === "acc") {
                 const accuracy = Number(studyData[study][analytic].content[1]);
                 const accuracyClass = accuracy < 50 ? "real" : accuracy < 75 ? "sus" : "fake";
-                textToCopy = `<${analyticData.name}>${accuracy && `<${accuracy}%}>`}<${(Date.now() - startTime) / 1000}s> Report: ${textarea}`;
+                textToCopy = `<${analyticData.name}>${accuracy && `<${accuracy}%>`}<${(Date.now() - startTime) / 1000}s> ${selectedFilter.length > 0 ? `<${selectedFilter}>` : ""} ${textarea.length > 0 ? `Report: ${textarea}` : ''}`;
 
                 analyticResponse = (
                     <div className="analytic-item-response">
@@ -110,7 +112,7 @@ function Modal() {
             } else {
                 const accuracy = Math.floor(Math.random() * 26) + 75
                 const accuracyClass = accuracy < 50 ? "real" : accuracy < 75 ? "sus" : "fake";
-                textToCopy = `<${analyticData.name}>${accuracy && `<${accuracy}%}>`}<${(Date.now() - startTime) / 1000}s> ${textarea.length > 0 ? `Report: ${textarea}` : ''}`;
+                textToCopy = `<${analyticData.name}>${accuracy && `<${accuracy}%>`}<${(Date.now() - startTime) / 1000}s> ${textarea.length > 0 ? `Report: ${textarea}` : ''}`;
 
                 analyticResponse = (
                     <div className="analytic-item-response">
