@@ -22,8 +22,6 @@ export const LoadGraph = () => {
 // Component that display the graph
 export const DisplayGraph = () => {
     return (
-        <SigmaContainer style={sigmaStyle}>
-            <LoadGraph />
-        </SigmaContainer>
+        <LoadGraph />
     );
 };
