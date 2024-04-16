@@ -524,32 +524,6 @@
         "deepLearning": false
     },
     {
-        "id": "image-stats",
-        "name": "Image/Video Statistics Analysis",
-        "description": "Analyzing image statistics for forgery detection",
-        "paperTitle": "",
-        "paperURL": "",
-        "codeURL": "",
-        "why": [
-            "deepfake",
-            "manual-forgery",
-            "manual-forgery-image",
-            "manual-forgery-video",
-            "synthetic-media",
-            "synthetic-image",
-            "synthetic-video"
-        ],
-        "where": [
-            "scene"
-        ],
-        "what": [
-            "spatial",
-            "spatial-pixel-level",
-            "spatial-frequency"
-        ],
-        "deepLearning": false
-    },
-    {
         "id": "metadata-analysis",
         "name": "Metadata Analysis",
         "description": "Analyzing file metadata for forgery detection",
