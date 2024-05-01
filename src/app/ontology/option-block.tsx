@@ -3,6 +3,7 @@ import React from 'react';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import { activateItem } from '@/lib/features/ontology/ontologySlice';
 import { OntologyFilter } from '@/lib/customTypes';
+import * as Tooltip from '@radix-ui/react-tooltip';
 
 type OptionBlockProps = {
     title: string;
@@ -22,6 +23,24 @@ const OptionBlock: React.FC<OptionBlockProps> = ({ title, nodenames }) => {
         return 0;
     }
 
+    const nodeItem = (item: string) => (
+        <Tooltip.Provider key={`${filter[item].id}-option`} >
+            <Tooltip.Root>
+                <Tooltip.Trigger asChild>
+                    <li onClick={() => dispatch(activateItem(filter[item].id))} className={`${filter[item]?.state} ontology-item pill`}>
+                        {filter[item].id}
+                    </li>
+                </Tooltip.Trigger>
+                <Tooltip.Portal>
+                    <Tooltip.Content className="tooltip-content" sideOffset={5}>
+                        {filter[item].description}
+                        <Tooltip.Arrow className="TooltipArrow" />
+                    </Tooltip.Content>
+                </Tooltip.Portal>
+            </Tooltip.Root>
+        </Tooltip.Provider>
+    )
+
     const alphabeticCompare = (a: string, b: string, state: string) => {
         return filter[a].state === state && filter[b].state === state ? a.localeCompare(b) : 0;
     }
@@ -34,11 +53,7 @@ const OptionBlock: React.FC<OptionBlockProps> = ({ title, nodenames }) => {
             <ul className="option-list">
                 {nodenames.map((item: string) => {
                     // console.log(">> ", item)
-                    return filter[item] ? (
-                        <li key={`${filter[item].id}-option`} onClick={() => dispatch(activateItem(filter[item].id))} className={`${filter[item]?.state} ontology-item pill`}>
-                            {filter[item].id}
-                        </li>
-                    ) : null;
+                    return filter[item] ? nodeItem(item) : null;
                 })}
             </ul>
             <div className="faded-scroller-bottom"></div>

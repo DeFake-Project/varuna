@@ -405,3 +405,21 @@
         margin-bottom: 12px;
     }
 }
+
+.tooltip-content {
+    background: white;
+    padding: 8px 12px;
+    border-radius: $border-radius-default;
+    box-shadow: $box-shadow-default;
+    border: 1px solid $border-color;
+    animation-duration: 0.6s;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1)
+}
+
+.tooltip-content[data-side='up'] {
+    animation-name: fadeOut;
+}
+
+.tooltip-content[data-side='down'] {
+    animation-name: fadeIn;
+}

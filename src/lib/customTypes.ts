@@ -4,7 +4,10 @@ export type OntologyNode = {
     id: string;
     name: string;
     state: string;
-    parents: string[];
+    description: string;
+    parents?: string[];
+    group?: number;
+    level?: number;
 };
 
 export type OntologyEdge = {
@@ -15,13 +18,7 @@ export type OntologyEdge = {
 };
 
 export type OntologyFilter = {
-    [key: string]: {
-        parents: string[] | string;
-        state: string;
-        id: string;
-        level: number;
-        group: number;
-    };
+    [key: string]: OntologyNode;
 };
 
 export type OntologyTree = {
