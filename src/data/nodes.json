@@ -219,108 +219,108 @@
         "id": "spatial",
         "name": "spatial",
         "group": 3,
-        "description": "Spatial features of media content"
+        "description": "Spatial distribution and arrangement of elements within media content, such as objects, shapes, and patterns."
     },
     {
         "id": "spatial-structural",
         "name": "spatial-structural",
         "group": 3,
-        "description": "Structural features of media content"
+        "description": "Focus on the structural features of the media content, such as the layout, composition, or arrangement of objects within the frame"
     },
     {
         "id": "spatial-pixel-level",
         "name": "spatial-pixel-level",
         "group": 3,
-        "description": "Pixel-level features of media content"
+        "description": "Investigating individual pixel-level attributes of media content, such as color, intensity, and texture, to extract meaningful information"
     },
     {
         "id": "spatial-context",
         "name": "spatial-context",
         "group": 3,
-        "description": "Contextual features of media content"
+        "description": "Contextual factors surrounding objects or scenes within media content, including their spatial relationships with other elements and their environmental context"
     },
     {
         "id": "spatial-provenance",
         "name": "spatial-provenance",
         "group": 3,
-        "description": "Provenance features of media content"
+        "description": "Examine the provenance features of the media content, such as the source, origin, or chain of custody of the file based on visual signals"
     },
     {
         "id": "spatial-identity",
         "name": "spatial-identity",
         "group": 3,
-        "description": "Identity-related features of media content"
+        "description": " Identifying and analyzing spatial features related to the identity of objects, individuals, or entities depicted in media content, such as facial recognition or object classification"
     },
     {
         "id": "spatial-physics",
         "name": "spatial-physics",
         "group": 3,
-        "description": "Physics-related features of media content"
+        "description": "Examining spatial features influenced by physical properties and phenomena, such as lighting conditions, shadows, reflections, and perspective distortions"
     },
     {
         "id": "file-analysis",
         "name": "file-analysis",
         "group": 3,
-        "description": "Analysis of media files"
+        "description": "Investigating the structure, format, and composition of media files to extract relevant information and detect anomalies or inconsistencies"
     },
     {
         "id": "file-metadata",
         "name": "file-metadata",
         "group": 3,
-        "description": "Metadata associated with media files"
+        "description": "Extracting and analyzing metadata associated with media files, including information such as creation date, authorship, location data, and device details"
     },
     {
         "id": "file-digital-watermark",
         "name": "file-digital-watermark",
         "group": 3,
-        "description": "Digital watermark embedded in media files"
+        "description": "Detecting and analyzing digital watermarks embedded within media files for purposes such as copyright protection, authentication, or tracking"
     },
     {
         "id": "temporal",
         "name": "temporal",
         "group": 3,
-        "description": "Temporal features of media content"
+        "description": "Analyzing temporal aspects and changes in media content over time, including motion, dynamics, and temporal relationships between objects or events"
     },
     {
         "id": "temporal-biometrics",
         "name": "temporal-biometrics",
         "group": 3,
-        "description": "Biometric features of media content over time"
+        "description": "Extracting biometric information from media content over time, such as facial expressions, gait analysis, or physiological signals for identity verification or behavioral analysis"
     },
     {
         "id": "temporal-physiology",
         "name": "temporal-physiology",
         "group": 3,
-        "description": "Physiological features of media content over time"
+        "description": "Monitoring physiological features and changes exhibited within media content over time, such as heart rate variability, pupil dilation, or facial blood flow for health monitoring or emotional analysis"
     },
     {
         "id": "temporal-context",
         "name": "temporal-context",
         "group": 3,
-        "description": "Contextual features of media content over time"
+        "description": "Considering the temporal context and sequential relationships between events or actions depicted in media content, such as scene transitions, continuity, or narrative structure"
     },
     {
         "id": "temporal-synchronization",
         "name": "temporal-synchronization",
         "group": 3,
-        "description": "Synchronization features of media content over time"
+        "description": "Ensuring synchronization and alignment of temporal elements within media content, such as audio-video synchronization or synchronization between different media streams"
     },
     {
         "id": "temporal-coherence",
         "name": "temporal-coherence",
         "group": 3,
-        "description": "Coherence features of media content over time"
+        "description": "Assessing the coherence and consistency of temporal features within media content, such as smoothness of motion, temporal stability, or temporal consistency across frames"
     },
     {
         "id": "compression-artifacts",
         "name": "compression-artifacts",
         "group": 3,
-        "description": "Artifacts introduced by compression"
+        "description": "Identifying and analyzing artifacts introduced by compression algorithms during the encoding or decoding process, such as blockiness, blurring, or ringing artifacts"
     },
     {
         "id": "spatial-frequency",
         "name": "spatial-frequency",
         "group": 3,
-        "description": "Frequency-related features of media content"
+        "description": " Analyzing frequency-related characteristics within spatial features of media content, such as variations in detail, sharpness, or spatial resolution"
     }
 ]
