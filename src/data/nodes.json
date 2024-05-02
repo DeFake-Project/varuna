@@ -9,31 +9,31 @@
         "id": "why",
         "name": "why",
         "group": 1,
-        "description": "Why is the media being analyzed?"
+        "description": "The Capabilities Space - “Why” are we analyzing this content?"
     },
     {
         "id": "where",
         "name": "where",
         "group": 2,
-        "description": "Where is the model looking at?"
+        "description": "The Search Space - “Where” does the analytic focus?"
     },
     {
         "id": "what",
         "name": "what",
         "group": 3,
-        "description": "What are the feautures being analyzed?"
+        "description": "The Feature Space - “What” features does the analytic use?"
     },
     {
         "id": "deepfake",
         "name": "deepfake",
         "group": 1,
-        "description": "Manipulated media"
+        "description": "Media manipulated using deep learning algorithms placing identifiable entities in fictitious situations"
     },
     {
         "id": "manual-forgery",
         "name": "manual-forgery",
         "group": 1,
-        "description": "Manually edited media"
+        "description": "Manually manipulated media"
     },
     {
         "id": "out-of-context",
@@ -45,91 +45,91 @@
         "id": "synthetic-media",
         "name": "synthetic-media",
         "group": 1,
-        "description": "Generated media"
+        "description": "Fully synthetic media content"
     },
     {
         "id": "human",
         "name": "human",
         "group": 2,
-        "description": "Media involving humans"
+        "description": "Analytic extracts human data and focuses only on that"
     },
     {
         "id": "non-human",
         "name": "non-human",
         "group": 2,
-        "description": "Media not involving humans"
+        "description": "Analytic extracts non-human data and focuses on that"
     },
     {
         "id": "scene",
         "name": "scene",
         "group": 2,
-        "description": "Media depicting a scene"
+        "description": "Analytic focuses on the whole scene"
     },
     {
         "id": "file",
         "name": "file",
         "group": 2,
-        "description": "Media stored in a file"
+        "description": "Analytic focuses on the file"
     },
     {
         "id": "deepfake-video",
         "name": "deepfake-video",
         "group": 1,
-        "description": "Manipulated video content created using deep learning techniques"
+        "description": "Videos manipulated using deep learning algorithms placing identifiable entities in fictitious situations"
     },
     {
         "id": "deepfake-audio",
         "name": "deepfake-audio",
         "group": 1,
-        "description": "Manipulated audio content created using deep learning techniques"
+        "description": "Audio manipulated using deep learning algorithms placing identifiable entities in fictitious situations"
     },
     {
         "id": "deepfake-image",
         "name": "deepfake-image",
         "group": 1,
-        "description": "Manipulated image content created using deep learning techniques"
+        "description": "Images manipulated using deep learning algorithms placing identifiable entities in fictitious situations"
     },
     {
         "id": "synthetic-image",
         "name": "synthetic-image",
         "group": 1,
-        "description": "Generated image"
+        "description": "Fully synthetic image"
     },
     {
         "id": "synthetic-video",
         "name": "synthetic-video",
         "group": 1,
-        "description": "Generated video"
+        "description": "Fully synthetic video"
     },
     {
         "id": "synthetic-audio",
         "name": "synthetic-audio",
         "group": 1,
-        "description": "Generated audio"
+        "description": "Fully synthetic audio"
     },
     {
         "id": "synthetic-text",
         "name": "synthetic-text",
         "group": 1,
-        "description": "Generated text"
+        "description": "Fully synthetic text"
     },
     {
         "id": "deepfake-text",
         "name": "deepfake-text",
         "group": 1,
-        "description": "Manipulated text content created using deep learning techniques"
+        "description": "Text manipulated using deep learning algorithms to imitate an identifiable entity"
     },
     {
         "id": "reenactment",
         "name": "reenactment",
         "group": 1,
-        "description": "Deepfake content created through reenactment"
+        "description": "Videos where an identifiable entity is manipulated using a driver video to perform actions"
     },
     {
         "id": "faceswap",
         "name": "faceswap",
         "group": 1,
-        "description": "Deepfake content created through faceswap"
+        "description": "Videos where an identifiable entity's face is swapped"
     },
     {
         "id": "manual-forgery-video",
@@ -159,61 +159,61 @@
         "id": "human-face",
         "name": "human-face",
         "group": 2,
-        "description": "Media manipulation searched within human faces"
+        "description": "Analytic extracts human face data and focuses only on that"
     },
     {
         "id": "human-mouth",
         "name": "human-mouth",
         "group": 2,
-        "description": "Media manipulation searched within human mouths"
+        "description": "Analytic extracts human mouth data and focuses only on that"
     },
     {
         "id": "human-eye",
         "name": "human-eye",
         "group": 2,
-        "description": "Media manipulation searched within human eyes"
+        "description": "Analytic extracts human eye data and focuses only on that"
     },
     {
         "id": "human-ear",
         "name": "human-ear",
         "group": 2,
-        "description": "Media manipulation searched within human ears"
+        "description": "Analytic extracts human ear data and focuses only on that"
     },
     {
         "id": "human-voice",
         "name": "human-voice",
         "group": 2,
-        "description": "Media content involving human voices"
+        "description": "Analytic extracts human voice data and focuses only on that"
     },
     {
         "id": "human-body",
         "name": "human-body",
         "group": 2,
-        "description": "Media content depicting human bodies"
+        "description": "Analytic extracts human body data and focuses only on that"
     },
     {
         "id": "human-handwriting",
         "name": "human-handwriting",
         "group": 2,
-        "description": "Media content depicting human handwriting"
+        "description": "Analytic extracts handwriting data and focuses only on thatg"
     },
     {
         "id": "human-text",
         "name": "human-text",
         "group": 2,
-        "description": "Media content depicting human text"
+        "description": "Analytic extracts text data and focuses only on that"
     },
     {
         "id": "non-human-biological",
         "name": "non-human-biological",
         "group": 2,
-        "description": "Media content involving non-human biological entities"
+        "description": "Analytic extracts non-human biological data and focuses only on that"
     },
     {
         "id": "non-human-non-biological",
         "name": "non-human-non-biological",
         "group": 2,
-        "description": "Media content involving non-human non-biological entities"
+        "description": "Analytic extracts non-biological data and focuses only on that"
     },
     {
         "id": "spatial",
