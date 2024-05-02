@@ -3,8 +3,8 @@
 export type OntologyNode = {
     id: string;
     name: string;
-    state: string;
-    parents: string[];
+    group: number;
+    description?: string;
 };
 
 export type OntologyEdge = {
@@ -12,33 +12,25 @@ export type OntologyEdge = {
     target: string;
     label: string;
     weight: number;
+    type: string;
 };
 
 export type OntologyFilter = {
-    [key: string]: {
-        parents: string[] | string;
+    [key: string]: OntologyNode & {
+        children: string[];
+        parents: string[];
         state: string;
-        id: string;
         level: number;
-        group: number;
     };
 };
 
 export type OntologyTree = {
-    [key: string]: {
-        id: string;
-        name: string;
-        description: string;
+    [key: string]: OntologyNode & {
         children: OntologyTree;
     };
 };
 
-export type OntologyState = {
-    filter: OntologyFilter | {};
-    tree: OntologyTree | {};
-    isLoading: Boolean;
-    startTime: number;
-};
+// analytics types
 
 export type AnalyticType = {
     id: string,
@@ -52,11 +44,7 @@ export type AnalyticType = {
     what: string[]
 }
 
-export type AnalyticFilter = {
-    why: string[],
-    where: string[],
-    what: string[]
-}
+// study data types
 
 export type StudyDataType = {
     [key: string]: {
@@ -65,4 +53,21 @@ export type StudyDataType = {
             content: string[]
         }
     }
+}
+
+// app state types
+
+export type OntologyState = {
+    filter: OntologyFilter | {};
+    tree: OntologyTree | {};
+    isLoading: Boolean;
+    startTime: number;
+};
+
+// misc types
+
+export type AnalyticFilter = {
+    why: string[],
+    where: string[],
+    what: string[]
 }

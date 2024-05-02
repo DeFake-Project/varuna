@@ -12,17 +12,17 @@ export const metadata: Metadata = {
 export default function Page() {
   return <>
     <Header />
-    <main className="ontology">
-      <section className="instructions">
-        <h2>Use the interactable sentences provided to filter out the analytics on the sidebar</h2>
-        <p>all the fields have multi-select capability</p>
-      </section>
-      <OntologyContainer />
-      <aside className="sidebar">
-        <Suspense>
+    <Suspense>
+      <main className="ontology">
+        <section className="instructions">
+          <h2>Use the interactable sentences provided to filter out the analytics on the sidebar</h2>
+          <p>all the fields have multi-select capability</p>
+        </section>
+        <OntologyContainer />
+        <aside className="sidebar">
           <AnalyticsContainer hasOntology={true} />
-        </Suspense>
-      </aside>
-    </main>
+        </aside>
+      </main>
+    </Suspense>
   </>;
 }
