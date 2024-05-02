@@ -417,8 +417,8 @@
     border: 1px solid $border-color;
     animation-duration: 0.6s;
     animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-    max-width: 80%;
-    width: min(var(--radix-popper-available-width), 600px);
+    max-width: min(400px, 80%);
+    width: min(var(--radix-popper-available-width), 400px);
     transform-origin: var(--radix-tooltip-content-transform-origin);
     animation: scaleIn 0.5s ease-out;
     z-index: 1;
