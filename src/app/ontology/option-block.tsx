@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import { activateItem } from '@/lib/features/ontology/ontologySlice';
 import { OntologyFilter } from '@/lib/customTypes';
 import * as Tooltip from '@radix-ui/react-tooltip';
+import { useSearchParams } from 'next/navigation';
 
 type OptionBlockProps = {
     title: string;
@@ -13,6 +14,8 @@ type OptionBlockProps = {
 const OptionBlock: React.FC<OptionBlockProps> = ({ title, nodenames }) => {
     const dispatch = useAppDispatch();
     const filter: OntologyFilter = useAppSelector((state) => state.ontology.filter);
+    const searchParams = useSearchParams();
+    const tooltip = searchParams.get("tooltip");
 
     // sort by state
     const sortByState = (a: string, b: string) => {
@@ -23,7 +26,7 @@ const OptionBlock: React.FC<OptionBlockProps> = ({ title, nodenames }) => {
         return 0;
     }
 
-    const nodeItem = (item: string) => (
+    const nodeItem = (item: string) => tooltip == "on" ? (
         <Tooltip.Root key={`${filter[item].id}-option`}>
             <Tooltip.Trigger asChild>
                 <li onClick={() => dispatch(activateItem(filter[item].id))} className={`${filter[item]?.state} ontology-item pill`}>
@@ -35,6 +38,10 @@ const OptionBlock: React.FC<OptionBlockProps> = ({ title, nodenames }) => {
                 <Tooltip.Arrow />
             </Tooltip.Content>
         </Tooltip.Root>
+    ) : (
+        <li onClick={() => dispatch(activateItem(filter[item].id))} className={`${filter[item]?.state} ontology-item pill`}>
+            {filter[item].id}
+        </li>
     )
 
     const alphabeticCompare = (a: string, b: string, state: string) => {
