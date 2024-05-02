@@ -39,7 +39,7 @@ const OptionBlock: React.FC<OptionBlockProps> = ({ title, nodenames }) => {
             </Tooltip.Content>
         </Tooltip.Root>
     ) : (
-        <li onClick={() => dispatch(activateItem(filter[item].id))} className={`${filter[item]?.state} ontology-item pill`}>
+        <li key={`${filter[item].id}-option`} onClick={() => dispatch(activateItem(filter[item].id))} className={`${filter[item]?.state} ontology-item pill`}>
             {filter[item].id}
         </li>
     )
