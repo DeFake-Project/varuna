@@ -24,21 +24,17 @@ const OptionBlock: React.FC<OptionBlockProps> = ({ title, nodenames }) => {
     }
 
     const nodeItem = (item: string) => (
-        <Tooltip.Provider key={`${filter[item].id}-option`} >
-            <Tooltip.Root>
-                <Tooltip.Trigger asChild>
-                    <li onClick={() => dispatch(activateItem(filter[item].id))} className={`${filter[item]?.state} ontology-item pill`}>
-                        {filter[item].id}
-                    </li>
-                </Tooltip.Trigger>
-                <Tooltip.Portal>
-                    <Tooltip.Content className="tooltip-content" sideOffset={5}>
-                        {filter[item].description}
-                        <Tooltip.Arrow className="TooltipArrow" />
-                    </Tooltip.Content>
-                </Tooltip.Portal>
-            </Tooltip.Root>
-        </Tooltip.Provider>
+        <Tooltip.Root key={`${filter[item].id}-option`}>
+            <Tooltip.Trigger asChild>
+                <li onClick={() => dispatch(activateItem(filter[item].id))} className={`${filter[item]?.state} ontology-item pill`}>
+                    {filter[item].id}
+                </li>
+            </Tooltip.Trigger>
+            <Tooltip.Content className="tooltip-content" sideOffset={2}>
+                {filter[item].description}
+                <Tooltip.Arrow />
+            </Tooltip.Content>
+        </Tooltip.Root>
     )
 
     const alphabeticCompare = (a: string, b: string, state: string) => {
@@ -48,16 +44,18 @@ const OptionBlock: React.FC<OptionBlockProps> = ({ title, nodenames }) => {
     nodenames.sort(sortByState).sort((a, b) => alphabeticCompare(a, b, "available"));
 
     return (
-        <div className={`${title} option-block scroll-shadows`}>
-            <h2 className="">{title}</h2>
-            <ul className="option-list">
-                {nodenames.map((item: string) => {
-                    // console.log(">> ", item)
-                    return filter[item] ? nodeItem(item) : null;
-                })}
-            </ul>
-            <div className="faded-scroller-bottom"></div>
-        </div>
+        <Tooltip.Provider>
+            <div className={`${title} option-block scroll-shadows`}>
+                <h2 className="">{title}</h2>
+                <ul className="option-list">
+                    {nodenames.map((item: string) => {
+                        // console.log(">> ", item)
+                        return filter[item] ? nodeItem(item) : null;
+                    })}
+                </ul>
+                <div className="faded-scroller-bottom"></div>
+            </div>
+        </Tooltip.Provider>
     );
 };
 
