@@ -261,7 +261,7 @@
         "id": "file-analysis",
         "name": "file-analysis",
         "group": 3,
-        "description": "Investigating the structure, format, and composition of media files to extract relevant information and detect anomalies or inconsistencies"
+        "description": "Investigating the structure, format, metadata, watermarks, and composition of media files to extract relevant information and detect anomalies or inconsistencies"
     },
     {
         "id": "file-metadata",
@@ -285,13 +285,13 @@
         "id": "temporal-biometrics",
         "name": "temporal-biometrics",
         "group": 3,
-        "description": "Extracting biometric information from media content over time, such as facial expressions, gait analysis, or physiological signals for identity verification or behavioral analysis"
+        "description": "Extracting identity-specific biometric information from media content over time, such as facial expressions, gait analysis, or physiological signals for identity verification or behavioral analysis"
     },
     {
         "id": "temporal-physiology",
         "name": "temporal-physiology",
         "group": 3,
-        "description": "Monitoring physiological features and changes exhibited within media content over time, such as heart rate variability, pupil dilation, or facial blood flow for health monitoring or emotional analysis"
+        "description": "Monitoring general species/object-specific physiological features and changes exhibited within media content over time, such as heart rate variability, pupil dilation, or facial blood flow for health monitoring or emotional analysis"
     },
     {
         "id": "temporal-context",
@@ -321,6 +321,6 @@
         "id": "spatial-frequency",
         "name": "spatial-frequency",
         "group": 3,
-        "description": " Analyzing frequency-related characteristics within spatial features of media content, such as variations in detail, sharpness, or spatial resolution"
+        "description": "Extracting frequency-related characteristics from media content to identify patterns using operations involving spacial frequency transformation, such as DCT or FFT"
     }
 ]
