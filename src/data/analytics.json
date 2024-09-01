@@ -626,5 +626,27 @@
             "spatial",
             "spatial-pixel-level"
         ]
+    },
+    {
+        "id": "defake-effnet",
+        "name": "DeFake EffNet",
+        "description": "DeFake project deepfake non-temporal detection model with the EfficientNetB6 backbone, trained on a curated list of the top research datasets for FaceSwap, Deepfake, and Puppetmaster Deepfakes. While the model is robust to a variety of compression levels and blurs, it may not be robust to lip-sync deepfakes or other advanced latest manipulation techniques.",
+        "paperTitle": "Recurrent Convolutional Structures for Audio Spoof and Video Deepfake Detection",
+        "paperURL": "https://ieeexplore.ieee.org/abstract/document/9105097/",
+        "codeURL": "",
+        "why": [
+            "deepfake",
+            "deepfake-video",
+            "faceswap",
+            "puppetmaster"
+        ],
+        "where": [
+            "human",
+            "human-face"
+        ],
+        "what": [
+            "spatial",
+            "spatial-pixel-level"
+        ]
     }
 ]
